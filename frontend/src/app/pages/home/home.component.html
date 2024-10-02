@@ -1,0 +1,18 @@
+<div class="home" *ngIf="isVisible">
+
+    <div class="content-container">
+        <img @firstSlideInLeft src="assets/img/me.jpg" class="profile-image" />
+        <div @firstSlideIn class="text-section">
+            <h1 style="font-size: 210%; margin-top: -3px;">{{ 'home-page.first-sentence' | translate }}</h1>
+            <p style="font-size: 95%; line-height: 1.2; margin-top: -43px;">{{ 'home-page.secund-sentence' | translate }}</p>
+        </div>
+    </div>
+
+    <div @secundSlideIn class="bottom-right">
+        <div class="move-up container" style="margin-bottom: 22px; margin-right: 27px">
+            <p>{{ 'network' | translate }}</p>
+            <img src="assets/img/finger.png" style="width: 70px; transform: scaleX(-1);" />
+        </div>
+    </div>
+
+</div>

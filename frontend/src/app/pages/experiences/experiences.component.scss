@@ -1,0 +1,46 @@
+@import '../../app.component.scss';
+
+.experiences {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.images-container {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  gap: 25px;
+  align-items: center;
+}
+
+.images-container img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height: auto;
+}
+
+.images-container img:hover {
+  transform: scale(1.25);
+}
+
+.iframe-container {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  width: 75%;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: $rectangle-border-radius;
+  outline: 2px solid black;
+}

@@ -1,0 +1,117 @@
+@import '../../app.component.scss';
+
+.architecture {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aws-rectangle {
+  width: 100%;
+  position: relative;
+  box-shadow: $rectangle-box-shadow;
+  border: $rectangle-border;
+  background-color: $rectangle-background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: $rectangle-border-radius;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.images-container {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin: 20px auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.images-container img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 60px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.images-container img:hover {
+  transform: scale(1.2);
+}
+
+.schema {
+  background-color: $small-rectangle-background-color;
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: $rectangle-border-radius;
+  box-shadow: $rectangle-box-shadow;
+  margin-bottom: 60px;
+}
+
+.text {
+  width: 93%;
+  color: white;
+  text-align: justify;
+  white-space: pre-wrap;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.components {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.first-line,
+.second-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-left: 60%;
+  position: relative;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden-button {
+  width: 150px;
+  height: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: $secund-color;
+}
+
+.container:hover .hidden-button {
+  display: flex;
+}
+
+.hidden-text {
+  color: transparent;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  font-size: 10px;
+  margin: 0;
+}

@@ -1,0 +1,43 @@
+@import '../../app.component.scss';
+
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+}
+
+.timeline-event {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: $rectangle-box-shadow;
+    border: $rectangle-border;
+    background-color: $small-rectangle-background-color;
+    border-radius: $rectangle-border-radius;
+    color: white;
+}
+
+.timeline-event:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    background: $secund-color;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+}
+
+.timeline-date {
+    margin-bottom: 5px;
+}
+
+.timeline-content h5 {
+    margin: 0;
+}
+
+.timeline-content p {
+    margin: 5px 0 0;
+}

@@ -1,0 +1,13 @@
+<div class="dialog" *ngIf="!isLoading">
+    <span class="text">{{ 'dialog.question' | translate }}</span>
+
+    <div class="button-container">
+        <div *ngFor="let job of jobs">
+            <button (click)="registerVisitor(job)" mat-stroked-button>{{'dialog.' + job | translate}}</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isLoading">
+    <app-spinner [isLoading]="isLoading" />
+</div>

@@ -1,0 +1,41 @@
+<div class="experiences" [@upsize]="{ value: 'enter', params: { scale: 1.25 }}">
+
+  <div class="images-container">
+    <a class="upsize-item" (click)="scrollToSection('studies')">
+      <img style="width: 100px" matTooltip="ESIR" [src]="'assets/img/esir.png'">
+    </a>
+    <a class="upsize-item" (click)="scrollToSection('studies')">
+      <img style="width: 60px" matTooltip="Image ET" [src]="'assets/img/imageet.png'">
+    </a>
+    <a class="upsize-item" (click)="scrollToSection('sopra')">
+      <img style="width: 100px" matTooltip="Sopra Steria" [src]="'assets/img/soprasteria.png'">
+    </a>
+    <a class="upsize-item" (click)="scrollToSection('sopra')">
+      <img style="width: 50px" matTooltip="DGA" [src]="'assets/img/dga.png'">
+    </a>
+    <a class="upsize-item" (click)="scrollToSection('sopra')">
+      <img style="width: 100px" matTooltip="DIRISI" [src]="'assets/img/dirisi.png'">
+    </a>
+  </div>
+
+  <div id="studies">
+    <app-card [title]="'experiences-page.studies'" [description]="'experiences-page.studies-description'"
+      [timeline]="studiesTimeline" />
+  </div>
+
+  <div class="iframe-container">
+    <iframe src="https://www.youtube.com/embed/eGV-xg-T39E?si=U9iTBXpIWCu2MqCc?autoplay=1&mute=1" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/5iOO_v4DDWs?si=nu7XcPWPEo2MvEuf?autoplay=1&mute=1" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+
+  <div id="sopra">
+    <app-card [title]="'experiences-page.sopra'" [description]="'experiences-page.sopra-description'"
+      [timeline]="sopraTimeline" [isDescriptionToTheLeft]="false" />
+  </div>
+
+</div>

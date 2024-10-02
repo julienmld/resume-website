@@ -1,0 +1,29 @@
+.skills {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.images-container {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 20px auto;
+  gap: 20px;
+  align-items: center;
+}
+
+.images-container img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 52px;
+  height: auto;
+}
+
+.images-container img:hover {
+  transform: scale(1.25);
+}

@@ -1,0 +1,27 @@
+.button {
+  margin-right: 20px;
+}
+
+.underline-on-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.underline-on-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.5s ease-out;
+}
+
+.underline-on-hover:hover::after {
+  transform: scaleX(1);
+}

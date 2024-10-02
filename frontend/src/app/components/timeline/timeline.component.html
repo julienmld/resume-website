@@ -1,0 +1,10 @@
+<div class="timeline">
+    <div *ngFor="let event of timeline" class="timeline-event">
+        <div class="timeline-date">{{ event + '.date' | translate }}</div>
+        <div class="timeline-content">
+            <h5>{{ event + '.title' | translate }}</h5>
+            <p>{{ event + '.description' | translate }}</p>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,206 @@
+{
+  "resume": "Curriculum Vitae",
+  "experiences": "Expériences",
+  "skills": "Compétences",
+  "contact-me": "Me contacter",
+  "experience": "Expérience",
+  "my-story": "Mon histoire",
+  "architecture": "Architecture du site",
+  "network": "CV et réseaux",
+  "small-screen": "Bonjour, la version mobile et tablette de ce site n'est pas encore disponible",
+  "home-page": {
+    "first-sentence": "Bonjour. Je suis Julien.",
+    "secund-sentence": "Développeur full stack passionné des nouvelles technologies, j'espère que ce site vous permettra de découvrir mon univers professionnel."
+  },
+  "architecture-page": {
+    "first-text": "Pour mettre en avant mes compétences en développement, j'ai décidé de créer ma propre application web. Vous trouverez ci-dessous un schéma illustrant les différentes composantes de cette application. En passant votre souris sur chaque élément, vous découvrirez des informations supplémentaires. Pour en savoir plus sur l'implémentation de ce projet, je vous invite à consulter le fichier README.md (fichier explicatif dans le monde de l'informatique) situé à la racine de mon projet GitHub. Vous pouvez y accéder en cliquant sur l'icône GitHub dans la bannière en bas à droite de cette page. Enfin, un easter egg est dissimulé sur ce site, n'hésitez pas à explorer la console web pour le découvrir.",
+    "title": "Mon CV au travers d'une application AWS",
+    "frontend": "Le frontend de l'application repose sur la technologie Angular. Il est déployé via l'outil AWS Amplify, une solution de construction et de déploiement d'application frontend de manière sécurisée. Cette brique est le point d'entrée que votre navigateur a contacté afin de vous servir ce site",
+    "gateway": "L'outil AWS gateway permet d'exposer les API REST de la brique backend sur internet et donc au frontend",
+    "backend": "Le backend de l'application repose sur la technologie Java/Spring. Il est déployé via l'outil AWS Lambda, une solution serverless (le développeur se soucie uniquement du code et non pas du paramétrage du serveur)",
+    "database": "L'outil AWS DynamoDB permet d'exposer une Base De Données relationnelle afin de persister des données du backend (votre réponse à la question posée sur la pop-up à votre arrivée sur le site)",
+    "iam": "L'outil AWS IAM pour la gestion des identités et des accès permet de gérer les utilisateurs et les groupes d'utilisateurs qui ont accès à la Base De Données. Une clé secrète et une clé d'accès peuvent être générées et utilisées par la brique backend pour accéder à la Base De Données",
+    "secret-manager": "AWS Secret Manager est un outil de gestion des secrets. Ainsi, je peux mettre des occurrences aux mots de passe dans le code de la brique du backend mais pas directement en clair. Cela me permet de vous offrir mon code sur un projet Github de manière transparente"
+  },
+  "dialog": {
+    "question": "À des fins statistiques, j'aimerais que vous répondiez à la question suivante. Laquelle de ces propositions vous définit-elle le mieux ?",
+    "developer": "Développeur",
+    "recruiter": "Recruteur",
+    "student": "Étudiant",
+    "client": "Client",
+    "curious": "Curieux",
+    "other": "Ne se prononce pas"
+  },
+  "experiences-page": {
+    "description": "Description",
+    "key-dates": "Dates clés",
+    "studies": "Études post-bac",
+    "studies-description": "\nAprès l'obtention de mon baccalauréat scientifique au lycée René Cassin de Montfort-sur-Meu, j'ai choisi de suivre un cycle préparatoire de deux ans afin d'intégrer l'École Supérieure d'Ingénieurs de Rennes (ESIR). Durant ces deux années, j'ai consolidé mes compétences en mathématiques, en logique, ainsi qu'en développement, notamment avec le langage Java.\n\nComme prévu, j'ai ensuite intégré l'ESIR. La première année était constituée d'un tronc commun comprenant des matières telles que les mathématiques et le développement, indépendamment des spécialisations proposées par l'école. En deuxième année, je me suis orienté vers l'Internet des Objets (IoT), ce qui m'a permis d'approfondir mes connaissances en JavaScript, sur le framework React, ainsi que sur les systèmes embarqués. Pour illustrer mon apprentissage de React, vous trouverez ci-dessous une vidéo du projet que j'ai développé cette année-là : une application de chat pour les utilisateurs, intégrant des fonctionnalités telles que la connexion et la création de groupes. Cette vidéo servait à démontrer le bon fonctionnement de l'application à mes enseignants.\n\nMalheureusement, en raison de la pandémie, mon stage de deuxième année prévu en Espagne n'a pu avoir lieu. J'ai donc poursuivi mon parcours académique à l'ESIR. En dernière année, j'ai travaillé sur un projet industriel avec la start-up rennaise Image ET, dont l'objectif était de concevoir un prototype pour protéger le personnel médical des rayonnements dangereux. Une vidéo de ce prototype est également disponible ci-dessous. Le projet consistait à détecter lorsqu'une personne entrait dans une zone d'émission de rayonnements, interrompant l'émission pour la reprendre une fois la zone sécurisée. Ce prototype, bien que simple, m'a permis de manipuler une carte Arduino avec divers capteurs, ainsi qu'une Raspberry Pi pour tracer l'historique des changements d'état.\n\nEnfin, j'ai effectué mon stage de fin d'études chez Sopra Steria, ce qui a débouché sur une proposition de CDI. J'ai obtenu mon diplôme la même année.",
+    "studies-timeline": {
+      "cupge": {
+        "date": "2016",
+        "title": "CUPGE",
+        "description": "Intégration du Cycle Universitaire Préparatoire aux Grandes Écoles de l'ESIR"
+      },
+      "esir": {
+        "date": "2018",
+        "title": "ESIR",
+        "description": "Intégration de l'École Supérieure d'Ingénieurs de Rennes"
+      },
+      "imageEt": {
+        "date": "2020",
+        "title": "Projet industriel",
+        "description": "Développement d'un projet industriel à l'intention de la startup Image ET"
+      },
+      "internship": {
+        "date": "Début 2021",
+        "title": "Stage",
+        "description": "Stage de fin d'études au sein de l'ESN Sopra Steria"
+      },
+      "diploma": {
+        "date": "Fin 2021",
+        "title": "Diplôme",
+        "description": "Obtention de mon diplôme d'ingénieur"
+      }
+    },
+    "sopra": "Carrière chez Sopra Steria",
+    "sopra-description": "\nJ'ai débuté ma carrière chez Sopra Steria par un stage de fin d'études, au sein de l'équipe CRACN (Composants et Hébergements Applicatifs des Configurations Licorn). Cette équipe, composée d'une vingtaine de personnes, m'a accueilli en tant que développeur full stack. Le site sur lequel je travaillais était entièrement dédié à des projets pour le secteur de la défense, avec pour principaux clients la DGA (Direction générale de l'Armement) et la DIRISI (Direction interarmées des réseaux d'infrastructure et des systèmes d'information). En raison de la sensibilité de ce secteur, je ne peux pas entrer dans les détails fonctionnels des applications, mais je serais ravi de vous en dire plus lors d'une rencontre.\n\nPendant mon stage, j'ai développé des fonctionnalités et corrigé des bugs, aussi bien sur le backend (Java) que sur le frontend (Angular). J'ai eu l'occasion de travailler sur un projet complexe et ancien, tout en contribuant à l'industrialisation des processus avec Jenkins.\n\nAprès avoir signé mon CDI, j'ai poursuivi dans cette équipe pendant plus de deux ans, où j'ai évolué jusqu'à devenir référent technique, ou \"leader technique\", comme on l'appelle chez Sopra Steria.\n\nVers la fin de l'année 2023, j'ai ressenti le besoin de relever de nouveaux défis, car ma courbe d'apprentissage commençait à se stabiliser. J'ai donc décidé de m'orienter davantage vers le DevOps et ai rejoint le projet SPRINT (Secure Portal Registered over INTernet). Ce projet se distinguait nettement de CRACN par son architecture en microservices. Cela m'a permis d'approfondir mes compétences en Terraform, Ansible, et Kubernetes (Docker), tout en consolidant mes connaissances en Java et Angular.\n\nEn 2024, en plus de mon travail sur SPRINT, j'ai encadré plusieurs collaborateurs, notamment en contribuant à l'estimation de solutions à grande échelle et en accompagnant de jeunes collègues dans leurs missions. J'ai également tutorer un alternant et un stagiaire. Le projet SPRINT s'est conclu fin 2024 avec une mise en production, peu avant ma démission. J'ai ensuite brièvement participé à un troisième projet, où j'ai principalement accompagné une équipe de deux juniors dans la mise à jour de la pile logicielle de l'application.",
+    "sopra-timeline": {
+      "internship": {
+        "date": "Début 2021",
+        "title": "Stage",
+        "description": "Stage de fin d'études"
+      },
+      "contract": {
+        "date": "Août 2021",
+        "title": "CDI",
+        "description": "Signature du CDI"
+      },
+      "sprint": {
+        "date": 2023,
+        "title": "Changement de projet",
+        "description": "Passage sur le projet SPRINT (Secure Portal Registered over INTernet)"
+      },
+      "transverse": {
+        "date": 2024,
+        "title": "Activités transverses",
+        "description": "Passage sur des tâches transverses en plus de mon activité SPRINT"
+      },
+      "freelance": {
+        "date": "Début 2025",
+        "title": "Départ",
+        "description": "De nouvelles opportunités"
+      }
+    }
+  },
+  "skills-page": {
+    "backend": "Backend",
+    "backend-description": "\nEn matière de technologies backend, je maîtrise Java et suis parfaitement à l'aise avec les outils Maven et Spring. J'ai d'ailleurs utilisé ces compétences pour développer ce site web, dont le code est accessible sur mon projet Github, intitulé resume-website. Vous pouvez y accéder via le bouton Github dans la bannière en bas de ce site.\n\nJ'ai découvert Java lors de mes études et n'ai cessé de perfectionner mes compétences tout au long de ma carrière chez Sopra Steria. Au fil du temps, j'ai notamment suivi deux formations spécifiques pour me former au framework Spring.\n\nMon expérience professionnelle m'a permis de travailler sur des projets variés, tels que CRACN, utilisant Java en version 1.8, et SPRINT, reposant sur Java version 17. Mon travail quotidien consistait principalement à spécifier et implémenter des interfaces, développer de nouvelles fonctionnalités, et corriger des anomalies.\n\nEn tant que leader technique, j'ai également consacré une part importante de mon temps à la relecture de code produit par d'autres collaborateurs. Cette activité faisait partie intégrante de mes responsabilités, garantissant la qualité du code et le respect des bonnes pratiques au sein des équipes de développement.",
+    "backend-timeline": {
+      "esir": {
+        "date": "2017-2019",
+        "title": "Cours",
+        "description": "Apprentissage théorique et pratique du Java à l'ESIR"
+      },
+      "cracn": {
+        "date": "2021-2023",
+        "title": "CRACN",
+        "description": "Développements en Java 1.8"
+      },
+      "training": {
+        "date": "2021 & 2023",
+        "title": "Formations Spring",
+        "description": "Réalisation de deux formations Spring"
+      },
+      "sprint": {
+        "date": "2023-2025",
+        "title": "SPRINT",
+        "description": "Développements en Java 17"
+      }
+    },
+    "frontend": "Frontend",
+    "frontend-description": "\nEn ce qui concerne les technologies frontend, j'ai principalement travaillé avec le framework Angular pendant toute ma carrière. C'est d'ailleurs ce même framework que j'ai utilisé pour développer ce site web, dont le code est disponible sur mon projet resume-website via le bouton Github en bas de ce site.\n\nJ'ai découvert Angular à mon arrivée chez Sopra Steria, mais j'avais déjà acquis des compétences en JavaScript, qui est similaire au TypeScript, le langage utilisé par Angular. Pour approfondir mes connaissances, j'ai suivi deux formations de trois jours sur ce framework au cours de ma carrière.\n\nJ'ai mis ces compétences en œuvre sur les projets SPRINT et CRACN, où mon travail consistait à corriger des anomalies, créer de nouveaux écrans, et surtout à relire le code produit par mes collègues. Tout comme pour le backend, cette relecture était une part essentielle de mes responsabilités, assurant la qualité du code et le respect des bonnes pratiques au sein des équipes de développement.",
+    "frontend-timeline": {
+      "esir": {
+        "date": "2020",
+        "title": "Cours",
+        "description": "Apprentissage théorique et pratique du Javascript à l'ESIR"
+      },
+      "cracn": {
+        "date": "2021-2023",
+        "title": "CRACN",
+        "description": "Développements Angular"
+      },
+      "training": {
+        "date": "2021 & 2023",
+        "title": "Formations Angular",
+        "description": "Réalisation de deux formations Angular"
+      },
+      "sprint": {
+        "date": "2023-2025",
+        "title": "SPRINT",
+        "description": "Développements Angular"
+      }
+    },
+    "devops": "DevOps",
+    "devops-description": "\nEn ce qui concerne l'aspect DevOps, j'ai eu l'occasion, tout au long de ma carrière, de me consacrer à l'industrialisation des processus en plus du développement. J'ai principalement utilisé deux outils : Jenkins et GitLab. Ces derniers m'ont permis, sur les deux projets majeurs sur lesquels j'ai travaillé, de mettre en place des pipelines d'intégration continue. Ces pipelines étaient essentiels pour automatiser l'installation et les tests de nos application, que ce soit à travers des tests d'intégration (vérification des requêtes REST) ou des tests d'IHM via le logiciel Cypress. J'ai appris au fil du temps l'importance, voire la nécessité, de ces pipelines, qui non seulement permettent des tests de non-régression, mais font également gagner un temps considérable à l'équipe.\n\nSur mon deuxième projet chez Sopra Steria, SPRINT, l'aspect DevOps était particulièrement présent. J'ai découvert et utilisé des technologies comme Terraform (pour l'infrastructure en tant que code) et Ansible (pour l'automatisation des configurations). J'ai également travaillé sur Kubernetes, en utilisant Helm comme gestionnaire de paquets.\n\nDans le cadre de Kubernetes, j'ai mis en place plusieurs fonctionnalités importantes, notamment la sauvegarde de l'application SPRINT via l'outil Velero, ainsi que l'autoscaling de cette application, permettant d'adapter automatiquement les ressources en fonction de la charge.",
+    "devops-timeline": {
+      "cracn": {
+        "date": "2021-2023",
+        "title": "CRACN",
+        "description": "Utilisation de Jenkins"
+      },
+      "sprint": {
+        "date": "2023-2025",
+        "title": "SPRINT",
+        "description": "Utilisation de Gitlab CI, Cypress, Kubernetes etc"
+      }
+    },
+    "transverse": "Transverse",
+    "transverse-description": "\nEn plus de mes compétences techniques, j'ai également développé des compétences transversales au fil du temps. J'ai notamment eu l'opportunité de tutorer, en accompagnant un stagiaire de l'ENIB (École Nationale d’Ingénieurs de Brest) et un alternant de l'ISTIC (Université de Rennes 1). Cela impliquait leur accueil, la définition des objectifs de mission, leur suivi tout au long de leur stage, la relecture de leurs rapports, l'organisation de soutenances blanches, ainsi que ma présence lors de leurs soutenances finales.\n\nEn tant que leader technique, j'ai également encadré des développeurs juniors au quotidien, en les guidant dans l’implémentation des solutions que j'avais préalablement estimées en termes de charge de travail.\n\nPar ailleurs, j'ai suivi une formation en recrutement chez Sopra Steria juste avant mon départ, bien que je n'aie pas eu l'occasion de mener des entretiens en raison de ma démission survenue peu après.\n\nEnfin, j'ai obtenu une certification SAFe (Scaled Agile Framework) Practicioner au cours de l'année 2024.",
+    "transverse-timeline": {
+      "tutor": {
+        "date": "2024",
+        "title": "Tuteur stagiaire/alternant",
+        "description": "Accompagnement de juniors en début de carrière"
+      },
+      "recruit": {
+        "date": "Fin 2024",
+        "title": "Formation recruteur",
+        "description": "Réalisation d'une formation afin de faire passer des entretiens"
+      },
+      "safe": {
+        "date": "Fin 2024",
+        "title": "Certification SAFe Agile",
+        "description": "Obtention de la certification SAFe Practitioner"
+      }
+    }
+  },
+  "contact-page": {
+    "your-email": "Adresse mail",
+    "example-email": "marion.dauvergne@outlook.fr",
+    "your-phone": "Numéro de téléphone",
+    "example-phone": "0783XXXX23",
+    "your-message": "Message",
+    "activity-area": "Domaine d'activité",
+    "aerospace": "Aérospatial",
+    "social": "Assurance et protection sociales",
+    "defense": "Défense et sécurité",
+    "energy": "Énergie et services publics",
+    "government": "Gouvernement",
+    "retail": "Vente au détail",
+    "financial": "Services Financiers",
+    "telecommunications": "Télécommunication, Médias et Divertissement",
+    "transportation": "Transport",
+    "others": "Autres",
+    "example-message": "Bonjour Julien,\n\nJe vous contacte à propos de ...",
+    "send": "Envoyer",
+    "disabled-button": "Veuillez remplir correctement les champs obligatoires"
+  },
+  "easter-egg": {
+    "first-indication": "Voici le premier indice. Rendez vous dans la console réseau et trouvez le nom de la requête réalisée pour persister votre réponse à la pop-up. Vous devrez ensuite faire un CTRL+F sur ce nom sur la page \"Architecture du site\"",
+    "secund-indication": "registerVisitor. Voici le deuxième indice. Rendez vous dans l'inspecteur et observez l'id de la balise qui contient mon nom et prénom en haut à gauche de ce site web",
+    "third-indication": "Bravo, ce jeu de piste touche à sa fin. Rendez vous de nouveau sur la page \"Architecture du site\", un bouton caché se situe en bas, légèrement à droite de la page. Il se révelera lorsque vous le survolerez",
+    "button": "Accrochez vous"
+  }
+}

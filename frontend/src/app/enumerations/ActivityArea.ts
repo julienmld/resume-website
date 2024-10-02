@@ -1,0 +1,12 @@
+export enum ActivityArea {
+    AEROSPACE,
+    SOCIAL,
+    DEFENSE,
+    ENERGY,
+    GOVERNMENT,
+    RETAIL,
+    FINANCIAL,
+    TELECOMMUNICATIONS,
+    TRANSPORTATION,
+    OTHERS
+}

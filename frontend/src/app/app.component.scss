@@ -1,0 +1,75 @@
+$primary-color: #0B0C10;
+$secund-color: #000D1A;
+$rectangle-box-shadow: inset 0 0 0 0.1px rgba(0, 0, 0, 1);
+$rectangle-border: 0.5px solid rgba(0, 0, 0, 0.5);
+$rectangle-background-color: rgba(0, 13, 26, 0.8);
+$rectangle-border-radius: 5px;
+$small-rectangle-background-color: rgba(0, 0, 0, 0.5);
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+@media (max-width: 700px) {
+  .content-large {
+    display: none;
+  }
+}
+
+.centered-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+  padding: 0 50px;
+}
+
+@media (min-width: 701px) {
+  .content-small {
+    display: none;
+  }
+}
+
+::ng-deep .mat-mdc-tooltip-surface {
+  background-color: $secund-color !important;
+  font-family: 'Poppins' !important;
+  text-align: center !important;
+}
+
+::ng-deep .mat-mdc-select-value-text {
+  color: white !important;
+}
+
+::ng-deep .mat-mdc-select-panel {
+  background-color: $secund-color !important;
+}
+
+::ng-deep .mat-mdc-option {
+  color: white !important;
+}
+
+::ng-deep .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color: white !important;
+}
+
+::ng-deep .mdc-button__label {
+  color: white;
+}
+
+::ng-deep .mat-mdc-form-field {
+  --mdc-filled-text-field-label-text-color: white;
+  --mdc-filled-text-field-input-text-color: white;
+  --mdc-filled-text-field-input-text-placeholder-color: grey;
+  --mdc-filled-text-field-focus-label-text-color: white;
+  --mdc-filled-text-field-hover-label-text-color: white;
+
+  --mdc-filled-text-field-container-color: rgba(0, 0, 0, 0.5);
+  color: white
+}

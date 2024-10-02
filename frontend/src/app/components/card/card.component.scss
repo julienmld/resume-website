@@ -1,0 +1,32 @@
+@import '../../app.component.scss';
+
+.rectangle {
+  width: 80%;
+  margin: auto;
+  box-shadow: $rectangle-box-shadow;
+  border: $rectangle-border;
+  background-color: $rectangle-background-color;
+  margin-bottom: 20px;
+  color: white;
+  text-align: justify;
+  white-space: pre-wrap;
+  border-radius: $rectangle-border-radius;
+}
+
+.top-section {
+  display: flexbox;
+  text-align: center;
+}
+
+.half {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.title {
+  font-size: 20px;
+  color: white;
+}

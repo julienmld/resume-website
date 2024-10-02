@@ -1,0 +1,206 @@
+{
+  "resume": "Resume",
+  "experiences": "Experiences",
+  "skills": "Skills",
+  "contact-me": "Contact me",
+  "experience": "Experience",
+  "my-story": "My story",
+  "architecture": "Site architecture",
+  "network": "Social networks",
+  "small-screen": "Hello, the mobile and tablet version of this site is not yet available",
+  "home-page": {
+    "first-sentence": "Hello. I am Julien.",
+    "secund-sentence": "A full-stack developer passionate about new technologies, I hope this site will allow you to discover my professional world."
+  },
+  "architecture-page": {
+    "first-text": "To showcase my development skills, I decided to create my own web application. Below, you will find a diagram illustrating the different components of this application. By hovering over each element, you will discover additional information. For more details on the implementation of this project, I invite you to consult the README.md file (an explanatory file in the world of IT) located at the root of my GitHub project. You can access it by clicking on the GitHub icon in the banner at the bottom right of this page. Finally, an easter egg is hidden on this site, feel free to explore the web console to discover it.",
+    "title": "My resume through an AWS application",
+    "frontend": "The frontend of the application is based on Angular technology. It is deployed via the AWS Amplify tool, a solution for building and deploying frontend applications securely. This brick is the entry point your browser contacted to serve you this site.",
+    "gateway": "The AWS gateway tool exposes the backend's REST APIs on the internet, making them available to the frontend.",
+    "backend": "The backend of the application is based on Java/Spring technology. It is deployed via AWS Lambda, a serverless solution (the developer only focuses on the code, not the server configuration).",
+    "database": "The AWS DynamoDB tool provides a relational database to persist backend data (such as your answer to the question asked in the pop-up when you arrived on the site).",
+    "iam": "The AWS IAM tool for identity and access management allows for managing users and user groups that have access to the database. A secret key and an access key can be generated and used by the backend to access the database.",
+    "secret-manager": "AWS Secret Manager is a tool for managing secrets. This allows me to place references to passwords in the backend code, but not directly in plain text. This allows me to transparently offer my code on a GitHub project."
+  },
+  "dialog": {
+    "question": "For statistical purposes, I would like you to answer the following question. Which of these options best defines you?",
+    "developer": "Developer",
+    "recruiter": "Recruiter",
+    "student": "Student",
+    "client": "Client",
+    "curious": "Curious",
+    "other": "No answer"
+  },
+  "experiences-page": {
+    "description": "Description",
+    "key-dates": "Key dates",
+    "studies": "Post-baccalaureate studies",
+    "studies-description": "\nAfter obtaining my scientific baccalaureate at René Cassin High School in Montfort-sur-Meu, I chose to pursue a two-year preparatory cycle to enter the École Supérieure d'Ingénieurs de Rennes (ESIR). During these two years, I strengthened my skills in mathematics, logic, and development, particularly with the Java language.\n\nAs planned, I then joined ESIR. The first year was composed of a core curriculum including subjects such as mathematics and development, regardless of the school's offered specializations. In the second year, I focused on the Internet of Things (IoT), which allowed me to deepen my knowledge of JavaScript, the React framework, and embedded systems. To illustrate my learning of React, below is a video of the project I developed that year: a chat application for users, integrating features such as login and group creation. This video was used to demonstrate the proper functioning of the application to my teachers.\n\nUnfortunately, due to the pandemic, my second-year internship in Spain could not take place. I continued my academic journey at ESIR. In my final year, I worked on an industrial project with the Rennes-based startup Image ET, which aimed to design a prototype to protect medical staff from hazardous radiation. A video of this prototype is also available below. The project involved detecting when a person entered a radiation-emitting area, stopping the emission, and resuming it once the area was safe. This simple prototype allowed me to work with an Arduino board with various sensors and a Raspberry Pi to track the state changes.\n\nFinally, I completed my final-year internship at Sopra Steria, which led to a permanent job offer. I received my diploma that same year.",
+    "studies-timeline": {
+      "cupge": {
+        "date": "2016",
+        "title": "CUPGE",
+        "description": "Enrollment in the Preparatory University Cycle for ESIR's Grandes Écoles"
+      },
+      "esir": {
+        "date": "2018",
+        "title": "ESIR",
+        "description": "Admission to the École Supérieure d'Ingénieurs de Rennes"
+      },
+      "imageEt": {
+        "date": "2020",
+        "title": "Industrial project",
+        "description": "Development of an industrial project for the startup Image ET"
+      },
+      "internship": {
+        "date": "Early 2021",
+        "title": "Internship",
+        "description": "Final-year internship at the IT services company Sopra Steria"
+      },
+      "diploma": {
+        "date": "Late 2021",
+        "title": "Diploma",
+        "description": "Obtained my engineering degree"
+      }
+    },
+    "sopra": "Career at Sopra Steria",
+    "sopra-description": "\nI started my career at Sopra Steria with a final-year internship in the CRACN team (Components and Hosting of Licorn Configurations). This team, composed of about twenty people, welcomed me as a full-stack developer. The site I worked on was entirely dedicated to defense projects, with the main clients being the DGA (French Defense Procurement Agency) and the DIRISI (Inter-army Infrastructure and Information Systems Network Directorate). Due to the sensitivity of this sector, I cannot go into the functional details of the applications, but I would be happy to share more during a meeting.\n\nDuring my internship, I developed features and fixed bugs on both the backend (Java) and frontend (Angular). I had the opportunity to work on a complex and old project while contributing to process industrialization with Jenkins.\n\nAfter signing my permanent contract, I continued in this team for more than two years, where I evolved to become a technical lead or \"tech leader,\" as we call it at Sopra Steria.\n\nTowards the end of 2023, I felt the need to take on new challenges as my learning curve started to flatten. I decided to focus more on DevOps and joined the SPRINT (Secure Portal Registered over INTernet) project. This project was significantly different from CRACN due to its microservices architecture. It allowed me to deepen my knowledge of Terraform, Ansible, and Kubernetes (Docker), while solidifying my skills in Java and Angular.\n\nIn 2024, in addition to my work on SPRINT, I mentored several colleagues, contributing to the estimation of large-scale solutions and supporting younger team members in their tasks. I also mentored an intern and an apprentice. The SPRINT project concluded at the end of 2024 with a production release, shortly before my resignation. I then briefly participated in a third project, where I mainly assisted a team of two junior developers in updating the software stack of the application.",
+    "sopra-timeline": {
+      "internship": {
+        "date": "Early 2021",
+        "title": "Internship",
+        "description": "Final-year internship"
+      },
+      "contract": {
+        "date": "August 2021",
+        "title": "Permanent contract",
+        "description": "Signed the permanent contract"
+      },
+      "sprint": {
+        "date": 2023,
+        "title": "Project change",
+        "description": "Moved to the SPRINT (Secure Portal Registered over INTernet) project"
+      },
+      "transverse": {
+        "date": 2024,
+        "title": "Cross-functional activities",
+        "description": "Engaged in cross-functional tasks in addition to my SPRINT activity"
+      },
+      "freelance": {
+        "date": "Early 2025",
+        "title": "Departure",
+        "description": "New opportunities"
+      }
+    }
+  },
+  "skills-page": {
+    "backend": "Backend",
+    "backend-description": "\nRegarding backend technologies, I am proficient in Java and very comfortable with tools like Maven and Spring. In fact, I used these skills to develop this website, whose code is accessible on my Github project, titled resume-website. You can access it via the Github button in the banner at the bottom of this site.\n\nI discovered Java during my studies and have continued to refine my skills throughout my career at Sopra Steria. Over time, I have taken two specific training courses to learn the Spring framework.\n\nMy professional experience has allowed me to work on various projects, such as CRACN, using Java 1.8, and SPRINT, using Java 17. My daily tasks mainly involved specifying and implementing interfaces, developing new features, and fixing bugs.\n\nAs a technical lead, I also spent a significant amount of time reviewing code produced by other team members. This activity was an integral part of my responsibilities, ensuring code quality and adherence to best practices within the development teams.",
+    "backend-timeline": {
+      "esir": {
+        "date": "2017-2019",
+        "title": "Courses",
+        "description": "Theoretical and practical learning of Java at ESIR"
+      },
+      "cracn": {
+        "date": "2021-2023",
+        "title": "CRACN",
+        "description": "Developments in Java 1.8"
+      },
+      "training": {
+        "date": "2021 & 2023",
+        "title": "Spring Training",
+        "description": "Completed two Spring framework training courses"
+      },
+      "sprint": {
+        "date": "2023-2025",
+        "title": "SPRINT",
+        "description": "Developments in Java 17"
+      }
+    },
+    "frontend": "Frontend",
+    "frontend-description": "\nRegarding frontend technologies, I have mainly worked with the Angular framework throughout my career. It is the same framework I used to develop this website, whose code is available on my resume-website project via the Github button at the bottom of this site.\n\nI discovered Angular upon joining Sopra Steria, but I had already acquired skills in JavaScript, which is similar to TypeScript, the language used by Angular. To deepen my knowledge, I attended two three-day training sessions on this framework during my career.\n\nI applied these skills to the SPRINT and CRACN projects, where my work involved fixing bugs, creating new screens, and primarily reviewing code produced by my colleagues. As with the backend, this code review was an essential part of my responsibilities, ensuring code quality and adherence to best practices within the development teams.",
+    "frontend-timeline": {
+      "esir": {
+        "date": "2020",
+        "title": "Courses",
+        "description": "Theoretical and practical learning of JavaScript at ESIR"
+      },
+      "cracn": {
+        "date": "2021-2023",
+        "title": "CRACN",
+        "description": "Developments in Angular"
+      },
+      "training": {
+        "date": "2021 & 2023",
+        "title": "Angular Training",
+        "description": "Completed two Angular training sessions"
+      },
+      "sprint": {
+        "date": "2023-2025",
+        "title": "SPRINT",
+        "description": "Developments in Angular"
+      }
+    },
+    "devops": "DevOps",
+    "devops-description": "\nIn terms of DevOps, throughout my career, I have had the opportunity to focus on process industrialization in addition to development. I mainly used two tools: Jenkins and GitLab. These allowed me, on the two major projects I worked on, to set up continuous integration pipelines. These pipelines were essential for automating the installation and testing of our applications, whether through integration tests (checking REST requests) or UI tests via the Cypress software. Over time, I learned the importance, even the necessity, of these pipelines, which not only enable regression testing but also save a considerable amount of time for the team.\n\nOn my second project at Sopra Steria, SPRINT, the DevOps aspect was particularly prominent. I discovered and used technologies such as Terraform (for infrastructure as code) and Ansible (for configuration automation). I also worked on Kubernetes, using Helm as a package manager.\n\nWithin Kubernetes, I implemented several key features, including backing up the SPRINT application via the Velero tool and autoscaling this application, allowing resources to automatically adjust based on load.",
+    "devops-timeline": {
+      "cracn": {
+        "date": "2021-2023",
+        "title": "CRACN",
+        "description": "Use of Jenkins"
+      },
+      "sprint": {
+        "date": "2023-2025",
+        "title": "SPRINT",
+        "description": "Use of GitLab CI, Cypress, Kubernetes, etc."
+      }
+    },
+    "transverse": "Cross-functional",
+    "transverse-description": "\nIn addition to my technical skills, I have also developed cross-functional skills over time. I had the opportunity to tutor, mentoring an intern from ENIB (École Nationale d’Ingénieurs de Brest) and an apprentice from ISTIC (Université de Rennes 1). This involved welcoming them, defining their mission objectives, monitoring them throughout their internship, reviewing their reports, organizing practice presentations, and attending their final presentations.\n\nAs a technical lead, I also supervised junior developers on a daily basis, guiding them in implementing solutions that I had previously estimated in terms of workload.\n\nAdditionally, I attended recruitment training at Sopra Steria just before my departure, although I did not have the opportunity to conduct interviews due to my resignation shortly thereafter.\n\nFinally, I obtained a SAFe (Scaled Agile Framework) Practitioner certification in 2024.",
+    "transverse-timeline": {
+      "tutor": {
+        "date": "2024",
+        "title": "Intern/Apprentice Tutor",
+        "description": "Mentoring juniors at the start of their careers"
+      },
+      "recruit": {
+        "date": "End of 2024",
+        "title": "Recruitment Training",
+        "description": "Completed a training course to recruit at Sopra Steria"
+      },
+      "safe": {
+        "date": "End of 2024",
+        "title": "SAFe Agile Certification",
+        "description": "Obtained SAFe Practitioner certification"
+      }
+    }
+  },
+  "contact-page": {
+    "your-email": "Email address",
+    "example-email": "marion.dauvergne@outlook.fr",
+    "your-phone": "Phone number",
+    "example-phone": "0783XXXX23",
+    "your-message": "Message",
+    "activity-area": "Industry sector",
+    "aerospace": "Aerospace",
+    "social": "Insurance and Social Protection",
+    "defense": "Defense and Security",
+    "energy": "Energy and Utilities",
+    "government": "Government",
+    "retail": "Retail",
+    "financial": "Financial Services",
+    "telecommunications": "Telecommunications, Media, and Entertainment",
+    "transportation": "Transportation",
+    "others": "Others",
+    "example-message": "Hello Julien,\n\nI am contacting you regarding ...",
+    "send": "Send",
+    "disabled-button": "Please fill in the required fields correctly"
+  },
+  "easter-egg": {
+    "first-indication": "Here is the first clue. Go to the network console and find the name of the request made to persist your response to the pop-up. You will then need to do a CTRL+F on this name on the 'Site Architecture' page.",
+    "secund-indication": "registerVisitor. Here is the second clue. Go to the inspector and observe the id of the tag that contains my first and last name at the top left of this website.",
+    "third-indication": "Congratulations, this scavenger hunt is coming to an end. Go back to the 'Site Architecture' page, a hidden button is located at the bottom, slightly to the right of the page. It will reveal itself when you hover over it.",
+    "button": "Hold on tight"
+  }
+}

@@ -1,0 +1,13 @@
+<div class="dropdown" (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)">
+  <div class="button-container">
+    <p class="button underline-on-hover">
+      {{ 'my-story' | translate }}
+    </p>
+    <img src="assets/img/arrow.png" style="margin-left: 8px; height:12px; filter: invert(1);"
+      [ngClass]="{'rotate': isOpen}" />
+  </div>
+  <div *ngIf="isOpen" class="dropdown-content">
+    <a mat-menu-item (click)="navigateTo('experiences')">{{ 'experiences' | translate }}</a>
+    <a mat-menu-item (click)="navigateTo('skills')">{{ 'skills' | translate }}</a>
+  </div>
+</div>

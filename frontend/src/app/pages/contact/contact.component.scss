@@ -1,0 +1,53 @@
+@import '../../app.component.scss';
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.centered-container {
+    box-shadow: $rectangle-box-shadow;
+    border: $rectangle-border;
+    background-color: $rectangle-background-color;
+    border-radius: $rectangle-border-radius;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 90%;
+}
+
+button {
+    background-color: $secund-color;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper,
+::ng-deep .mdc-floating-label,
+::ng-deep .mdc-list-item__primary-text,
+::ng-deep .mdc-button__label,
+::ng-deep .mat-mdc-select-min-line {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+}
+
+.recaptcha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}

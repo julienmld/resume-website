@@ -1,0 +1,46 @@
+<div class="contact">
+
+  <div class="centered-container">
+    <form class="form">
+      <mat-form-field>
+        <mat-label>{{ 'contact-page.your-email' | translate }}</mat-label>
+        <input type="email" name="email" [(ngModel)]="email" matInput [formControl]="emailFormControl"
+          [errorStateMatcher]="matcher" placeholder="{{ 'contact-page.example-email' | translate }}">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>{{ 'contact-page.your-phone' | translate }}</mat-label>
+        <input type="phone" name="phone" [(ngModel)]="phone" matInput [formControl]="phoneFormControl"
+          [errorStateMatcher]="matcher" placeholder="{{ 'contact-page.example-phone' | translate }}">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>{{ 'contact-page.activity-area' | translate }}</mat-label>
+        <mat-select [(ngModel)]="selectedActivityArea" name="activityArea">
+          <mat-option *ngFor="let activityArea of activityAreas" [value]="activityArea">{{ 'contact-page.' +
+            activityArea.viewValue| translate}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>{{ 'contact-page.your-message' | translate }}</mat-label>
+        <textarea [formControl]="messageFormControl" style="height: 300px;" name="text" [(ngModel)]="text" matInput
+          [errorStateMatcher]="matcher" placeholder="{{ 'contact-page.example-message' | translate }}"></textarea>
+      </mat-form-field>
+
+      <div class="recaptcha-container">
+        <div id="recaptcha-container"></div>
+      </div>
+
+      <div class="button-container" [matTooltip]="'contact-page.disabled-button' | translate"
+        [matTooltipDisabled]="!isButtonDisabled()">
+        <button [disabled]="isButtonDisabled()" (click)="contact()" mat-stroked-button>{{
+          'contact-page.send' | translate }}</button>
+      </div>
+    </form>
+
+  </div>
+
+  <app-spinner [isLoading]="isLoading" />
+
+</div>
