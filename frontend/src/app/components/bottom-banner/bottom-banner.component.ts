@@ -42,7 +42,7 @@ export class BottomBannerComponent implements OnInit {
   }
 
   openGithub() {
-    window.open('https://github.com/julienmld', '_blank');
+    window.open('https://github.com/julienmld/resume-website', '_blank');
   }
 
   openLinkedin() {
