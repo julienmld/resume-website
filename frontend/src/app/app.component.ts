@@ -21,7 +21,7 @@ import { PreloadService } from './services/preload.service';
   animations: [
     trigger('firstSlideIn', [
       transition(':enter', [
-        style({ transform: 'translateX(-50%)', opacity: 0 }),
+        style({ transform: 'translateX(-20%)', opacity: 0 }),
         animate('1s ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ])
     ])
