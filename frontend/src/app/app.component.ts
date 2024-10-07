@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
   isHomePage: boolean = true;
   isHomeOrArchitecturePage: boolean = true;
   page: string = 'home';
+  screenWidth: number = 0;
   private imageUrls: string[] = ['me.jpg', 'servers.png', 'amplify.jpg', 'angular.png', 'ansible.png', 'apigateway.png', 'arrow.png', 'cv.png', 'cypress.png', 'dynamo.jpg', 'english.png', 'esir.png', 'french.png', 'github.png', 'gitlab.png', 'helm.svg', 'iam.jpg', 'imageet.png', 'safe.png', 'java.png', 'jenkins.jpg', 'jmblack.png', 'jmwhite.png', 'kubernetes.jpg', 'lambda.png', 'linkedin.png', 'linux.jpg', 'maven.png', 'secretmanager.jpg', 'soprasteria.png', 'spring.svg', 'terraform.png', 'malt.svg', 'dga.png', 'dirisi.png'];
 
   constructor(private router: Router, public translate: TranslateService, @Inject(PLATFORM_ID) private platformId: Object) {
@@ -53,6 +54,7 @@ export class AppComponent implements OnInit {
 
       this.page = event.url.split('/')[1];
       if (typeof window !== 'undefined') {
+        this.screenWidth = window.innerWidth;
         window.scrollTo(0, 0);
       }
     });
@@ -66,9 +68,11 @@ export class AppComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(DialogComponent, {
-      disableClose: true
-    });
+    if (this.screenWidth > 700) {
+      this.dialog.open(DialogComponent, {
+        disableClose: true
+      });
+    }
   }
 
 }
