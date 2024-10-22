@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   isHomeOrArchitecturePage: boolean = true;
   page: string = 'home';
   screenWidth: number = 0;
-  private imageUrls: string[] = ['me.jpg', 'servers.png', 'amplify.jpg', 'angular.png', 'ansible.png', 'apigateway.png', 'arrow.png', 'cv.png', 'cypress.png', 'dynamo.jpg', 'english.png', 'esir.png', 'french.png', 'github.png', 'gitlab.png', 'helm.svg', 'iam.jpg', 'imageet.png', 'safe.png', 'java.png', 'jenkins.jpg', 'jmblack.png', 'jmwhite.png', 'kubernetes.jpg', 'lambda.png', 'linkedin.png', 'linux.jpg', 'maven.png', 'secretmanager.jpg', 'soprasteria.png', 'spring.svg', 'terraform.png', 'malt.svg', 'dga.png', 'dirisi.png'];
+  private imageUrls: string[] = ['me.jpg', 'arrow.png', 'english.png', 'french.png', 'cv.png', 'linkedin.png', 'github.png', 'malt.svg', 'finger.png', 'servers.png', 'amplify.jpg', 'angular.png', 'ansible.png', 'apigateway.png', 'cypress.png', 'dynamo.jpg', 'esir.png', 'gitlab.png', 'helm.svg', 'iam.jpg', 'imageet.png', 'safe.png', 'java.png', 'jenkins.jpg', 'kubernetes.jpg', 'lambda.png', 'linux.jpg', 'maven.png', 'secretmanager.jpg', 'soprasteria.png', 'spring.svg', 'terraform.png', 'dga.png', 'dirisi.png'];
 
   constructor(private router: Router, public translate: TranslateService, @Inject(PLATFORM_ID) private platformId: Object) {
     translate.setDefaultLang('fr');
@@ -60,11 +60,7 @@ export class AppComponent implements OnInit {
     });
 
     this.preload.preloadImages(this.imageUrls).then(() => {
-      console.log('Images preloaded successfully');
     })
-    .catch(error => {
-      console.error('Error preloading images', error);
-    });
   }
 
   openDialog() {
