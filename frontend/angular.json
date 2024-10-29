@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "resume-website": {
+    "cv-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/resume-website",
+            "outputPath": "dist/cv-website",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -79,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "resume-website:build:production"
+              "buildTarget": "cv-website:build:production"
             },
             "development": {
-              "buildTarget": "resume-website:build:development"
+              "buildTarget": "cv-website:build:development"
             }
           },
           "defaultConfiguration": "development"
