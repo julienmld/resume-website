@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>julien.maillard</groupId>
-    <artifactId>cv-website</artifactId>
+    <artifactId>resume-website</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 

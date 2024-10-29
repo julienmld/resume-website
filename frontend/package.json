@@ -1,5 +1,5 @@
 {
-  "name": "cv-website",
+  "name": "resume-website",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:cv-website": "node dist/cv-website/server/server.mjs"
+    "serve:ssr:resume-website": "node dist/resume-website/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +25,7 @@
     "@angular/ssr": "^18.0.5",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
-    "cv-website": "file:",
+    "resume-website": "file:",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
