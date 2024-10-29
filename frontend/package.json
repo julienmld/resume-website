@@ -1,5 +1,5 @@
 {
-  "name": "cv-website",
+  "name": "resume-website",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -28,6 +28,7 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "cv-website": "file:",
     "express": "^4.18.2",
+    "resume-website": "file:",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
