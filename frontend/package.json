@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve:ssr:cv-website": "node dist/cv-website/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "@angular/ssr": "^18.0.5",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "cv-website": "file:",
     "express": "^4.18.2",
     "resume-website": "file:",
     "rxjs": "~7.8.0",
