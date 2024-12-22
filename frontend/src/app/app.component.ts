@@ -15,7 +15,7 @@ import { PreloadService } from './services/preload.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TopBannerComponent, BottomBannerComponent, TranslateModule, TopPictureComponent, NgIf, DialogComponent],
+  imports: [RouterOutlet, TopBannerComponent, BottomBannerComponent, TranslateModule, TopPictureComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   animations: [
