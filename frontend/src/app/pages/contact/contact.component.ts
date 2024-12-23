@@ -1,4 +1,4 @@
-import { Component, Inject, inject, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateModule } from '@ngx-translate/core';
@@ -16,7 +16,7 @@ import {
 import { phoneNumberValidator } from '../../validators/phoneNumberValidator';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { isPlatformBrowser, NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ActivityArea } from '../../enumerations/ActivityArea';
 import { SpinnerComponent } from "../../components/spinner/spinner.component";
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -39,9 +39,6 @@ export class ContactComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   messageFormControl = new FormControl('', [Validators.required]);
   phoneFormControl = new FormControl('', [phoneNumberValidator(10)]);
-  siteKey: string = '6LeHpk4qAAAAAJHePvFxsKLDaSAh06uMxnzQDfLu';
-  isRecaptchaValid: boolean = false;
-  recaptchaWidgetId: any;
   activityAreas = [
     { value: ActivityArea.AEROSPACE, viewValue: 'aerospace' },
     { value: ActivityArea.SOCIAL, viewValue: 'social' },
@@ -62,58 +59,8 @@ export class ContactComponent {
 
   private backendService = inject(BackendService);
 
-  constructor(private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: any) { }
-
-  ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.addRecaptchaScript();
-    }
-  }
-
-  ngOnDestroy() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.removeRecaptchaScript();
-    }
-  }
-
-  addRecaptchaScript() {
-    const script = this.renderer.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
-    script.async = true;
-    script.defer = true;
-    this.renderer.appendChild(document.body, script);
-
-    script.onload = () => {
-      this.renderRecaptcha();
-    };
-  }
-
-  renderRecaptcha() {
-    this.recaptchaWidgetId = (window as any).grecaptcha.render('recaptcha-container', {
-      sitekey: this.siteKey,
-      theme: 'dark',
-      callback: (response: string) => this.onRecaptchaSuccess(response),
-      'expired-callback': () => this.onRecaptchaExpired()
-    });
-  }
-
-  onRecaptchaSuccess(token: string): void {
-    this.isRecaptchaValid = true;
-  }
-
-  onRecaptchaExpired(): void {
-    this.isRecaptchaValid = false;
-  }
-
-  removeRecaptchaScript() {
-    const script = document.querySelector(`script[src="https://www.google.com/recaptcha/api.js"]`);
-    if (script) {
-      script.remove();
-    }
-  }
-
   isButtonDisabled() {
-    return !this.messageFormControl.valid || !this.emailFormControl.valid || !this.phoneFormControl.valid || !this.isRecaptchaValid;
+    return !this.messageFormControl.valid || !this.emailFormControl.valid || !this.phoneFormControl.valid;
   }
 
   contact() {

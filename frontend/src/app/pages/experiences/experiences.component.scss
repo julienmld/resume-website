@@ -1,11 +1,12 @@
 @import '../../app.component.scss';
 
 .experiences {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 90px;
 }
 
 .images-container {
@@ -42,5 +43,4 @@
   max-width: 560px;
   height: 315px;
   border-radius: $rectangle-border-radius;
-  outline: 2px solid black;
 }

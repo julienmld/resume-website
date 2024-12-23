@@ -11,7 +11,6 @@
 .aws-rectangle {
   width: 100%;
   position: relative;
-  box-shadow: $rectangle-box-shadow;
   border: $rectangle-border;
   background-color: $rectangle-background-color;
   display: flex;
@@ -55,7 +54,7 @@
 
 .schema {
   background-color: $small-rectangle-background-color;
-  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  border: $rectangle-border;
   border-radius: $rectangle-border-radius;
   box-shadow: $rectangle-box-shadow;
   margin-bottom: 60px;

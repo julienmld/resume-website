@@ -28,10 +28,6 @@
           [errorStateMatcher]="matcher" placeholder="{{ 'contact-page.example-message' | translate }}"></textarea>
       </mat-form-field>
 
-      <div class="recaptcha-container">
-        <div id="recaptcha-container"></div>
-      </div>
-
       <div class="button-container" [matTooltip]="'contact-page.disabled-button' | translate"
         [matTooltipDisabled]="!isButtonDisabled()">
         <button [disabled]="isButtonDisabled()" (click)="contact()" mat-stroked-button>{{

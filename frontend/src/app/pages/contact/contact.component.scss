@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 90px;
 }
 
 .centered-container {
@@ -13,7 +14,7 @@
     background-color: $rectangle-background-color;
     border-radius: $rectangle-border-radius;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,11 +44,16 @@ button {
 ::ng-deep .mat-mdc-select-min-line {
     font-family: 'Poppins', sans-serif !important;
     font-size: 15px !important;
+    scrollbar-width: thin;
 }
 
-.recaptcha-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
+::ng-deep .mat-mdc-text-field-wrapper{
+    border: $rectangle-border;
+}
+
+::ng-deep .mat-mdc-select-panel {
+    scrollbar-width: thin !important;
+    scrollbar-color: #333 #888 !important;
+
+
 }

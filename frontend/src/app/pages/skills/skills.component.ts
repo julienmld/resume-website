@@ -20,11 +20,11 @@ export class SkillsComponent {
     { label: 'Angular', img: 'angular.png', part: 'frontend' },
     { label: 'Terraform', img: 'terraform.png', part: 'devops' },
     { label: 'Ansible', img: 'ansible.png', part: 'devops' },
-    { label: 'Kubernetes', img: 'kubernetes.jpg', part: 'devops' },
-    { label: 'Helm', img: 'helm.svg', part: 'devops' },
+    { label: 'Kubernetes', img: 'kubernetes.png', part: 'devops' },
+    { label: 'Helm', img: 'helm.png', part: 'devops' },
     { label: 'Gitlab', img: 'gitlab.png', part: 'devops' },
-    { label: 'Jenkins', img: 'jenkins.jpg', part: 'devops' },
-    { label: 'Linux', img: 'linux.jpg', part: 'devops' },
+    { label: 'Jenkins', img: 'jenkins.png', part: 'devops' },
+    { label: 'Linux', img: 'linux.png', part: 'devops' },
     { label: 'Cypress', img: 'cypress.png', part: 'devops' },
     { label: 'SAFe', img: 'safe.png', part: 'transverse' }
   ];

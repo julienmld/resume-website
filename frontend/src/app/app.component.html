@@ -1,16 +1,10 @@
 <div class="content-large">
+    <app-hamburger />
     <app-top-banner />
     <div class="page-container">
         <div class="content">
-            <app-top-picture *ngIf="!isHomePage" [title]="page"/>
             <router-outlet></router-outlet>
         </div>
         <app-bottom-banner [isHomePage]="isHomePage" />
-    </div>
-</div>
-
-<div class="content-small">
-    <div class="centered-text">
-        <p @firstSlideIn style="font-size: 200%;">{{ 'small-screen' | translate }}</p>
     </div>
 </div>

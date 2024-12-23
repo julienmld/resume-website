@@ -1,0 +1,17 @@
+<div class="body">
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+    <div id="sidebarMenu">
+        <div class="main-content-wrapper">
+            <a (click)="open('home')">{{'home' | translate}}</a>
+            <a (click)="open('architecture')">{{'architecture' | translate}}</a>
+            <a (click)="open('experiences')">{{'experience' | translate}}</a>
+            <a (click)="open('skills')">{{'skills' | translate}}</a>
+            <a (click)="open('contact-me')">{{'contact-me' | translate}}</a>
+        </div>
+    </div>
+</div>

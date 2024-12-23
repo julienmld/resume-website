@@ -1,10 +1,14 @@
 $primary-color: #0B0C10;
-$secund-color: #000D1A;
-$rectangle-box-shadow: inset 0 0 0 0.1px rgba(0, 0, 0, 1);
-$rectangle-border: 0.5px solid rgba(0, 0, 0, 0.5);
-$rectangle-background-color: rgba(0, 13, 26, 0.8);
+$secund-color: #00070d;
+$rectangle-box-shadow: inset 0 0 0 0px rgb(255, 255, 255);
+$rectangle-border: 0.05px solid rgba(255, 255, 255, 0.15);
+$rectangle-background-color: rgba(11, 12, 16, 0.85);
 $rectangle-border-radius: 5px;
 $small-rectangle-background-color: rgba(0, 0, 0, 0.5);
+
+#particles-js {
+  background-color: $primary-color;
+}
 
 .page-container {
   display: flex;
@@ -16,12 +20,6 @@ $small-rectangle-background-color: rgba(0, 0, 0, 0.5);
   flex: 1;
 }
 
-@media (max-width: 700px) {
-  .content-large {
-    display: none;
-  }
-}
-
 .centered-text {
   display: flex;
   justify-content: center;
@@ -31,8 +29,23 @@ $small-rectangle-background-color: rgba(0, 0, 0, 0.5);
   padding: 0 50px;
 }
 
+
+@media (max-width: 701px) {
+  app-bottom-banner {
+    display: none;
+  }
+
+  app-top-banner {
+    display: none;
+  }
+
+  .bottom-right {
+    display: none;
+  }
+}
+
 @media (min-width: 701px) {
-  .content-small {
+  app-hamburger {
     display: none;
   }
 }

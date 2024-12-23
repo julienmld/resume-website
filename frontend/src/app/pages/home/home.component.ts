@@ -2,12 +2,11 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { isPlatformBrowser, NgIf } from '@angular/common';
-import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TranslateModule, NgIf, MatIcon],
+  imports: [TranslateModule, NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [
