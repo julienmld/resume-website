@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
   isHomeOrArchitecturePage: boolean = true;
   page: string = 'home';
   screenWidth: number = 0;
-  private imageUrls: string[] = ['me.jpg', 'arrow.png', 'english.png', 'french.png', 'cv.png', 'linkedin.png', 'github.png', 'malt.svg', 'finger.png', 'servers.png', 'amplify.jpg', 'angular.png', 'ansible.png', 'apigateway.png', 'cypress.png', 'dynamo.jpg', 'esir.png', 'gitlab.png', 'helm.png', 'iam.jpg', 'imageet.png', 'safe.png', 'java.png', 'jenkins.png', 'kubernetes.png', 'lambda.png', 'linux.png', 'maven.png', 'secretmanager.jpg', 'soprasteria.png', 'spring.svg', 'terraform.png', 'dga.png', 'dirisi.png'];
+  private imageUrls: string[] = ['me.jpg', 'arrow.png', 'english.png', 'french.png', 'cv.png', 'linkedin.png', 'github.png', 'malt.png', 'finger.png', 'servers.png', 'amplify.jpg', 'angular.png', 'ansible.png', 'apigateway.png', 'cypress.png', 'dynamo.jpg', 'esir.png', 'gitlab.png', 'helm.png', 'iam.jpg', 'imageet.png', 'safe.png', 'java.png', 'jenkins.png', 'kubernetes.png', 'lambda.png', 'linux.png', 'maven.png', 'secretmanager.jpg', 'soprasteria.png', 'spring.svg', 'terraform.png', 'dga.png', 'dirisi.png'];
 
   constructor(private router: Router, public translate: TranslateService, @Inject(PLATFORM_ID) private platformId: Object) {
     translate.setDefaultLang('fr');
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
     });
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
-        //this.openDialog();
+        this.openDialog();
       }, 6000);
     }
   }

@@ -1,5 +1,11 @@
 @import '../../app.component.scss';
 
+.architecture-page {
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
 .architecture {
   width: 80%;
   margin: 0 auto;
@@ -116,5 +122,41 @@
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
+
+  .architecture-page {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .images-container img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 20px;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .images-container {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 1px auto;
+    align-items: center;
+  }
+
+  .architecture {
+    width: 90%;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    font-size: 8px;
+  }
 
 }

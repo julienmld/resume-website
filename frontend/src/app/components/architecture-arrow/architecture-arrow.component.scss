@@ -1,3 +1,5 @@
+@import '../../app.component.scss';
+
 $animation-duration: 2.5s;
 
 .architecture-arrow {
@@ -42,4 +44,47 @@ $animation-duration: 2.5s;
     transform: scale(1) rotate(90deg);
     visibility: visible;
   }
+}
+
+@media (max-width: $trigger-mobile-version-limit) {
+  .arrow {
+    height: 5px;
+    position: relative;
+    visibility: hidden;
+    animation: moveArrow $animation-duration linear infinite;
+    filter: invert(1);
+  }
+
+  
+@keyframes moveArrow {
+  0% {
+    left: 0;
+    transform: scale(1) rotate(90deg);
+    visibility: visible;
+  }
+
+  25% {
+    left: -1px;
+    transform: scale(1.2) rotate(270deg);
+    visibility: visible;
+  }
+
+  50% {
+    left: 0;
+    transform: scale(1) rotate(270deg);
+    visibility: visible;
+  }
+
+  75% {
+    left: 1px;
+    transform: scale(1.2) rotate(90deg);
+    visibility: visible;
+  }
+
+  100% {
+    left: 0;
+    transform: scale(1) rotate(90deg);
+    visibility: visible;
+  }
+}
 }
