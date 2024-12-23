@@ -1,3 +1,5 @@
+@import '../../app.component.scss';
+
 #sidebarMenu {
     height: 100%;
     position: fixed;
@@ -14,7 +16,7 @@
     background: white;
     text-align: center;
     padding-top: 15px;
-    border: 1px solid #4b4545;
+    border: 0.1px solid $primary-color;
     color: black;
     text-decoration: none;
 }

@@ -54,6 +54,28 @@ button {
 ::ng-deep .mat-mdc-select-panel {
     scrollbar-width: thin !important;
     scrollbar-color: #333 #888 !important;
+}
 
+@media (max-width: $trigger-mobile-version-limit) {
 
+    .contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .centered-container {
+        box-shadow: $rectangle-box-shadow;
+        border: $rectangle-border;
+        background-color: $rectangle-background-color;
+        border-radius: $rectangle-border-radius;
+        margin-top: 50px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
 }

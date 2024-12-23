@@ -5,6 +5,7 @@ $rectangle-border: 0.05px solid rgba(255, 255, 255, 0.15);
 $rectangle-background-color: rgba(11, 12, 16, 0.85);
 $rectangle-border-radius: 5px;
 $small-rectangle-background-color: rgba(0, 0, 0, 0.5);
+$trigger-mobile-version-limit: 700px;
 
 #particles-js {
   background-color: $primary-color;
@@ -30,7 +31,7 @@ $small-rectangle-background-color: rgba(0, 0, 0, 0.5);
 }
 
 
-@media (max-width: 701px) {
+@media (max-width: $trigger-mobile-version-limit) {
   app-bottom-banner {
     display: none;
   }
@@ -44,7 +45,7 @@ $small-rectangle-background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
-@media (min-width: 701px) {
+@media (min-width: $trigger-mobile-version-limit) {
   app-hamburger {
     display: none;
   }

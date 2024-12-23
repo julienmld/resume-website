@@ -16,7 +16,7 @@ import {
 import { phoneNumberValidator } from '../../validators/phoneNumberValidator';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { ActivityArea } from '../../enumerations/ActivityArea';
 import { SpinnerComponent } from "../../components/spinner/spinner.component";
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -32,7 +32,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   standalone: true,
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
-  imports: [MatTooltipModule, MatSelectModule, FormsModule, MatFormFieldModule, TranslateModule, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule, NgFor, SpinnerComponent, NgIf]
+  imports: [MatTooltipModule, MatSelectModule, FormsModule, MatFormFieldModule, TranslateModule, FormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule, NgFor, SpinnerComponent]
 })
 export class ContactComponent {
   isLoading: boolean = false;
