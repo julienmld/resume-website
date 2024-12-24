@@ -26,5 +26,16 @@ button {
   box-shadow: $rectangle-box-shadow;
   border: $rectangle-border;
   background-color: rgba(255, 255, 255, 0.97);
-  width: 85%
+  width: 85%;
+}
+
+@media (max-width: $trigger-mobile-version-limit) {
+
+  ::ng-deep .mat-mdc-dialog-surface {
+    box-shadow: $rectangle-box-shadow;
+    border: $rectangle-border;
+    background-color: rgba(255, 255, 255, 0.97);
+    width: 110%;
+  }
+
 }

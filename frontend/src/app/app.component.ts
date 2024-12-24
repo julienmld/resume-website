@@ -4,7 +4,7 @@ import { TopBannerComponent } from './components/top-banner/top-banner.component
 import { BottomBannerComponent } from './components/bottom-banner/bottom-banner.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
-import { isPlatformBrowser, NgIf } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
@@ -33,7 +33,6 @@ export class AppComponent implements OnInit {
   isHomePage: boolean = true;
   isHomeOrArchitecturePage: boolean = true;
   page: string = 'home';
-  screenWidth: number = 0;
   private imageUrls: string[] = ['me.jpg', 'arrow.png', 'english.png', 'french.png', 'cv.png', 'linkedin.png', 'github.png', 'malt.png', 'finger.png', 'servers.png', 'amplify.jpg', 'angular.png', 'ansible.png', 'apigateway.png', 'cypress.png', 'dynamo.jpg', 'esir.png', 'gitlab.png', 'helm.png', 'iam.jpg', 'imageet.png', 'safe.png', 'java.png', 'jenkins.png', 'kubernetes.png', 'lambda.png', 'linux.png', 'maven.png', 'secretmanager.jpg', 'soprasteria.png', 'spring.svg', 'terraform.png', 'dga.png', 'dirisi.png'];
 
   constructor(private router: Router, public translate: TranslateService, @Inject(PLATFORM_ID) private platformId: Object) {
@@ -54,7 +53,6 @@ export class AppComponent implements OnInit {
 
       this.page = event.url.split('/')[1];
       if (typeof window !== 'undefined') {
-        this.screenWidth = window.innerWidth;
         window.scrollTo(0, 0);
       }
     });
@@ -64,11 +62,9 @@ export class AppComponent implements OnInit {
   }
 
   openDialog() {
-    if (this.screenWidth > 700) {
-      this.dialog.open(DialogComponent, {
-        disableClose: true
-      });
-    }
+    this.dialog.open(DialogComponent, {
+      disableClose: true
+    });
   }
 
 }
