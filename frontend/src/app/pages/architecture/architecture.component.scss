@@ -54,10 +54,6 @@
   border-radius: 5px;
 }
 
-.images-container img:hover {
-  transform: scale(1.2);
-}
-
 .schema {
   background-color: $small-rectangle-background-color;
   border: $rectangle-border;
@@ -121,8 +117,15 @@
   margin: 0;
 }
 
+@media (min-width: $trigger-mobile-version-limit) {
+  img:hover {
+    transform: scale(1.2);
+  }
+}
+
 @media (max-width: $trigger-mobile-version-limit) {
 
+  
   .architecture-page {
     margin-top: 60px;
     display: flex;

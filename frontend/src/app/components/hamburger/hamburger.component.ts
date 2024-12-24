@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -9,8 +9,19 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './hamburger.component.html',
   styleUrl: './hamburger.component.scss'
 })
-export class HamburgerComponent {
+export class HamburgerComponent implements OnInit{
   private router = inject(Router);
+
+  ngOnInit(): void {
+    if (typeof window !== "undefined") {
+      window.addEventListener('load', () => {
+        const banner = document.querySelector('.sidebarIconToggle');
+        if (banner) {
+          banner.classList.add('show');
+        }
+      });
+    }
+  }
 
   open(page: string) {
     document.getElementById('openSidebarMenu')?.click();

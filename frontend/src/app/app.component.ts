@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     });
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
-        this.openDialog();
+        //this.openDialog();
       }, 6000);
     }
   }

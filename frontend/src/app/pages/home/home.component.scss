@@ -50,6 +50,8 @@
 .move-up {
   position: relative;
   animation: moveUp 1.1s linear infinite;
+  margin-bottom: 22px;
+  margin-right: 27px;
 }
 
 @keyframes moveUp {
@@ -73,14 +75,8 @@
 
 @media (max-width: $trigger-mobile-version-limit) {
 
-  .home {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .content-container {
+    margin-top: -100px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -89,18 +85,35 @@
 
   .profile-image {
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
+    height: 170px;
+    width: 170px;
   }
 
   .text-section {
-    display: none;
+    text-align: center;
+    color: white;
+    width: 85%;
+    margin-left: 0;
+  }
+
+  .p {
+    font-size: 15px;
+    margin: 0;
+  }
+  
+  .h1 {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 20px;
   }
 
   .bottom-right {
+    font-size: 12px;
     color: white;
-    bottom: 7%;
+    bottom: 6%;
     right: 0;
+    margin-right: 15px;
+
   }
 
 }

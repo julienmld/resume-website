@@ -7,21 +7,23 @@
     width: 100%;
     z-index: 1;
     transform: translateY(-100%);
+    margin-top: 5px;
 }
 
 .main-content-wrapper a {
-    width: 100%;
+    width: 99%;
     height: 40px;
     display: block;
     background: $primary-color;
     text-align: center;
     padding-top: 15px;
-    border: 0.1px solid white;
     color: white;
+    border-radius: 1px;
 }
 
 #sidebarMenu::-webkit-scrollbar {
     width: 12px;
+    background-color: $primary-color;
 }
 
 #sidebarMenu::-webkit-scrollbar-track {
@@ -56,18 +58,23 @@ input[type=checkbox] {
 }
 
 .sidebarIconToggle {
-    filter: invert(1) brightness(10000%);
+    filter: invert(1);
     transition: all 0.3s;
     box-sizing: border-box;
-    cursor: pointer;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     height: 40px;
     width: 40px;
     left: 20px;
     top: 20px;
     display: none;
+    transform: translateY(-100%);
+    transition: transform 1s ease-out;
 }
+
+.sidebarIconToggle.show {
+    transform: translateY(0);
+  }
 
 .spinner {
     transition: all 0.3s;
@@ -101,6 +108,16 @@ input[type=checkbox] {
     margin-top: 3px;
 }
 
+.bande-transparente {
+    height: 55px;
+    width: 100%;
+    background-color: $rectangle-background-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
 input[type=checkbox]:checked~.sidebarIconToggle>.horizontal {
     transition: all 0.3s;
     box-sizing: border-box;
@@ -121,10 +138,13 @@ input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-2 {
     margin-top: -9px;
 }
 
+input[type=checkbox]:checked ~ .bande-transparente {
+    height: 100%;
+}
+
 .sidebarIconToggle {
     display: block;
 }
 
-a {
-    cursor: pointer;
-}
+
+
