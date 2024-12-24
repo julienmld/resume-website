@@ -50,7 +50,7 @@
   cursor: pointer;
   transition: transform 0.3s ease;
   width: 60px;
-  height: auto;
+  height: 60px;
   border-radius: 5px;
 }
 
@@ -132,8 +132,8 @@
   .images-container img {
     cursor: pointer;
     transition: transform 0.3s ease;
-    width: 20px;
-    height: auto;
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
   }
 
@@ -149,14 +149,25 @@
 
   .architecture {
     width: 90%;
-    margin-top: -20px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   p {
-    font-size: 8px;
+    font-size: 15px;
+    text-align: center;
   }
+
+  .schema {
+    width: 95%;
+    background-color: $small-rectangle-background-color;
+    border: $rectangle-border;
+    border-radius: $rectangle-border-radius;
+    box-shadow: $rectangle-box-shadow;
+    margin-bottom: 60px;
+  }
+
 
 }

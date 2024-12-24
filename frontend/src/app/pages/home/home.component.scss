@@ -1,80 +1,74 @@
 @import '../../app.component.scss';
 
-@media (min-width: $trigger-mobile-version-limit) {
+.p {
+  font-size: 95%;
+  line-height: 1.2;
+  margin-top: -43px;
+  color: white;
+}
 
-  .p {
-    font-size: 95%; line-height: 1.2; margin-top: -43px; color: white;
+.h1 {
+  font-size: 210%;
+  margin-top: -3px;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-section {
+  text-align: left;
+  color: white;
+  font-size: 24px;
+  margin-left: 40px;
+  width: 50%;
+  max-width: 1400px;
+}
+
+.profile-image {
+  border-radius: 50%;
+  height: 215px;
+  width: 220px;
+}
+
+.bottom-right {
+  color: white;
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+}
+
+.move-up {
+  position: relative;
+  animation: moveUp 1.1s linear infinite;
+}
+
+@keyframes moveUp {
+  0%,
+  100% {
+    top: 0;
   }
 
-  .h1 {
-    font-size: 210%; margin-top: -3px;
+  50% {
+    top: 8px;
   }
+}
 
-  .home {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    position: relative;
-  }
-  
-  .content-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .text-section {
-    text-align: left;
-    color: white;
-    font-size: 24px;
-    margin-left: 40px;
-    width: 50%;
-    max-width: 1400px;
-  }
-  
-  .profile-image {
-    border-radius: 50%;
-    height: 215px;
-    width: 220px;
-  }
-    
-  .bottom-right {
-    color: white;
-    position: absolute;
-    bottom: 50px;
-    right: 0;
-  }
-  
-  .move-up {
-    position: relative;
-    animation: moveUp 1.1s linear infinite;
-  }
-  
-  @keyframes moveUp {
-  
-    0%,
-    100% {
-      top: 0;
-    }
-  
-    50% {
-      top: 8px;
-    }
-  }
-  
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  .bottom-left {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
@@ -83,14 +77,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
-    position: relative;
+    height: 90vh;
   }
 
   .content-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
@@ -98,12 +89,18 @@
 
   .profile-image {
     border-radius: 50%;
-    height: 130px;
-    width: 130px;
+    height: 200px;
+    width: 200px;
   }
 
   .text-section {
     display: none;
+  }
+
+  .bottom-right {
+    color: white;
+    bottom: -4vh;
+    right: 0;
   }
 
 }

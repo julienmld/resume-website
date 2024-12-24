@@ -2,19 +2,19 @@
 
   <div class="images-container">
     <a class="upsize-item" (click)="scrollToSection('studies')">
-      <img style="width: 100px" matTooltip="ESIR" [src]="'assets/img/esir.png'">
+      <img class="esir" matTooltip="ESIR" [src]="'assets/img/esir.png'">
     </a>
     <a class="upsize-item" (click)="scrollToSection('studies')">
-      <img style="width: 60px; filter: invert(1) brightness(10000%);" matTooltip="Image ET" [src]="'assets/img/imageet.png'">
+      <img class="imageet" matTooltip="Image ET" [src]="'assets/img/imageet.png'">
     </a>
     <a class="upsize-item" (click)="scrollToSection('sopra')">
-      <img style="width: 70px" matTooltip="Sopra Steria" [src]="'assets/img/soprasteria.png'">
+      <img class="soprasteria" matTooltip="Sopra Steria" [src]="'assets/img/soprasteria.png'">
     </a>
     <a class="upsize-item" (click)="scrollToSection('sopra')">
-      <img style="width: 60px" matTooltip="DGA" [src]="'assets/img/dga.png'">
+      <img class="dga" matTooltip="DGA" [src]="'assets/img/dga.png'">
     </a>
     <a class="upsize-item" (click)="scrollToSection('sopra')">
-      <img style="width: 110px; filter: invert(1) brightness(10000%);" matTooltip="DIRISI" [src]="'assets/img/dirisi.png'">
+      <img class="dirisi" matTooltip="DIRISI" [src]="'assets/img/dirisi.png'">
     </a>
   </div>
 
@@ -35,7 +35,7 @@
 
   <div id="sopra">
     <app-card [title]="'experiences-page.sopra'" [description]="'experiences-page.sopra-description'"
-      [timeline]="sopraTimeline" [isDescriptionToTheLeft]="false" />
+      [timeline]="sopraTimeline"/>
   </div>
 
 </div>

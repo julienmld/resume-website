@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { upsizeAnimation } from '../../animations/upsizeAnimation';
-import { NgFor } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { TimelineComponent } from "../../components/timeline/timeline.component";
 import { CardComponent } from "../../components/card/card.component";
 
 @Component({
   selector: 'app-experiences',
   standalone: true,
-  imports: [NgFor, MatTooltipModule, TimelineComponent, CardComponent],
+  imports: [MatTooltipModule, CardComponent],
   templateUrl: './experiences.component.html',
   styleUrl: './experiences.component.scss',
   animations: [upsizeAnimation]

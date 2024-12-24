@@ -3,28 +3,15 @@
         <p class="title">{{ title | translate }}</p>
     </div>
 
-    <div *ngIf="isDescriptionToTheLeft; else reverseOrder">
-        <div class="half">
-            <p>| {{'experiences-page.description' | translate }}</p>
-            <p>{{ description | translate }}</p>
-        </div>
+    <div class="content">
         <div class="half">
             <p>| {{'experiences-page.key-dates' | translate }}</p>
             <app-timeline [timeline]="timeline" />
         </div>
+        <div class="half">
+            <p>| {{'experiences-page.description' | translate }}</p>
+            <p>{{ description | translate }}</p>
+        </div>
     </div>
-
-    <ng-template #reverseOrder>
-        <ng-container>
-            <div class="half">
-                <p>| {{'experiences-page.key-dates' | translate }}</p>
-                <app-timeline [timeline]="timeline" />
-            </div>
-            <div class="half">
-                <p>| {{'experiences-page.description' | translate }}</p>
-                <p>{{ description | translate }}</p>
-            </div>
-        </ng-container>
-    </ng-template>
 
 </div>

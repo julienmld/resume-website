@@ -14,5 +14,4 @@ export class CardComponent {
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() timeline: any = {};
-  @Input() isDescriptionToTheLeft: boolean = true;
 }

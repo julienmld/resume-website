@@ -41,3 +41,19 @@
 .timeline-content p {
     margin: 5px 0 0;
 }
+
+@media (max-width: $trigger-mobile-version-limit) {
+
+    h5, p {
+        font-size: 12px;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 600px;
+        margin: auto;
+        padding: 0;
+    }
+
+  
+  }

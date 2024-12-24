@@ -22,7 +22,6 @@
 .images-container img {
   cursor: pointer;
   transition: transform 0.3s ease;
-  height: auto;
 }
 
 .images-container img:hover {
@@ -43,4 +42,68 @@
   max-width: 560px;
   height: 315px;
   border-radius: $rectangle-border-radius;
+}
+
+.esir {
+  width: 100px;
+}
+
+.imageet {
+  width: 60px;
+  filter: invert(1) brightness(10000%);
+}
+.soprasteria {
+  width: 70px;
+
+}
+.dga {
+  width: 60px;
+}
+
+.dirisi {
+  width: 110px;
+  filter: invert(1) brightness(10000%);
+}
+
+@media (max-width: $trigger-mobile-version-limit) {
+  
+  .images-container {
+    margin-bottom: 10px;
+  }
+
+  .experiences {
+    margin-top: 45px;
+  }
+
+  .esir {
+    width: 55px;
+  }
+  
+  .imageet {
+    width: 40px;
+    filter: invert(1) brightness(10000%);
+  }
+
+  .soprasteria {
+    width: 45px;
+  }
+
+  .dga {
+    width: 35px;
+  }
+  
+  .dirisi {
+    width: 60px;
+    filter: invert(1) brightness(10000%);
+  }
+
+  .iframe-container {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 30px;
+  }
+
 }

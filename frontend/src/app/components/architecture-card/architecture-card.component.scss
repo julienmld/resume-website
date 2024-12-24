@@ -12,25 +12,32 @@ img {
   height: 70px;
   margin: 5px;
   border-radius: 5px;
+  margin-bottom: 0;
 }
 
-.small-rectangle:hover {
-  transform: scale(1.05);
+@media (min-width: $trigger-mobile-version-limit) {
+  .small-rectangle:hover {
+    transform: scale(1.05);
+  }
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
 
   .small-rectangle {
     display: inline-block;
-    padding: 2px;
+    padding: 1px;
+    padding-bottom: 0;
     border-radius: $rectangle-border-radius;
     border: $rectangle-border;
-    margin: 2px;
+    margin: 5px;
+    text-align: center;
   }
 
   img {
-    height: 20px;
-    margin: 1px;
+    height: 40px;
     border-radius: 5px;
+    margin-bottom: 0;
   }
+
+
 }
