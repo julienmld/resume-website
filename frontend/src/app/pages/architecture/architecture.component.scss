@@ -36,12 +36,12 @@
 }
 
 .images-container {
-  height: 80px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 90vw;
   margin: 20px auto;
+  margin-top: 32px;
   gap: 20px;
   align-items: center;
 }
