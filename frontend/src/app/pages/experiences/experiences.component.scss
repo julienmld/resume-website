@@ -50,7 +50,7 @@
 
 .imageet {
   width: 60px;
-  filter: invert(1) brightness(10000%);
+  filter: invert(1);
 }
 .soprasteria {
   width: 70px;
@@ -62,7 +62,7 @@
 
 .dirisi {
   width: 110px;
-  filter: invert(1) brightness(10000%);
+  filter: invert(1);
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
@@ -82,7 +82,7 @@
   
   .imageet {
     width: 40px;
-    filter: invert(1) brightness(10000%);
+    filter: invert(1);
   }
 
   .soprasteria {
@@ -95,7 +95,7 @@
   
   .dirisi {
     width: 60px;
-    filter: invert(1) brightness(10000%);
+    filter: invert(1);
   }
 
   .iframe-container {
