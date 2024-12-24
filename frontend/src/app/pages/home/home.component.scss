@@ -74,6 +74,7 @@
 @media (max-width: $trigger-mobile-version-limit) {
 
   .home {
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
