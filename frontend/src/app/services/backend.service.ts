@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Message } from '../models/Message';
 import { Observable } from 'rxjs';
+import { StatisticDTO } from '../models/StatisticDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -25,4 +26,13 @@ export class BackendService {
     });
     return this.http.post<string>(this.backendUrl + 'registerVisitor', JSON.stringify(job), { headers });
   }
+
+  getStatistics(): Observable<StatisticDTO> {
+    const headers = new HttpHeaders({
+      'x-api-key': this.key,
+      'Content-Type': 'application/json'
+    });
+    return this.http.get<StatisticDTO>(this.backendUrl + 'statistics', { headers });
+  }
+
 }

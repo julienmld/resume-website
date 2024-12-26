@@ -25,6 +25,7 @@ public class VisitorConfiguration {
         return new DynamoDBMapper(buildAmazonDynamoDB());
     }
 
+    @Bean
     public AmazonDynamoDB buildAmazonDynamoDB() {
         return AmazonDynamoDBClientBuilder.standard().withEndpointConfiguration(
                 new AwsClientBuilder.EndpointConfiguration("dynamodb.eu-west-3.amazonaws.com", "eu-west-3"))

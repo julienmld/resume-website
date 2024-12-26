@@ -6,7 +6,9 @@
   "contact-me": "Contact me",
   "experience": "Experience",
   "my-story": "My story",
-  "architecture": "Site architecture",
+  "about-website": "About website",
+  "architecture": "Architecture",
+  "statistics": "Statistics",
   "network": "Social networks",
   "small-screen": "Hello, the mobile and tablet version of this site is not available",
   "home-page": {
@@ -22,6 +24,19 @@
     "database": "The AWS DynamoDB tool provides a relational database to persist backend data (such as your answer to the question asked in the pop-up when you arrived on the site).",
     "iam": "The AWS IAM tool for identity and access management allows for managing users and user groups that have access to the database. A secret key and an access key can be generated and used by the backend to access the database.",
     "secret-manager": "AWS Secret Manager is a tool for managing secrets. This allows me to place references to passwords in the backend code, but not directly in plain text. This allows me to transparently offer my code on a GitHub project."
+  },
+  "statistics-page": {
+    "distribution-visitors": "Visitors distribution",
+    "number-visitors": "Visitors number",
+    "visitors": "Visitors",
+    "computer": "Computer",
+    "mobile": "Mobile and tablet",
+    "developer": "Developer",
+    "recruiter": "Recruiter",
+    "student": "Student",
+    "client": "Client",
+    "curious": "Curious",
+    "other": "No answer"
   },
   "dialog": {
     "question": "For statistical purposes, I would like you to answer the following question. Which of these options best defines you?",

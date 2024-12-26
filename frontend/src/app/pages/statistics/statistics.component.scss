@@ -1,0 +1,36 @@
+@import '../../app.component.scss';
+
+
+.statistics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rectangle {
+  width: 80%;
+  background-color: $rectangle-background-color;
+  border: $rectangle-border;
+  flex-direction: column;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   flex-direction: column;
+}
+
+canvas {
+  width: 180%;
+  padding: 50px;
+}
+
+p {
+  font-size: 20px;
+  color: white;
+  margin-top: 60px;
+  margin-bottom: -10px;
+}

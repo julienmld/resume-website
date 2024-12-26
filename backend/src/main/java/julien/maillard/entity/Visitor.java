@@ -23,6 +23,9 @@ public class Visitor {
     private String job;
 
     @DynamoDBAttribute
-    private String date;
+    private String device;
+
+    @DynamoDBAttribute
+    private String visitDateTime;
 
 }

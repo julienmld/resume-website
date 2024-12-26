@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { ArchitectureCardComponent } from '../../components/architecture-card/architecture-card.component';
 import { ArchitectureArrowComponent } from '../../components/architecture-arrow/architecture-arrow.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { upsizeAnimation } from '../../animations/upsizeAnimation';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button'
+
 
 @Component({
   selector: 'app-architecture',
   standalone: true,
-  imports: [NgIf, NgFor, ArchitectureCardComponent, ArchitectureArrowComponent, MatTooltipModule, TranslateModule, MatButtonModule],
+  imports: [NgFor, ArchitectureCardComponent, ArchitectureArrowComponent, MatTooltipModule, TranslateModule, MatButtonModule],
   templateUrl: './architecture.component.html',
   styleUrl: './architecture.component.scss',
   animations: [upsizeAnimation,
@@ -24,8 +25,7 @@ import { MatButtonModule } from '@angular/material/button'
   ]
 })
 export class ArchitectureComponent {
-
-  public spinValue: number = 0;
+  spinValue: number = 0;
   technos: any[] = [
     { label: 'Amplify', img: 'amplify.jpg', part: 'schema' },
     { label: 'API Gateway', img: 'apigateway.png', part: 'schema' },
@@ -34,17 +34,6 @@ export class ArchitectureComponent {
     { label: 'IAM', img: 'iam.jpg', part: 'schema' },
     { label: 'Secret Manager', img: 'secretmanager.jpg', part: 'schema' }
   ];
-
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-    }
-  }
-
-  changeColor() {
-    this.spinValue++;
-  }
 
   schema = {
     frontend: {
@@ -73,4 +62,17 @@ export class ArchitectureComponent {
     }
   }
 
+
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+  }
+
+  changeColor() {
+    this.spinValue++;
+  }
+  
 }
