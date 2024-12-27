@@ -34,11 +34,11 @@ export class StatisticsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      /**this.backendService.getStatistics().subscribe((res: StatisticDTO) => {
+      this.backendService.getStatistics().subscribe((res: StatisticDTO) => {
         this.createDoughnutChart(res);
         this.createBarChart(res);
-      });*/
-      let s: any = {
+      });
+      /**let s: any = {
         "numberDeveloper": 5,
         "numberRecruiter": 0,
         "numberStudent": 0,
@@ -70,7 +70,7 @@ export class StatisticsComponent implements AfterViewInit {
       }
 
       this.createDoughnutChart(s);
-      this.createBarChart(s);
+      this.createBarChart(s);*/
     }
   }
 
@@ -110,8 +110,6 @@ export class StatisticsComponent implements AfterViewInit {
     const monthsToDisplay: string[] = [];
     const computerToDisplay: number[] = [];
     const mobileToDisplay: number[] = [];
-
-    console.log(statisticDTO.deviceStatistics);
 
     for (const [key, value] of Object.entries(statisticDTO.deviceStatistics)) {
       monthsToDisplay.push(this.months[parseInt(key) - 1]);
