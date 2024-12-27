@@ -50,11 +50,13 @@ public class WebsiteServiceImpl implements WebsiteService {
         statisticDTO.setNumberOther(visitorRepository.countVisitorsByAttribute("job", "other"));
 
         Calendar calendar = Calendar.getInstance();
-        Map <Integer, int[]> deviceStatistics = new HashMap<>();
+        Map<Integer, int[]> deviceStatistics = new HashMap<>();
         for (int i = 0; i < 5; i++) {
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH) + 1;
-            deviceStatistics.put(month, new int[] {visitorRepository.countVisitorsByMonth("device", "computer", month, year), visitorRepository.countVisitorsByMonth("device", "mobile", month, year)});
+            deviceStatistics.put(month,
+                    new int[] { visitorRepository.countVisitorsByMonth("device", "computer", month, year),
+                            visitorRepository.countVisitorsByMonth("device", "mobile", month, year) });
             calendar.add(Calendar.MONTH, -1);
         }
         statisticDTO.setDeviceStatistics(deviceStatistics);

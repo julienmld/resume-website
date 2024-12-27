@@ -18,7 +18,7 @@ public class Controller {
 
 	@Autowired
 	private WebsiteService websiteService;
-	
+
 	@PostMapping("/contact")
 	public void contact(@RequestBody Message message) {
 		websiteService.sendSimpleMessage(message);
