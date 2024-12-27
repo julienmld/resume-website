@@ -35,15 +35,6 @@
 
   .rectangle {
     width: 90%;
-    margin: auto;
-    box-shadow: $rectangle-box-shadow;
-    border: $rectangle-border;
-    background-color: $rectangle-background-color;
-    margin-bottom: 20px;
-    color: white;
-    text-align: justify;
-    white-space: pre-wrap;
-    border-radius: $rectangle-border-radius;
   }
 
   .title {
@@ -55,7 +46,7 @@
     font-size: 15px;
     text-align: justify;
   }
-  
+
   .content {
     display: flex;
     flex-direction: column;

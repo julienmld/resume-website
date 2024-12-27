@@ -64,6 +64,7 @@
     justify-content: center;
     flex-direction: column;
   }
+
   .container {
     background-color: $rectangle-background-color;
     border: $rectangle-border;
@@ -81,11 +82,11 @@
   }
 
   .chart {
-    padding: 0px;
+    padding: 0;
   }
 
   p {
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 50px;
     font-size: 15px;
     color: white;

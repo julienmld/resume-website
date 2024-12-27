@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './hamburger.component.html',
   styleUrl: './hamburger.component.scss'
 })
-export class HamburgerComponent implements OnInit{
+export class HamburgerComponent implements OnInit {
   private router = inject(Router);
 
   ngOnInit(): void {
@@ -29,8 +29,7 @@ export class HamburgerComponent implements OnInit{
   }
 
   close() {
-    console.log('juju')
     document.getElementById('openSidebarMenu')?.click();
   }
-  
+
 }

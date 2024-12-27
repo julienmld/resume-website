@@ -48,10 +48,12 @@
   width: 60px;
   filter: invert(1);
 }
+
 .soprasteria {
   width: 70px;
 
 }
+
 .dga {
   width: 60px;
 }
@@ -68,7 +70,7 @@
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
-  
+
   .images-container {
     margin-bottom: 15px;
   }
@@ -80,7 +82,7 @@
   .esir {
     width: 45px;
   }
-  
+
   .imageet {
     width: 30px;
     filter: invert(1);
@@ -93,19 +95,14 @@
   .dga {
     width: 25px;
   }
-  
+
   .dirisi {
     width: 45px;
-    filter: invert(0.4);
   }
 
   .iframe-container {
-    margin-top: 20px;
-    margin-bottom: 40px;
-    display: flex;
     flex-direction: column;
     width: 90%;
-    gap: 30px;
   }
 
 }

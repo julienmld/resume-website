@@ -44,7 +44,8 @@
 
 @media (max-width: $trigger-mobile-version-limit) {
 
-    h5, p {
+    h5,
+    p {
         font-size: 12px;
     }
 
@@ -55,5 +56,4 @@
         padding: 0;
     }
 
-  
-  }
+}

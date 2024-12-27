@@ -218,8 +218,8 @@
     "disabled-button": "Please fill in the required fields correctly"
   },
   "easter-egg": {
-    "first-indication": "Here is the first clue. Go to the network console and find the name of the request made to persist your response to the pop-up. You will then need to do a CTRL+F on this name on the 'Site Architecture' page.",
-    "secund-indication": "registerVisitor. Here is the second clue. Go to the inspector and observe the id of the tag that contains my first and last name at the top left of this website.",
+    "first-indication": "Here is the first clue. Go to the network console and find the name of the request made to display statistics on page \"Statistics\". You will then need to do a CTRL+F on this name on the \" Architecture\" page.",
+    "secund-indication": "statistics. Here is the second clue. Go to the inspector and observe the id of the tag that contains my first and last name at the top left of this website.",
     "third-indication": "Congratulations, this scavenger hunt is coming to an end. Go back to the 'Site Architecture' page, a hidden button is located at the bottom, slightly to the right of the page. It will reveal itself when you hover over it.",
     "button": "Hold on tight"
   }

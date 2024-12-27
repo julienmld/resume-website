@@ -5,14 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button'
 import { BackendService } from '../../services/backend.service';
 import { Message } from '../../models/Message';
-import {
-  FormControl,
-  FormGroupDirective,
-  NgForm,
-  Validators,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { phoneNumberValidator } from '../../validators/phoneNumberValidator';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';

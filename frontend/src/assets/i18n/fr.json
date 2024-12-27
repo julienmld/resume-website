@@ -218,8 +218,8 @@
     "disabled-button": "Veuillez remplir correctement les champs obligatoires"
   },
   "easter-egg": {
-    "first-indication": "Voici le premier indice. Rendez vous dans la console réseau et trouvez le nom de la requête réalisée pour persister votre réponse à la pop-up. Vous devrez ensuite faire un CTRL+F sur ce nom sur la page \"Architecture du site\"",
-    "secund-indication": "registerVisitor. Voici le deuxième indice. Rendez vous dans l'inspecteur et observez l'id de la balise qui contient mon nom et prénom en haut à gauche de ce site web",
+    "first-indication": "Voici le premier indice. Rendez vous dans la console réseau et trouvez le nom de la requête réalisée au backend de l'application pour récupérer les statistiques qui s'affichent sur la page \"Statistiques\". Vous devrez ensuite faire un CTRL+F sur ce nom sur la page \"Architecture\"",
+    "secund-indication": "statistics. Voici le deuxième indice. Rendez vous dans l'inspecteur et observez l'id de la balise qui contient mon nom et prénom en haut à gauche de ce site web",
     "third-indication": "Bravo, ce jeu de piste touche à sa fin. Rendez vous de nouveau sur la page \"Architecture du site\", un bouton caché se situe en bas, légèrement à droite de la page. Il se révelera lorsque vous le survolerez",
     "button": "Accrochez vous"
   }

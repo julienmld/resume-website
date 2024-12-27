@@ -1,18 +1,14 @@
 <div class="bottom-banner" [ngClass]="{'fixed': isHomePage}">
     <div class="section">
-        <img matTooltip="Français" (click)="changeLanguage('fr')" class="left image"
-            src="assets/img/french.png">
-        <img matTooltip="English" (click)="changeLanguage('en')" class="left image"
-            src="assets/img/english.png">
+        <img matTooltip="Français" (click)="changeLanguage('fr')" class="left image" src="assets/img/french.png">
+        <img matTooltip="English" (click)="changeLanguage('en')" class="left image" src="assets/img/english.png">
     </div>
 
     <div class="section">
-        <img [matTooltip]="'resume' | translate" (click)="downloadCV()" class="right image"
-            src="assets/img/cv.png" style="filter:grayscale(100%);">
-        <img matTooltip="Linkedin" (click)="openLinkedin()" class="right image"
-            src="assets/img/linkedin.png">
-            <img matTooltip="Github" (click)="openGithub()" class="right image" src="assets/img/github.png">
-            <img matTooltip="Malt" (click)="openMalt()" class="right image"
-            src="assets/img/malt.png">
+        <img [matTooltip]="'resume' | translate" (click)="downloadCV()" class="right image" src="assets/img/cv.png"
+            style="filter:grayscale(100%);">
+        <img matTooltip="Linkedin" (click)="openLinkedin()" class="right image" src="assets/img/linkedin.png">
+        <img matTooltip="Github" (click)="openGithub()" class="right image" src="assets/img/github.png">
+        <img matTooltip="Malt" (click)="openMalt()" class="right image" src="assets/img/malt.png">
     </div>
 </div>

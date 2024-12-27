@@ -63,7 +63,7 @@
 }
 
 .text {
-  width: 93%;
+  width: 90%;
   color: white;
   text-align: justify;
   white-space: pre-wrap;
@@ -125,36 +125,18 @@
 
 @media (max-width: $trigger-mobile-version-limit) {
 
-  
-  .architecture-page {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-  }
-
   .images-container img {
-    cursor: pointer;
-    transition: transform 0.3s ease;
     width: 35px;
     height: 35px;
-    border-radius: 5px;
   }
 
   .images-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 90vw;
     margin: 1px auto;
-    align-items: center;
   }
 
   .architecture {
     width: 90%;
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 60px;
   }
 
@@ -165,14 +147,11 @@
 
   .schema {
     width: 95%;
-    background-color: $small-rectangle-background-color;
-    border: $rectangle-border;
-    border-radius: $rectangle-border-radius;
-    box-shadow: $rectangle-box-shadow;
     margin-bottom: 40px;
   }
 
-  .hidden-text, .container {
+  .hidden-text,
+  .container {
     display: none;
   }
 

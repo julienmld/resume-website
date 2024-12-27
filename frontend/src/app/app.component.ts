@@ -8,7 +8,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { trigger, style, animate, transition } from '@angular/animations';
 import { PreloadService } from './services/preload.service';
 import { HamburgerComponent } from "./components/hamburger/hamburger.component";
 
@@ -18,14 +17,7 @@ import { HamburgerComponent } from "./components/hamburger/hamburger.component";
   imports: [RouterOutlet, TopBannerComponent, BottomBannerComponent, TranslateModule, HamburgerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  animations: [
-    trigger('firstSlideIn', [
-      transition(':enter', [
-        style({ transform: 'translateX(-20%)', opacity: 0 }),
-        animate('1s ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
-      ])
-    ])
-  ]
+  animations: []
 })
 export class AppComponent {
   readonly dialog = inject(MatDialog);
@@ -41,7 +33,7 @@ export class AppComponent {
     });
 
     this.router.events.pipe(filter((event: any) => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
-      this.isHomePage = ![ '/architecture', '/statistics', '/skills', '/experiences', '/contact-me'].includes(event.url);
+      this.isHomePage = !['/architecture', '/statistics', '/skills', '/experiences', '/contact-me'].includes(event.url);
 
       this.page = event.url.split('/')[1];
       if (typeof window !== 'undefined') {

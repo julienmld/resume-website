@@ -70,8 +70,6 @@ export class StatisticsComponent implements AfterViewInit {
     });
 
     this.months = this.translateService.getDefaultLang() === 'en' ? this.englishMonths : this.frenchMonths;
-
-
     if (isPlatformBrowser(this.platformId)) {
       this.backendService.getStatistics().subscribe((res: StatisticDTO) => {
         this.statisticDTO = res;

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
+import { Component } from '@angular/core';
 import { ArchitectureCardComponent } from '../../components/architecture-card/architecture-card.component';
 import { ArchitectureArrowComponent } from '../../components/architecture-arrow/architecture-arrow.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -7,7 +7,6 @@ import { upsizeAnimation } from '../../animations/upsizeAnimation';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button'
-
 
 @Component({
   selector: 'app-architecture',
@@ -62,8 +61,6 @@ export class ArchitectureComponent {
     }
   }
 
-
-
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -74,5 +71,5 @@ export class ArchitectureComponent {
   changeColor() {
     this.spinValue++;
   }
-  
+
 }

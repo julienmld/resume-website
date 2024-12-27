@@ -7,7 +7,7 @@ import { Directive, ElementRef, Renderer2, OnInit, OnDestroy } from '@angular/co
 export class AppearOnScrollDirective implements OnInit, OnDestroy {
   private observer!: IntersectionObserver;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
     this.observer = new IntersectionObserver(entries => {
