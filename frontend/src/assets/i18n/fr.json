@@ -29,14 +29,14 @@
     "distribution-visitors": "Répartition des visiteurs",
     "number-visitors": "Nombre de visiteurs",
     "visitors": "Visiteurs",
-    "computer": "Ordinateur",
-    "mobile": "Mobile et tablette",
-    "developer": "Développeur",
-    "recruiter": "Recruteur",
-    "student": "Étudiant",
-    "client": "Client",
+    "computers": "Ordinateurs",
+    "mobiles": "Mobiles et tablettes",
+    "developers": "Développeurs",
+    "recruiters": "Recruteurs",
+    "students": "Étudiants",
+    "clients": "Clients",
     "curious": "Curieux",
-    "other": "Ne se prononce pas"
+    "others": "Ne se prononcent pas"
   },
   "dialog": {
     "question": "À des fins statistiques, j'aimerais que vous répondiez à la question suivante. Laquelle de ces propositions vous définit-elle le mieux ?",

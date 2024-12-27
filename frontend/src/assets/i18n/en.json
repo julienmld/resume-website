@@ -29,14 +29,14 @@
     "distribution-visitors": "Visitors distribution",
     "number-visitors": "Visitors number",
     "visitors": "Visitors",
-    "computer": "Computer",
-    "mobile": "Mobile and tablet",
-    "developer": "Developer",
-    "recruiter": "Recruiter",
-    "student": "Student",
-    "client": "Client",
+    "computers": "Computers",
+    "mobiles": "Mobiles and tablets",
+    "developers": "Developers",
+    "recruiters": "Recruiters",
+    "students": "Students",
+    "clients": "Clients",
     "curious": "Curious",
-    "other": "No answer"
+    "others": "No answer"
   },
   "dialog": {
     "question": "For statistical purposes, I would like you to answer the following question. Which of these options best defines you?",

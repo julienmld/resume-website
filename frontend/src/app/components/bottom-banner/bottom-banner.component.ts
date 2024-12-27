@@ -1,17 +1,19 @@
-import { NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CommunicationService } from '../../services/communication.service';
 
 @Component({
   selector: 'app-bottom-banner',
   standalone: true,
-  imports: [TranslateModule, NgIf, MatTooltipModule, NgClass],
+  imports: [TranslateModule, MatTooltipModule, NgClass],
   templateUrl: './bottom-banner.component.html',
   styleUrl: './bottom-banner.component.scss'
 })
 export class BottomBannerComponent implements OnInit {
   @Input() isHomePage: boolean = true;
+  commService = inject(CommunicationService);
   private translate = inject(TranslateService);
 
   ngOnInit(): void {
@@ -27,6 +29,7 @@ export class BottomBannerComponent implements OnInit {
 
   changeLanguage(language: string): void {
     this.translate.setDefaultLang(language);
+    this.commService.notifyButtonClicked();
     this.translate.get('easter-egg.first-indication').subscribe((res: string) => {
       console.clear();
       console.log(res);
