@@ -35,8 +35,9 @@ export class BackendService {
 
     return this.http.get<any>(this.backendUrl + 'statistics', { headers }).pipe(
       map((data) => {
+        console.log(data)
         const deviceStatisticsMap = new Map<number, number[]>(Object.entries(data.deviceStatistics).map(([key, value]) => [Number(key), value as number[]]));
-
+        console.log(deviceStatisticsMap)
         return {
           numberDeveloper: data.numberDeveloper,
           numberRecruiter: data.numberRecruiter,
