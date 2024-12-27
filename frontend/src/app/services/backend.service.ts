@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Message } from '../models/Message';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { StatisticDTO } from '../models/StatisticDTO';
 
 @Injectable({
@@ -32,7 +32,21 @@ export class BackendService {
       'x-api-key': this.key,
       'Content-Type': 'application/json'
     });
-    return this.http.get<StatisticDTO>(this.backendUrl + 'statistics', { headers });
+
+    return this.http.get<any>(this.backendUrl + 'statistics', { headers }).pipe(
+      map((data) => {
+        const deviceStatisticsMap = new Map<number, number[]>(Object.entries(data.deviceStatistics).map(([key, value]) => [Number(key), value as number[]]));
+
+        return {
+          numberDeveloper: data.numberDeveloper,
+          numberRecruiter: data.numberRecruiter,
+          numberStudent: data.numberStudent,
+          numberClient: data.numberClient,
+          numberCurious: data.numberCurious,
+          numberOther: data.numberOther,
+          deviceStatistics: deviceStatisticsMap,
+        } as StatisticDTO;
+      }));
   }
 
 }
