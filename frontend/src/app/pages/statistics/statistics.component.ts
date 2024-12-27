@@ -110,9 +110,12 @@ export class StatisticsComponent implements AfterViewInit {
     const canvas = this.doughnutCanvas.nativeElement;
     const ctx = canvas.getContext('2d');
 
-    console.log(this.statisticDTO)
+    console.log('juju')
 
     if (this.statisticDTO) {
+
+      console.log(this.statisticDTO)
+
       this.doughnutChart = new Chart(ctx, {
         type: 'doughnut' as ChartType,
         data: {
