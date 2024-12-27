@@ -26,6 +26,7 @@
   .container {
     background-color: $rectangle-background-color;
     border: $rectangle-border;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,6 +67,7 @@
   .container {
     background-color: $rectangle-background-color;
     border: $rectangle-border;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
