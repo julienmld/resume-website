@@ -1,6 +1,10 @@
 {
   "resume": "Curriculum Vitae",
   "home": "Accueil",
+  "my-experiences": "Mes expériences",
+  "my-skills": "Mes compétences",
+  "architecture-site": "Architecture du site",
+  "statistics-site": "Statistiques du site",
   "experiences": "Expériences",
   "skills": "Compétences",
   "contact-me": "Me contacter",

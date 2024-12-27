@@ -8,7 +8,6 @@
   width: 100%;
   height: 37px;
   bottom: 0;
-  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,4 +37,13 @@
 .image {
   cursor: pointer;
   width: 24px;
+}
+
+@media (max-width: $trigger-mobile-version-limit) {
+  .bottom-banner {
+    height: 50px;
+  }
+  .image {
+    width: 28px;
+  }
 }

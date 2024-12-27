@@ -24,8 +24,13 @@ export class HamburgerComponent implements OnInit{
   }
 
   open(page: string) {
-    document.getElementById('openSidebarMenu')?.click();
+    this.close();
     this.router.navigate([page]);
+  }
+
+  close() {
+    console.log('juju')
+    document.getElementById('openSidebarMenu')?.click();
   }
   
 }

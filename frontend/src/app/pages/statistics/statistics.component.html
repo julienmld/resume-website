@@ -1,17 +1,17 @@
 
 
 <div >
-    <div style="margin-top: 120px;" class="statistics">
+    <div class="statistics first">
         <div class="rectangle">
             <div class="container">
+                <mat-spinner *ngIf="loading" color="accent" [strokeWidth]="5"></mat-spinner>
                 <p [hidden]="loading">{{ 'statistics-page.distribution-visitors' | translate }}</p>
-                <mat-spinner color="accent" [strokeWidth]="5"></mat-spinner>
                 <canvas class="chart" #doughnutCanvas [hidden]="loading"></canvas>
             </div>
         </div>
     </div>
     
-    <div style="margin-top: 40px; margin-bottom: 60px;" class="statistics" appAppearOnScroll>
+    <div class="statistics secund" appAppearOnScroll>
         <div class="rectangle">
             <div class="container">
                 <p [hidden]="loading">{{ 'statistics-page.number-visitors' | translate }}</p>

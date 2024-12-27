@@ -1,36 +1,91 @@
 @import '../../app.component.scss';
 
+@media (min-width: $trigger-mobile-version-limit) {
 
-.statistics {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  .statistics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .first {
+    margin-top: 120px;
+  }
+
+  .secund {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  .rectangle {
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .container {
+    background-color: $rectangle-background-color;
+    border: $rectangle-border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .chart {
+    padding: 50px;
+  }
+
+  p {
+    font-size: 20px;
+    color: white;
+    margin-top: 60px;
+    margin-bottom: -10px;
+  }
+
 }
 
-.rectangle {
-  width: 80%;
+@media (max-width: $trigger-mobile-version-limit) {
 
-  flex-direction: column;
-}
+  .first {
+    margin-top: 80px;
+  }
 
-.container {
-  background-color: $rectangle-background-color;
-  border: $rectangle-border;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
-   flex-direction: column;
-}
+  .secund {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
 
-.chart {
-  padding: 50px;
-}
+  .statistics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .container {
+    background-color: $rectangle-background-color;
+    border: $rectangle-border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    flex-direction: column;
+  }
 
-p {
-  font-size: 20px;
-  color: white;
-  margin-top: 60px;
-  margin-bottom: -10px;
+  .rectangle {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .chart {
+    padding: 0px;
+  }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    font-size: 15px;
+    color: white;
+  }
 }

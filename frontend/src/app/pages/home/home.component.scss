@@ -92,7 +92,7 @@
   .text-section {
     text-align: center;
     color: white;
-    width: 85%;
+    width: 90%;
     margin-left: 0;
   }
 
@@ -108,12 +108,7 @@
   }
 
   .bottom-right {
-    font-size: 12px;
-    color: white;
-    bottom: 6%;
-    right: 0;
-    margin-right: 15px;
-
+    display: none;
   }
 
 }

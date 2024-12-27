@@ -2,7 +2,7 @@
 <div class="hamburger">
 
     <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
-    <div class="bande-transparente"></div>
+    <div class="bande-transparente" (click)="close()"></div>
 
     <label for="openSidebarMenu" class="sidebarIconToggle">
         <div class="spinner diagonal part-1"></div>
@@ -12,9 +12,10 @@
     <div id="sidebarMenu">
         <div class="main-content-wrapper">
             <a (click)="open('home')">{{'home' | translate}}</a>
-            <a (click)="open('architecture')">{{'architecture' | translate}}</a>
-            <a (click)="open('experiences')">{{'experiences' | translate}}</a>
-            <a (click)="open('skills')">{{'skills' | translate}}</a>
+            <a (click)="open('architecture')">{{'architecture-site' | translate}}</a>
+            <a (click)="open('statistics')">{{'statistics-site' | translate}}</a>
+            <a (click)="open('experiences')">{{'my-experiences' | translate}}</a>
+            <a (click)="open('skills')">{{'my-skills' | translate}}</a>
             <a (click)="open('contact-me')">{{'contact-me' | translate}}</a>
         </div>
     </div>

@@ -127,7 +127,7 @@
 
   
   .architecture-page {
-    margin-top: 60px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
   }
@@ -135,8 +135,8 @@
   .images-container img {
     cursor: pointer;
     transition: transform 0.3s ease;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 5px;
   }
 
@@ -151,10 +151,11 @@
 
   .architecture {
     width: 90%;
-    margin-top: 10px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 60px;
   }
 
   p {
@@ -168,7 +169,11 @@
     border: $rectangle-border;
     border-radius: $rectangle-border-radius;
     box-shadow: $rectangle-box-shadow;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+  }
+
+  .hidden-text, .container {
+    display: none;
   }
 
 }

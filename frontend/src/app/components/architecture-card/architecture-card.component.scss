@@ -24,7 +24,6 @@ img {
 @media (max-width: $trigger-mobile-version-limit) {
 
   .small-rectangle {
-    display: inline-block;
     padding: 1px;
     padding-bottom: 0;
     border-radius: $rectangle-border-radius;
@@ -34,7 +33,7 @@ img {
   }
 
   img {
-    height: 40px;
+    height: 30px;
     border-radius: 5px;
     margin-bottom: 0;
   }
