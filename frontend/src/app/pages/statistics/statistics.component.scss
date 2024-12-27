@@ -10,12 +10,13 @@
 
 .rectangle {
   width: 80%;
-  background-color: $rectangle-background-color;
-  border: $rectangle-border;
+
   flex-direction: column;
 }
 
 .container {
+  background-color: $rectangle-background-color;
+  border: $rectangle-border;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -23,8 +24,7 @@
    flex-direction: column;
 }
 
-canvas {
-  width: 180%;
+.chart {
   padding: 50px;
 }
 

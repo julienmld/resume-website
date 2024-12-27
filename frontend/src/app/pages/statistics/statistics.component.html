@@ -1,17 +1,24 @@
-<div style="margin-top: 120px;" class="statistics" [hidden]="loading">
-    <div class="rectangle">
-        <div class="container">
-            <p>{{ 'statistics-page.distribution-visitors' | translate }}</p>
-            <canvas #doughnutCanvas></canvas>
+
+
+<div >
+    <div style="margin-top: 120px;" class="statistics">
+        <div class="rectangle">
+            <div class="container">
+                <p [hidden]="loading">{{ 'statistics-page.distribution-visitors' | translate }}</p>
+                <mat-spinner color="accent" [strokeWidth]="5"></mat-spinner>
+                <canvas class="chart" #doughnutCanvas [hidden]="loading"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; margin-bottom: 60px;" class="statistics" appAppearOnScroll>
+        <div class="rectangle">
+            <div class="container">
+                <p [hidden]="loading">{{ 'statistics-page.number-visitors' | translate }}</p>
+                <canvas class="canvas" #barCanvas></canvas>
+            </div>
         </div>
     </div>
 </div>
 
-<div style="margin-top: 40px; margin-bottom: 60px;" class="statistics" appAppearOnScroll >
-    <div class="rectangle">
-        <div class="container">
-            <p>{{ 'statistics-page.number-visitors' | translate }}</p>
-            <canvas #barCanvas></canvas>
-        </div>
-    </div>
-</div>
+

@@ -1,15 +1,16 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { Chart, ChartType, DoughnutController, ArcElement, Tooltip, Legend, BarElement, LinearScale, CategoryScale, BarController } from 'chart.js';
-import { isPlatformBrowser, NgIf } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { BackendService } from '../../services/backend.service';
 import { StatisticDTO } from '../../models/StatisticDTO';
 import { AppearOnScrollDirective } from '../../services/appear-on-scroll.directive';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-statistics',
   standalone: true,
-  imports: [NgIf, TranslateModule, AppearOnScrollDirective],
+  imports: [TranslateModule, AppearOnScrollDirective, MatProgressSpinnerModule],
   templateUrl: './statistics.component.html',
   styleUrl: './statistics.component.scss'
 })
@@ -41,10 +42,10 @@ export class StatisticsComponent implements AfterViewInit {
       });
       /**let s: any = {
         "numberDeveloper": 5,
-        "numberRecruiter": 0,
-        "numberStudent": 0,
+        "numberRecruiter": 4,
+        "numberStudent": 6,
         "numberClient": 2,
-        "numberCurious": 0,
+        "numberCurious": 9,
         "numberOther": 3,
         "deviceStatistics": {
           "8": [
@@ -69,10 +70,17 @@ export class StatisticsComponent implements AfterViewInit {
           ]
         }
       }
-      this.loading = false;
 
-      this.createDoughnutChart(s);
-      this.createBarChart(s);*/
+      if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem('dialogShown', 'true');
+        setTimeout(() => {
+          this.loading = false;
+          this.createDoughnutChart(s);
+          this.createBarChart(s);
+        }, 1000);
+      }*/
+
+
     }
   }
 
@@ -95,6 +103,10 @@ export class StatisticsComponent implements AfterViewInit {
       },
       options: {
         responsive: true,
+        animation: {
+          delay: 700,
+          duration: 400,
+        },
         plugins: {
           legend: {
             position: 'bottom',

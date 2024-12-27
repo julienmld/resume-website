@@ -1,4 +1,4 @@
-import { Component, Inject, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { TopBannerComponent } from './components/top-banner/top-banner.component';
 import { BottomBannerComponent } from './components/bottom-banner/bottom-banner.component';
@@ -27,7 +27,7 @@ import { HamburgerComponent } from "./components/hamburger/hamburger.component";
     ])
   ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   readonly dialog = inject(MatDialog);
   private preload = inject(PreloadService);
   isHomePage: boolean = false;
@@ -40,9 +40,6 @@ export class AppComponent implements OnInit {
       console.log(res);
     });
 
-  }
-
-  ngOnInit() {
     this.router.events.pipe(filter((event: any) => event instanceof NavigationEnd)).subscribe((event: NavigationEnd) => {
       this.isHomePage = ![ '/architecture', '/statistics', '/skills', '/experiences', '/contact-me'].includes(event.url);
 
@@ -51,7 +48,8 @@ export class AppComponent implements OnInit {
         window.scrollTo(0, 0);
       }
 
-      if (isPlatformBrowser(this.platformId) && this.isHomePage) {
+      if (isPlatformBrowser(this.platformId) && this.isHomePage && localStorage.getItem('dialogShown') === null) {
+        localStorage.setItem('dialogShown', 'true');
         setTimeout(() => {
           this.openDialog();
         }, 6000);
