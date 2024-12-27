@@ -1,4 +1,4 @@
-<div style="margin-top: 120px;" class="statistics">
+<div style="margin-top: 120px;" class="statistics" [hidden]="loading">
     <div class="rectangle">
         <div class="container">
             <p>{{ 'statistics-page.distribution-visitors' | translate }}</p>
@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<div style="margin-top: 40px; margin-bottom: 60px;" class="statistics">
+<div style="margin-top: 40px; margin-bottom: 60px;" class="statistics" appAppearOnScroll >
     <div class="rectangle">
         <div class="container">
             <p>{{ 'statistics-page.number-visitors' | translate }}</p>

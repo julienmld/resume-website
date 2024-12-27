@@ -19,12 +19,12 @@ export class BackendService {
     return this.http.post<Message>(this.backendUrl + 'contact', message, { headers });
   }
 
-  registerVisitor(job: string): Observable<string> {
+  registerVisitor(information: any): Observable<string> {
     const headers = new HttpHeaders({
       'x-api-key': this.key,
       'Content-Type': 'application/json'
     });
-    return this.http.post<string>(this.backendUrl + 'registerVisitor', JSON.stringify(job), { headers });
+    return this.http.post<string>(this.backendUrl + 'registerVisitor', information, { headers });
   }
 
   getStatistics(): Observable<StatisticDTO> {

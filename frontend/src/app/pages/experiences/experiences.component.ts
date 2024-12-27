@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { upsizeAnimation } from '../../animations/upsizeAnimation';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CardComponent } from "../../components/card/card.component";
+import { AppearOnScrollDirective } from '../../services/appear-on-scroll.directive';
 
 @Component({
   selector: 'app-experiences',
   standalone: true,
-  imports: [MatTooltipModule, CardComponent],
+  imports: [MatTooltipModule, CardComponent, AppearOnScrollDirective],
   templateUrl: './experiences.component.html',
   styleUrl: './experiences.component.scss',
   animations: [upsizeAnimation]

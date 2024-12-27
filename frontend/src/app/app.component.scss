@@ -21,6 +21,15 @@ $trigger-mobile-version-limit: 1000px;
   flex: 1;
 }
 
+[appAppearOnScroll] {
+  opacity: 0;
+}
+
+.in-view {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
 .centered-text {
   display: flex;
   justify-content: center;

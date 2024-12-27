@@ -1,22 +1,22 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Inject, PLATFORM_ID, inject } from '@angular/core';
 import { Chart, ChartType, DoughnutController, ArcElement, Tooltip, Legend, BarElement, LinearScale, CategoryScale, BarController } from 'chart.js';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgIf } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { BackendService } from '../../services/backend.service';
 import { StatisticDTO } from '../../models/StatisticDTO';
-import { stat } from 'fs';
+import { AppearOnScrollDirective } from '../../services/appear-on-scroll.directive';
 
 @Component({
   selector: 'app-statistics',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [NgIf, TranslateModule, AppearOnScrollDirective],
   templateUrl: './statistics.component.html',
   styleUrl: './statistics.component.scss'
 })
 export class StatisticsComponent implements AfterViewInit {
   @ViewChild('doughnutCanvas') doughnutCanvas!: ElementRef;
   @ViewChild('barCanvas') barCanvas!: ElementRef;
-
+  loading: boolean = true;
   translateService = inject(TranslateService);
   backendService = inject(BackendService);
   translations: any;
@@ -28,13 +28,14 @@ export class StatisticsComponent implements AfterViewInit {
     Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
     Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
     this.translateService.get('statistics-page').subscribe((res: string) => {
-      this.translations = res
+      this.translations = res;
     });
   }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.backendService.getStatistics().subscribe((res: StatisticDTO) => {
+        this.loading = false;
         this.createDoughnutChart(res);
         this.createBarChart(res);
       });
@@ -68,6 +69,7 @@ export class StatisticsComponent implements AfterViewInit {
           ]
         }
       }
+      this.loading = false;
 
       this.createDoughnutChart(s);
       this.createBarChart(s);*/

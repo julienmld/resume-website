@@ -21,10 +21,13 @@ export class DialogComponent {
 
   registerVisitor(job: string) {
     this.isLoading = true;
-    this.backendService.registerVisitor(job).subscribe();
+    this.backendService.registerVisitor({
+      'job': job,
+      'device': window.innerWidth < 1000 ? 'mobile' : 'computer'
+    }).subscribe();
     setTimeout(() => {
       this.dialogRef.close();
-    }, 1000);
+    }, 700);
   }
 
 }

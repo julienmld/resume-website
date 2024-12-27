@@ -30,8 +30,7 @@ import { HamburgerComponent } from "./components/hamburger/hamburger.component";
 export class AppComponent implements OnInit {
   readonly dialog = inject(MatDialog);
   private preload = inject(PreloadService);
-  isHomePage: boolean = true;
-  isHomeOrArchitecturePage: boolean = true;
+  isHomePage: boolean = false;
   page: string = 'home';
   private imageUrls: string[] = ['me.jpg', 'arrow.png', 'english.png', 'french.png', 'cv.png', 'linkedin.png', 'github.png', 'malt.png', 'finger.png', 'amplify.jpg', 'angular.png', 'ansible.png', 'apigateway.png', 'cypress.png', 'dynamo.jpg', 'esir.png', 'gitlab.png', 'helm.png', 'iam.jpg', 'imageet.png', 'safe.png', 'java.png', 'jenkins.png', 'kubernetes.png', 'lambda.png', 'linux.png', 'maven.png', 'secretmanager.jpg', 'soprasteria.png', 'spring.svg', 'terraform.png', 'dga.png', 'dirisi.png'];
 
@@ -40,11 +39,7 @@ export class AppComponent implements OnInit {
     this.translate.get('easter-egg.first-indication').subscribe((res: string) => {
       console.log(res);
     });
-    if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => {
-        //this.openDialog();
-      }, 6000);
-    }
+
   }
 
   ngOnInit() {
@@ -54,6 +49,12 @@ export class AppComponent implements OnInit {
       this.page = event.url.split('/')[1];
       if (typeof window !== 'undefined') {
         window.scrollTo(0, 0);
+      }
+
+      if (isPlatformBrowser(this.platformId) && this.isHomePage) {
+        setTimeout(() => {
+          this.openDialog();
+        }, 6000);
       }
     });
 
