@@ -76,6 +76,10 @@
 
 @media (max-width: $trigger-mobile-version-limit) {
 
+  .home {
+    height: 90vh;
+  }
+
   .content-container {
     margin-top: -100px;
     flex-direction: column;
@@ -90,6 +94,7 @@
   .text-section {
     width: 90%;
     margin-left: 0;
+    text-align: center;
   }
 
   .p {

@@ -42,6 +42,8 @@
 @media (max-width: $trigger-mobile-version-limit) {
   .bottom-banner {
     height: 50px;
+    position: fixed;
+    background-color: rgba(11, 12, 16, 0.7);
   }
 
   .image {
