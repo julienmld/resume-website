@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostBinding, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -11,6 +11,9 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class HamburgerComponent implements OnInit {
   private router = inject(Router);
+  private lastScrollTop = 0;
+  @HostBinding('style.opacity') opacity = '1';
+  @HostBinding('style.transition') transition = 'opacity 0.3s';
 
   ngOnInit(): void {
     if (typeof window !== "undefined") {
@@ -20,7 +23,19 @@ export class HamburgerComponent implements OnInit {
           banner.classList.add('show');
         }
       });
+      window.addEventListener('scroll', this.onScroll.bind(this));
     }
+  }
+
+  onScroll(): void {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > this.lastScrollTop) {
+      this.opacity = '0';
+    } else {
+      this.opacity = '1';
+    }
+
+    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 
   open(page: string) {

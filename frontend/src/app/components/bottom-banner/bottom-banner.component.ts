@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, inject, Input, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommunicationService } from '../../services/communication.service';
@@ -13,8 +13,12 @@ import { CommunicationService } from '../../services/communication.service';
 })
 export class BottomBannerComponent implements OnInit {
   @Input() isHomePage: boolean = true;
-  commService = inject(CommunicationService);
+  private commService = inject(CommunicationService);
   private translate = inject(TranslateService);
+  private lastScrollTop = 0;
+
+    @HostBinding('style.opacity') opacity = '1';
+    @HostBinding('style.transition') transition = 'opacity 0.3s';
 
   ngOnInit(): void {
     if (typeof window !== "undefined") {
@@ -24,6 +28,22 @@ export class BottomBannerComponent implements OnInit {
           banner.classList.add('show');
         }
       });
+
+      window.addEventListener('scroll', this.onScroll.bind(this));
+
+    }
+  }
+
+  onScroll(): void {
+    if(window.innerWidth < 1000) {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > this.lastScrollTop) {
+        this.opacity = '0';
+      } else {
+        this.opacity = '1';
+      }
+  
+      this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }
   }
 

@@ -12,13 +12,13 @@ import { isPlatformBrowser, NgIf } from '@angular/common';
   animations: [
     trigger('firstSlideIn', [
       transition(':enter', [
-        style({ transform: 'translateX(10%)', opacity: 0 }),
+        style({ transform: 'translateX(5vh)', opacity: 0 }),
         animate('1s 0.5s ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ]),
     ]),
     trigger('firstSlideInLeft', [
       transition(':enter', [
-        style({ transform: 'translateX(-20%)', opacity: 0 }),
+        style({ transform: 'translateX(-10vh)', opacity: 0 }),
         animate('1s 0.5s ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ]),
     ]),

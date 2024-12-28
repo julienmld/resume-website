@@ -10,15 +10,17 @@ export class AppearOnScrollDirective implements OnInit, OnDestroy {
   constructor(private el: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
-    this.observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.renderer.addClass(this.el.nativeElement, 'in-view');
-        }
-      });
-    }, { threshold: 0.1 });
+    if (typeof window !== "undefined") {
+      this.observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.renderer.addClass(this.el.nativeElement, 'in-view');
+          }
+        });
+      }, { threshold: 0.1 });
 
-    this.observer.observe(this.el.nativeElement);
+      this.observer.observe(this.el.nativeElement);
+    }
   }
 
   ngOnDestroy() {
