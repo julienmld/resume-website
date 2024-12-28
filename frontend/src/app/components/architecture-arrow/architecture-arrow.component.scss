@@ -22,7 +22,7 @@ $animation-duration: 2.5s;
   }
 
   25% {
-    left: -2px;
+    left: -4px;
     transform: scale(1.2) rotate(270deg);
     visibility: visible;
   }
@@ -34,7 +34,7 @@ $animation-duration: 2.5s;
   }
 
   75% {
-    left: 2px;
+    left: 4px;
     transform: scale(1.2) rotate(90deg);
     visibility: visible;
   }
@@ -49,37 +49,5 @@ $animation-duration: 2.5s;
 @media (max-width: $trigger-mobile-version-limit) {
   .arrow {
     height: 5px;
-  }
-
-  @keyframes moveArrow {
-    0% {
-      left: 0;
-      transform: scale(1) rotate(90deg);
-      visibility: visible;
-    }
-
-    25% {
-      left: -1px;
-      transform: scale(1.2) rotate(270deg);
-      visibility: visible;
-    }
-
-    50% {
-      left: 0;
-      transform: scale(1) rotate(270deg);
-      visibility: visible;
-    }
-
-    75% {
-      left: 1px;
-      transform: scale(1.2) rotate(90deg);
-      visibility: visible;
-    }
-
-    100% {
-      left: 0;
-      transform: scale(1) rotate(90deg);
-      visibility: visible;
-    }
   }
 }

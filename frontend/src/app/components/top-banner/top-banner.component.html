@@ -1,7 +1,6 @@
 <div class="top-banner">
     <p (click)="redirectHome()" class="title left" [id]="'easter-egg.third-indication' | translate">Julien Maillard</p>
-    <app-banner-dropdown style="margin-right: 20px;" [title]="'about-website'"
-        [pages]="['architecture', 'statistics']" />
-    <app-banner-dropdown [title]="'my-story'" [pages]="['experiences', 'skills']" />
+    <app-banner-dropdown class="right" [title]="'about-website'" [pages]="['architecture', 'statistics']" />
+    <app-banner-dropdown class="right" [title]="'my-story'" [pages]="['experiences', 'skills']" />
     <app-button routerLink="/contact-me" class="right" [label]="'contact-me'" />
 </div>
