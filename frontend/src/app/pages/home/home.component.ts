@@ -12,13 +12,13 @@ import { isPlatformBrowser, NgIf } from '@angular/common';
   animations: [
     trigger('firstSlideIn', [
       transition(':enter', [
-        style({ transform: 'translateX(5vh)', opacity: 0 }),
+        style({ transform: 'translateX({{translateX}})', opacity: 0 }),
         animate('1s 0.5s ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ]),
     ]),
     trigger('firstSlideInLeft', [
       transition(':enter', [
-        style({ transform: 'translateX(-10vh)', opacity: 0 }),
+        style({ transform: 'translateX({{translateX}})', opacity: 0 }),
         animate('1s 0.5s ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ]),
     ]),
@@ -32,6 +32,7 @@ import { isPlatformBrowser, NgIf } from '@angular/common';
 })
 export class HomeComponent {
   isVisible = false;
+  isMobile = true;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object) {
@@ -39,6 +40,10 @@ export class HomeComponent {
       setTimeout(() => {
         this.isVisible = true;
       }, 300);
+    }
+
+    if (typeof window !== "undefined") {
+      this.isMobile = window.innerWidth < 1000;
     }
   }
 
