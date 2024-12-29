@@ -13,7 +13,6 @@ export class HamburgerComponent implements OnInit {
   private router = inject(Router);
   private lastScrollTop = 0;
   @HostBinding('style.opacity') opacity = '1';
-  @HostBinding('style.transition') transition = 'opacity 0.3s';
 
   ngOnInit(): void {
     if (typeof window !== "undefined") {
