@@ -28,14 +28,16 @@ export class HamburgerComponent implements OnInit {
   }
 
   onScroll(): void {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    if (currentScroll > this.lastScrollTop) {
-      this.opacity = '0';
-    } else {
-      this.opacity = '1';
-    }
+    if (window.innerWidth < 1000) {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > this.lastScrollTop) {
+        this.opacity = '0';
+      } else {
+        this.opacity = '1';
+      }
 
-    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }
   }
 
   open(page: string) {
