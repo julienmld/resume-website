@@ -37,7 +37,7 @@ export class AppComponent {
 
       this.page = event.url.split('/')[1];
       if (typeof window !== 'undefined') {
-        window.scrollTo(-100, -100);
+        window.scrollTo(-1000, -1000);
       }
 
       if (isPlatformBrowser(this.platformId) && this.isHomePage && localStorage.getItem('dialogShown') === null) {
