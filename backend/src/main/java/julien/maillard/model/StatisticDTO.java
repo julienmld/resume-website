@@ -20,7 +20,7 @@ public class StatisticDTO {
     private int numberClient;
     private int numberCurious;
     private int numberOther;
-    // Map avec en clé un nom de mois et en valeur un tableau contenant le nombre de
+    // Map avec en clé un mois et en valeur un tableau contenant le nombre de
     // visiteurs sur ordinateur en première position et sur mobile en seconde
     private Map<Integer, int[]> deviceStatistics;
 

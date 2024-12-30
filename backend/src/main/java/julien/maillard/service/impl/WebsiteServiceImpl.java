@@ -18,8 +18,8 @@ import julien.maillard.service.WebsiteService;
 @Service
 public class WebsiteServiceImpl implements WebsiteService {
 
-    private static final String mailSubject = "Contact depuis site web";
-    private static final String myMail = "julienmld.pro@outlook.fr";
+    private static final String JOB = "job";
+    private static final String DEVICE = "device";
 
     @Autowired
     private JavaMailSender emailSender;
@@ -29,8 +29,8 @@ public class WebsiteServiceImpl implements WebsiteService {
 
     public void sendSimpleMessage(Message message) {
         SimpleMailMessage mail = new SimpleMailMessage();
-        mail.setTo(myMail);
-        mail.setSubject(mailSubject);
+        mail.setTo("julienmld.pro@outlook.fr");
+        mail.setSubject("Contact depuis site web");
         mail.setText(message.display());
         emailSender.send(mail);
     }
@@ -42,12 +42,12 @@ public class WebsiteServiceImpl implements WebsiteService {
 
     public StatisticDTO getStatisticDTO() {
         StatisticDTO statisticDTO = new StatisticDTO();
-        statisticDTO.setNumberDeveloper(visitorRepository.countVisitorsByAttribute("job", "developer"));
-        statisticDTO.setNumberRecruiter(visitorRepository.countVisitorsByAttribute("job", "recruiter"));
-        statisticDTO.setNumberStudent(visitorRepository.countVisitorsByAttribute("job", "student"));
-        statisticDTO.setNumberClient(visitorRepository.countVisitorsByAttribute("job", "client"));
-        statisticDTO.setNumberCurious(visitorRepository.countVisitorsByAttribute("job", "curious"));
-        statisticDTO.setNumberOther(visitorRepository.countVisitorsByAttribute("job", "other"));
+        statisticDTO.setNumberDeveloper(visitorRepository.countVisitorsByAttribute(JOB, "developer"));
+        statisticDTO.setNumberRecruiter(visitorRepository.countVisitorsByAttribute(JOB, "recruiter"));
+        statisticDTO.setNumberStudent(visitorRepository.countVisitorsByAttribute(JOB, "student"));
+        statisticDTO.setNumberClient(visitorRepository.countVisitorsByAttribute(JOB, "client"));
+        statisticDTO.setNumberCurious(visitorRepository.countVisitorsByAttribute(JOB, "curious"));
+        statisticDTO.setNumberOther(visitorRepository.countVisitorsByAttribute(JOB, "other"));
 
         Calendar calendar = Calendar.getInstance();
         Map<Integer, int[]> deviceStatistics = new HashMap<>();
@@ -55,8 +55,8 @@ public class WebsiteServiceImpl implements WebsiteService {
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH) + 1;
             deviceStatistics.put(month,
-                    new int[] { visitorRepository.countVisitorsByMonth("device", "computer", month, year),
-                            visitorRepository.countVisitorsByMonth("device", "mobile", month, year) });
+                    new int[] { visitorRepository.countVisitorsByMonth(DEVICE, "computer", month, year),
+                            visitorRepository.countVisitorsByMonth(DEVICE, "mobile", month, year) });
             calendar.add(Calendar.MONTH, -1);
         }
         statisticDTO.setDeviceStatistics(deviceStatistics);

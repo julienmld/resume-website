@@ -50,12 +50,9 @@ public class VisitorRepository {
         Instant startInstant = startDateTime.atZone(ZoneId.of("UTC")).toInstant();
         Instant endInstant = endDateTime.atZone(ZoneId.of("UTC")).toInstant();
 
-        String startDateString = startInstant.toString(); // Format ISO 8601
-        String endDateString = endInstant.toString(); // Format ISO 8601
-
         Map<String, AttributeValue> expressionAttributeValues = new HashMap<>();
-        expressionAttributeValues.put(":startDate", new AttributeValue().withS(startDateString));
-        expressionAttributeValues.put(":endDate", new AttributeValue().withS(endDateString));
+        expressionAttributeValues.put(":startDate", new AttributeValue().withS(startInstant.toString()));
+        expressionAttributeValues.put(":endDate", new AttributeValue().withS(endInstant.toString()));
         expressionAttributeValues.put(":val", new AttributeValue().withS(attributeValue));
 
         String filterExpression = "visitDateTime between :startDate and :endDate AND " + attributeName + " = :val";
