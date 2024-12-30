@@ -22,7 +22,7 @@ $animation-duration: 2.5s;
   }
 
   25% {
-    left: -0.5vh;
+    left: -1vw;
     transform: scale(1.2) rotate(270deg);
     visibility: visible;
   }
@@ -34,7 +34,7 @@ $animation-duration: 2.5s;
   }
 
   75% {
-    left: 0.5vh;
+    left: 1vw;
     transform: scale(1.2) rotate(90deg);
     visibility: visible;
   }
