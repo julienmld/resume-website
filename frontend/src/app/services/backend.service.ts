@@ -9,7 +9,7 @@ import { StatisticDTO } from '../models/StatisticDTO';
 })
 export class BackendService {
   private http = inject(HttpClient);
-  private readonly backendUrl = 'https://5h0w8bjqlg.execute-api.eu-west-3.amazonaws.com/prod/';
+  private readonly backendUrl = 'https://696kzbvj38.execute-api.eu-west-3.amazonaws.com/prod/';
   private readonly key = '5WQWm1ON7T7WdudQzul6H2mmz816HyDT7v2MmY3J';
 
   contact(message: Message): Observable<any> {
