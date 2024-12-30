@@ -15,10 +15,6 @@ export class BottomBannerComponent implements OnInit {
   @Input() isHomePage: boolean = true;
   private commService = inject(CommunicationService);
   private translate = inject(TranslateService);
-  private lastScrollTop = 0;
-
-  @HostBinding('style.opacity') opacity = '1';
-  @HostBinding('style.transition') transition = 'opacity 0.3s';
 
   ngOnInit(): void {
     if (typeof window !== "undefined") {
@@ -28,22 +24,6 @@ export class BottomBannerComponent implements OnInit {
           banner.classList.add('show');
         }
       });
-
-      window.addEventListener('scroll', this.onScroll.bind(this));
-
-    }
-  }
-
-  onScroll(): void {
-    if (window.innerWidth < 1000) {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      if (currentScroll > this.lastScrollTop) {
-        this.opacity = '0';
-      } else {
-        this.opacity = '1';
-      }
-
-      this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }
   }
 
