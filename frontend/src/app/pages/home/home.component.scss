@@ -36,7 +36,7 @@
 
 .profile-image {
   border-radius: 50%;
-  height: 215px;
+  height: 220px;
   width: 220px;
 }
 
@@ -96,8 +96,8 @@
   }
 
   .profile-image {
-    height: 120px;
-    width: 120px;
+    height: 30vw;
+    width: 30vw;
   }
 
   .text-section {
@@ -116,9 +116,10 @@
   }
 
   .bottom-right {
-    font-size: 15px;
+    font-size: 13px;
     bottom: 20px;
-    right: 5px;
+    right: 10px;
+    z-index: 3;
   }
 
   .finger {

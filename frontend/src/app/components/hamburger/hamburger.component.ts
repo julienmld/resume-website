@@ -12,7 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class HamburgerComponent implements OnInit {
   private router = inject(Router);
   private lastScrollTop = 0;
-  @HostBinding('style.opacity') opacity = '1';
+  scrolling = false;
 
   ngOnInit(): void {
     if (typeof window !== "undefined") {
@@ -29,9 +29,9 @@ export class HamburgerComponent implements OnInit {
   onScroll(): void {
     const currentScroll = document.body.scrollTop || document.documentElement.scrollTop;
     if (currentScroll > this.lastScrollTop) {
-      this.opacity = '0';
+      this.scrolling = true;
     } else {
-      this.opacity = '1';
+      this.scrolling = false;
     }
 
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
