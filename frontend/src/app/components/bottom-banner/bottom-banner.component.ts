@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, HostBinding, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommunicationService } from '../../services/communication.service';
@@ -15,6 +15,9 @@ export class BottomBannerComponent implements OnInit {
   @Input() isHomePage: boolean = true;
   private commService = inject(CommunicationService);
   private translate = inject(TranslateService);
+  private lastScrollTop = 0;
+  scrolling = false;
+
 
   ngOnInit(): void {
     if (typeof window !== "undefined") {
@@ -24,7 +27,19 @@ export class BottomBannerComponent implements OnInit {
           banner.classList.add('show');
         }
       });
+      window.addEventListener('scroll', this.onScroll.bind(this));
     }
+  }
+
+  onScroll(): void {
+    const currentScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    if (currentScroll > this.lastScrollTop) {
+      this.scrolling = true;
+    } else {
+      this.scrolling = false;
+    }
+
+    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 
   changeLanguage(language: string): void {

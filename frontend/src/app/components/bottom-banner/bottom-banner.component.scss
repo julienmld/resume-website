@@ -42,11 +42,17 @@
 
 @media (max-width: $trigger-mobile-version-limit) {
   .bottom-banner {
+    position: fixed;
     height: 50px;
     background-color: rgba(11, 12, 16, 0.85);
   }
 
   .image {
     width: 28px;
+  }
+
+  [hidden] {
+    opacity: 0;
+    visibility: hidden;
   }
 }

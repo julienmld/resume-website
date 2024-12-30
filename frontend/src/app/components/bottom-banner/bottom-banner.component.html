@@ -1,4 +1,4 @@
-<div class="bottom-banner" [ngClass]="{'fixed': isHomePage}">
+<div [hidden]="scrolling" class="bottom-banner" [ngClass]="{'fixed': isHomePage}">
     <div class="section">
         <img matTooltip="Français" (click)="changeLanguage('fr')" class="left image" src="assets/img/french.png">
         <img matTooltip="English" (click)="changeLanguage('en')" class="left image" src="assets/img/english.png">
