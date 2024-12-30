@@ -71,13 +71,13 @@ export class StatisticsComponent implements AfterViewInit {
 
     this.months = this.translateService.getDefaultLang() === 'en' ? this.englishMonths : this.frenchMonths;
     if (isPlatformBrowser(this.platformId)) {
-      this.backendService.getStatistics().subscribe((res: StatisticDTO) => {
+      /**this.backendService.getStatistics().subscribe((res: StatisticDTO) => {
         this.statisticDTO = res;
         this.loading = false;
         this.createDoughnutChart();
         this.createBarChart();
-      });
-      /**this.statisticDTO = {
+      });*/
+      this.statisticDTO = {
         "numberDeveloper": 5,
         "numberRecruiter": 4,
         "numberStudent": 6,
@@ -99,7 +99,7 @@ export class StatisticsComponent implements AfterViewInit {
           this.createDoughnutChart();
           this.createBarChart();
         }, 2000);
-      }*/
+      }
     }
   }
 

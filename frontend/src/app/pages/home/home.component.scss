@@ -54,6 +54,11 @@
   margin-right: 27px;
 }
 
+.finger {
+  width: 70px;
+  transform: scaleX(-1);
+}
+
 @keyframes moveUp {
 
   0%,
@@ -85,35 +90,39 @@
   }
 
   .content-container {
-    margin-top: -100px;
-    flex-direction: column;
+    margin-top: -10px;
     text-align: center;
+    width: 90%
   }
 
   .profile-image {
-    height: 170px;
-    width: 170px;
+    height: 120px;
+    width: 120px;
   }
 
   .text-section {
     width: 90%;
-    margin-left: 0;
-    text-align: center;
+    margin-left: 5px;
   }
 
   .p {
-    font-size: 15px;
+    font-size: 13px;
     margin: 0;
   }
 
   .h1 {
-    font-size: 20px;
+    font-size: 15px;
     margin: 0;
-    margin-top: 20px;
   }
 
   .bottom-right {
-    display: none;
+    font-size: 15px;
+    bottom: 20px;
+    right: 5px;
+  }
+
+  .finger {
+    width: 50px;
   }
 
 }
