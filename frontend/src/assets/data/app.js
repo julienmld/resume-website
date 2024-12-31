@@ -1,4 +1,5 @@
-const color = '#8c267f'
+const particlesColor = '#ffffff';
+
 particlesJS('particles-js',
 
   {
@@ -25,13 +26,13 @@ particlesJS('particles-js',
         }
       },
       "color": {
-        "value": color
+        "value": particlesColor
       },
       "shape": {
         "type": "circle",
         "stroke": {
           "width": 0,
-          "color": color
+          "color": particlesColor
         },
         "polygon": {
           "nb_sides": 7
@@ -43,7 +44,7 @@ particlesJS('particles-js',
         }
       },
       "opacity": {
-        "value": 0.9,
+        "value": 0.7,
         "random": false,
         "anim": {
           "enable": false,
@@ -53,7 +54,7 @@ particlesJS('particles-js',
         }
       },
       "size": {
-        "value": 3,
+        "value": 2.5,
         "random": true,
         "anim": {
           "enable": false,
@@ -65,8 +66,8 @@ particlesJS('particles-js',
       "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": color,
-        "opacity": 0.4,
+        "color": particlesColor,
+        "opacity": 0.2,
         "width": 1
       },
       "move": {
