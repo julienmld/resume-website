@@ -3,6 +3,7 @@ package julien.maillard.repository;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +17,7 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 
 import julien.maillard.entity.Visitor;
+import julien.maillard.model.StatisticDTO;
 
 @Repository
 public class VisitorRepository {
@@ -31,6 +33,9 @@ public class VisitorRepository {
     }
 
     public int countVisitorsByAttribute(String attributeName, String attributeValue) {
+        
+        long startTime = System.nanoTime();
+
         Map<String, AttributeValue> expressionAttributeValues = new HashMap<>();
         expressionAttributeValues.put(":val", new AttributeValue().withS(attributeValue));
 
@@ -40,10 +45,18 @@ public class VisitorRepository {
                 .withExpressionAttributeValues(expressionAttributeValues);
 
         ScanResult result = amazonDynamoDB.scan(scanRequest);
+
+        long endTime = System.nanoTime();
+        double durationInMillis = (endTime - startTime) / 1_000_000_000.0;
+        System.out.println("La fonction countVisitorsByAttribute " + durationInMillis + " secondes.");
+
         return result.getCount();
     }
 
     public int countVisitorsByMonth(String attributeName, String attributeValue, int month, int year) {
+
+        long startTime = System.nanoTime();
+
         LocalDateTime startDateTime = LocalDateTime.of(year, month, 1, 0, 0);
         LocalDateTime endDateTime = startDateTime.plusMonths(1).minusSeconds(1);
 
@@ -63,6 +76,11 @@ public class VisitorRepository {
                 .withExpressionAttributeValues(expressionAttributeValues);
 
         ScanResult result = amazonDynamoDB.scan(scanRequest);
+
+        long endTime = System.nanoTime();
+        double durationInMillis = (endTime - startTime) / 1_000_000_000.0;
+        System.out.println("La fonction countVisitorsByMonth " + durationInMillis + " secondes.");
+
         return result.getCount();
     }
 

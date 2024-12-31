@@ -41,6 +41,9 @@ public class WebsiteServiceImpl implements WebsiteService {
     }
 
     public StatisticDTO getStatisticDTO() {
+
+        long startTime = System.nanoTime();
+
         StatisticDTO statisticDTO = new StatisticDTO();
         statisticDTO.setNumberDeveloper(visitorRepository.countVisitorsByAttribute(JOB, "developer"));
         statisticDTO.setNumberRecruiter(visitorRepository.countVisitorsByAttribute(JOB, "recruiter"));
@@ -60,6 +63,11 @@ public class WebsiteServiceImpl implements WebsiteService {
             calendar.add(Calendar.MONTH, -1);
         }
         statisticDTO.setDeviceStatistics(deviceStatistics);
+
+        long endTime = System.nanoTime();
+        double durationInMillis = (endTime - startTime) / 1_000_000_000.0;
+        System.out.println("La fonction getStatisticDTO " + durationInMillis + " secondes.");
+
         return statisticDTO;
     }
 
