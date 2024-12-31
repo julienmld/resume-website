@@ -26,6 +26,7 @@ export class DialogComponent {
       'device': window.innerWidth < 1000 ? 'mobile' : 'computer'
     }).subscribe();
     setTimeout(() => {
+      localStorage.setItem('dialogShown', 'true');
       this.dialogRef.close();
     }, 700);
   }

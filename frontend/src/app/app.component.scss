@@ -29,16 +29,6 @@ html {
   transition: opacity 1s ease-in-out;
 }
 
-.centered-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80svh;
-  text-align: center;
-  padding: 0 50px;
-}
-
-
 @media (max-width: $trigger-mobile-version-limit) {
   app-top-banner {
     display: none;
