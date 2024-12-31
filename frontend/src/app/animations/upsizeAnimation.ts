@@ -10,6 +10,6 @@ export const upsizeAnimation = trigger('upsize', [
         animate('200ms ease-out', style({ transform: 'scale({{ scale }})' })),
         animate('300ms ease-out', style({ transform: 'scale(1)' }))
       ])
-    ], { optional: true })
+    ])
   ])
 ]);

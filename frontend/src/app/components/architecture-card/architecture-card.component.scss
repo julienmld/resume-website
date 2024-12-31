@@ -22,7 +22,6 @@ img {
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
-
   .small-rectangle {
     padding: 1px;
     padding-bottom: 0;
@@ -32,5 +31,4 @@ img {
   img {
     height: 30px;
   }
-
 }
