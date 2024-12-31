@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Inject, PLATFORM_ID, inject } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, Inject, PLATFORM_ID, inject, OnInit } from '@angular/core';
 import { Chart, ChartType, DoughnutController, ArcElement, Tooltip, Legend, BarElement, LinearScale, CategoryScale, BarController } from 'chart.js';
 import { isPlatformBrowser, NgIf } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -15,13 +15,13 @@ import { CommunicationService } from '../../services/communication.service';
   templateUrl: './statistics.component.html',
   styleUrl: './statistics.component.scss'
 })
-export class StatisticsComponent implements AfterViewInit {
+export class StatisticsComponent implements AfterViewInit, OnInit {
   @ViewChild('doughnutCanvas') doughnutCanvas!: ElementRef;
   @ViewChild('barCanvas') barCanvas!: ElementRef;
-  comService = inject(CommunicationService);
-  loading: boolean = true;
-  translateService = inject(TranslateService);
-  backendService = inject(BackendService);
+  private comService = inject(CommunicationService);
+  private translateService = inject(TranslateService);
+  private backendService = inject(BackendService);
+  private platformId = inject(PLATFORM_ID);
   translations: any;
   doughnutChart!: Chart;
   barChart!: Chart;
@@ -29,8 +29,9 @@ export class StatisticsComponent implements AfterViewInit {
   statisticDTO: StatisticDTO | undefined;
   englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   frenchMonths = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+  loading: boolean = true;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  ngOnInit(): void {
     Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
     Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -41,30 +42,7 @@ export class StatisticsComponent implements AfterViewInit {
     });
   }
 
-  translateCharts() {
-    this.translateService.get('statistics-page').subscribe((res: string) => {
-      this.translations = res;
-    });
-
-    const english = this.translateService.getDefaultLang() === 'en';
-    this.months = english ? this.englishMonths : this.frenchMonths;
-    this.doughnutChart.data.labels = [this.translations.developers, this.translations.recruiters, this.translations.students, this.translations.clients, this.translations.curious, this.translations.others];
-    this.doughnutChart.data.datasets[0].label = this.translations.visitors;
-    this.doughnutChart.update();
-
-    const monthsToDisplay: string[] = [];
-    this.statisticDTO?.deviceStatistics.forEach((value, key) => {
-      monthsToDisplay.push(english ? this.englishMonths[key - 1] : this.frenchMonths[key - 1]);
-    });
-    this.barChart.data.labels = monthsToDisplay;
-    this.barChart.data.datasets[0].label = this.translations.computers;
-    this.barChart.data.datasets[1].label = this.translations.mobiles;
-    this.barChart.update();
-
-  }
-
   ngAfterViewInit(): void {
-
     this.translateService.get('statistics-page').subscribe((res: string) => {
       this.translations = res;
     });
@@ -101,6 +79,28 @@ export class StatisticsComponent implements AfterViewInit {
         }, 2000);
       }*/
     }
+  }
+
+  translateCharts() {
+    this.translateService.get('statistics-page').subscribe((res: string) => {
+      this.translations = res;
+    });
+
+    const english = this.translateService.getDefaultLang() === 'en';
+    this.months = english ? this.englishMonths : this.frenchMonths;
+    this.doughnutChart.data.labels = [this.translations.developers, this.translations.recruiters, this.translations.students, this.translations.clients, this.translations.curious, this.translations.others];
+    this.doughnutChart.data.datasets[0].label = this.translations.visitors;
+    this.doughnutChart.update();
+
+    const monthsToDisplay: string[] = [];
+    this.statisticDTO?.deviceStatistics.forEach((value, key) => {
+      monthsToDisplay.push(english ? this.englishMonths[key - 1] : this.frenchMonths[key - 1]);
+    });
+    this.barChart.data.labels = monthsToDisplay;
+    this.barChart.data.datasets[0].label = this.translations.computers;
+    this.barChart.data.datasets[1].label = this.translations.mobiles;
+    this.barChart.update();
+
   }
 
   createDoughnutChart() {
