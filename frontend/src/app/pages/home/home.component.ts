@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, inject, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { isPlatformBrowser, NgIf } from '@angular/common';
@@ -16,12 +16,6 @@ import { isPlatformBrowser, NgIf } from '@angular/common';
         animate('1s 0.5s ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ]),
     ]),
-    trigger('firstSlideInLeft', [
-      transition(':enter', [
-        style({ transform: 'translateX({{translateX}})', opacity: 0 }),
-        animate('1s 0.5s ease-in-out', style({ transform: 'translateX(0)', opacity: 1 }))
-      ]),
-    ]),
     trigger('secundSlideIn', [
       transition(':enter', [
         style({ transform: 'translateY(-10%)', opacity: 0 }),
@@ -30,12 +24,12 @@ import { isPlatformBrowser, NgIf } from '@angular/common';
     ])
   ]
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  private platformId: Object = inject(PLATFORM_ID);
   isVisible = false;
   isMobile = true;
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: Object) {
+  ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       setTimeout(() => {
         this.isVisible = true;

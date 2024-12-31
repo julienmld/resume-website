@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { TimelineComponent } from "../timeline/timeline.component";
@@ -6,7 +5,7 @@ import { TimelineComponent } from "../timeline/timeline.component";
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [TranslateModule, TimelineComponent, NgIf],
+  imports: [TranslateModule, TimelineComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })

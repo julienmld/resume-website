@@ -1,20 +1,18 @@
-<div>
-    <div class="statistics first">
-        <div class="rectangle">
-            <div class="container">
-                <mat-spinner *ngIf="loading" color="accent" [strokeWidth]="5"></mat-spinner>
-                <p [hidden]="loading">{{ 'statistics-page.distribution-visitors' | translate }}</p>
-                <canvas class="chart" #doughnutCanvas [hidden]="loading"></canvas>
-            </div>
+<div class="statistics first">
+    <div class="rectangle">
+        <div class="container">
+            <mat-spinner *ngIf="loading" color="accent" [strokeWidth]="5"></mat-spinner>
+            <p [hidden]="loading">{{ 'statistics-page.distribution-visitors' | translate }}</p>
+            <canvas class="chart" #doughnutCanvas [hidden]="loading"></canvas>
         </div>
     </div>
+</div>
 
-    <div class="statistics secund" appAppearOnScroll>
-        <div class="rectangle">
-            <div class="container">
-                <p [hidden]="loading">{{ 'statistics-page.number-visitors' | translate }}</p>
-                <canvas class="chart" #barCanvas></canvas>
-            </div>
+<div class="statistics secund" appAppearOnScroll>
+    <div class="rectangle">
+        <div class="container">
+            <p [hidden]="loading">{{ 'statistics-page.number-visitors' | translate }}</p>
+            <canvas class="chart" #barCanvas></canvas>
         </div>
     </div>
 </div>

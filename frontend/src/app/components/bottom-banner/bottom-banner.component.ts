@@ -18,7 +18,6 @@ export class BottomBannerComponent implements OnInit {
   private lastScrollTop = 0;
   scrolling = false;
 
-
   ngOnInit(): void {
     if (typeof window !== "undefined") {
       window.addEventListener('load', () => {
@@ -27,12 +26,15 @@ export class BottomBannerComponent implements OnInit {
           banner.classList.add('show');
         }
       });
-      window.addEventListener('scroll', this.onScroll.bind(this));
+
+      if (window.innerWidth < 1000) {
+        window.addEventListener('scroll', this.onScroll.bind(this));
+      }
     }
   }
 
   onScroll(): void {
-    const currentScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const currentScroll = document.documentElement.scrollTop;
     if (currentScroll > this.lastScrollTop) {
       this.scrolling = true;
     } else {
@@ -59,16 +61,8 @@ export class BottomBannerComponent implements OnInit {
     link.click();
   }
 
-  openGithub() {
-    window.open('https://github.com/julienmld/resume-website', '_blank');
-  }
-
-  openLinkedin() {
-    window.open('https://www.linkedin.com/in/julien-maillard-946b74181/', '_blank');
-  }
-
-  openMalt() {
-    window.open('https://www.malt.fr/profile/julienmaillard3', '_blank');
+  openLink(link: string) {
+    window.open(link, '_blank');
   }
 
 }

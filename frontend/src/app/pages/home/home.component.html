@@ -1,7 +1,7 @@
 <div class="home" *ngIf="isVisible">
 
     <div class="content-container">
-        <img [@firstSlideInLeft]="{ value: '', params: { translateX: isMobile ? '-2vh' : '-10vh' } }" src="assets/img/me.jpg" class="profile-image" />
+        <img [@firstSlideIn]="{ value: '', params: { translateX: isMobile ? '-2vh' : '-10vh' } }" src="assets/img/me.jpg" class="profile-image" />
         <div [@firstSlideIn]="{ value: '', params: { translateX: isMobile ? '2vh' : '10vh' } }" class="text-section">
             <h1 class="h1">{{ 'home-page.first-sentence' | translate }}</h1>
             <p class="p">{{ 'home-page.secund-sentence' | translate }}</p>

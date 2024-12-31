@@ -1,7 +1,6 @@
 @import '../../app.component.scss';
 
 @media (min-width: $trigger-mobile-version-limit) {
-
   .statistics {
     display: flex;
     align-items: center;
@@ -44,11 +43,9 @@
     margin-top: 60px;
     margin-bottom: -10px;
   }
-
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
-
   .first {
     margin-top: 80px;
   }

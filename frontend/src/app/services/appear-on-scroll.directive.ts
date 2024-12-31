@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2, OnInit, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, Renderer2, OnInit, OnDestroy, inject } from '@angular/core';
 
 @Directive({
   selector: '[appAppearOnScroll]',
@@ -6,8 +6,8 @@ import { Directive, ElementRef, Renderer2, OnInit, OnDestroy } from '@angular/co
 })
 export class AppearOnScrollDirective implements OnInit, OnDestroy {
   private observer!: IntersectionObserver;
-
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  private el = inject(ElementRef);
+  private renderer = inject(Renderer2);
 
   ngOnInit() {
     if (typeof window !== "undefined") {

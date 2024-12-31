@@ -1,11 +1,6 @@
-<div class="dropdown" (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)">
-  <div class="button-container">
-    <p class="button underline-on-hover">
-      {{ title | translate }}
-    </p>
-    <img src="assets/img/arrow.png" style="margin-left: 8px; height:12px; filter: invert(1);"
-      [ngClass]="{'rotate': isOpen}" />
-  </div>
+<div (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)">
+  <p class="underline-on-hover">{{ title | translate }}</p>
+  <img src="assets/img/arrow.png" [ngClass]="{'rotate': isOpen}" />
   <div *ngIf="isOpen" class="dropdown-content">
     <a *ngFor="let page of pages" mat-menu-item (click)="navigateTo(page)">{{ page | translate }}</a>
   </div>
