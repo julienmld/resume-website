@@ -1,12 +1,12 @@
 import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { TranslateModule } from '@ngx-translate/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslateModule, NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [
