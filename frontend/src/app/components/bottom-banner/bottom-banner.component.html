@@ -3,7 +3,7 @@
         <img [matTooltipDisabled]="settingsVisible" [matTooltip]="'settings' | translate" (click)="clickSettings()"
             class="settings" src="assets/img/settings.png">
 
-        <div *ngIf="settingsVisible" class="bubble">
+        <div [hidden]="!settingsVisible" class="bubble">
             <div class="line">
                 <p>{{'language' | translate}} </p>
                 <img (click)="changeLanguage('fr')" class="left" src="assets/img/french.png">

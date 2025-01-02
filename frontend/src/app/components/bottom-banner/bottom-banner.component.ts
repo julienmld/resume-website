@@ -1,4 +1,4 @@
-import { NgIf, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, ElementRef, HostListener, inject, Input, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-bottom-banner',
   standalone: true,
-  imports: [NgIf, FormsModule, TranslateModule, NgClass, MatTooltipModule, MatSlideToggleModule],
+  imports: [FormsModule, TranslateModule, NgClass, MatTooltipModule, MatSlideToggleModule],
   templateUrl: './bottom-banner.component.html',
   styleUrl: './bottom-banner.component.scss'
 })

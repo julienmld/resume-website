@@ -1,4 +1,4 @@
-<div class="home" *ngIf="isVisible">
+<div class="home" [hidden]="!isVisible">
 
     <div class="content-container">
         <img [@firstSlideIn]="{ value: '', params: { translateX: isMobile ? '-2vh' : '-10vh' } }" src="assets/img/me.jpg" class="profile-image" />

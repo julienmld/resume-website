@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { Router } from '@angular/router';
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-banner-dropdown',
   standalone: true,
-  imports: [NgClass, NgFor, NgIf, TranslateModule],
+  imports: [NgClass, NgFor, TranslateModule],
   templateUrl: './banner-dropdown.component.html',
   styleUrl: './banner-dropdown.component.scss'
 })

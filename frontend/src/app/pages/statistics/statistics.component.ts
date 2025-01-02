@@ -1,18 +1,17 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Inject, PLATFORM_ID, inject, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, PLATFORM_ID, inject, OnInit } from '@angular/core';
 import { Chart, ChartType, DoughnutController, ArcElement, Tooltip, Legend, BarElement, LinearScale, CategoryScale, BarController } from 'chart.js';
-import { isPlatformBrowser, NgIf } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { BackendService } from '../../services/backend.service';
 import { StatisticDTO } from '../../models/StatisticDTO';
 import { AppearOnScrollDirective } from '../../services/appear-on-scroll.directive';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommunicationService } from '../../services/communication.service';
-import { get } from 'http';
 
 @Component({
   selector: 'app-statistics',
   standalone: true,
-  imports: [NgIf, TranslateModule, AppearOnScrollDirective, MatProgressSpinnerModule],
+  imports: [TranslateModule, AppearOnScrollDirective, MatProgressSpinnerModule],
   templateUrl: './statistics.component.html',
   styleUrl: './statistics.component.scss'
 })
