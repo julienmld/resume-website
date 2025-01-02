@@ -1,7 +1,7 @@
 <div class="statistics first">
     <div class="rectangle">
         <div class="container">
-            <mat-spinner [hidden]="loading" color="accent" [strokeWidth]="5"></mat-spinner>
+            <mat-spinner *ngIf="loading" color="accent" [strokeWidth]="5"></mat-spinner>
             <p [hidden]="loading">{{ 'statistics-page.distribution-visitors' | translate }}</p>
             <canvas class="chart" #doughnutCanvas [hidden]="loading"></canvas>
         </div>
