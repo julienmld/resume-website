@@ -6,7 +6,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Calendar;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 
 import julien.maillard.entity.Visitor;
@@ -49,15 +49,14 @@ public class WebsiteServiceImpl implements WebsiteService {
         statisticDTO.setNumberCurious(visitorRepository.countVisitorsByAttribute(JOB, "curious"));
         statisticDTO.setNumberOther(visitorRepository.countVisitorsByAttribute(JOB, "other"));
         Calendar calendar = Calendar.getInstance();
-        Map<Integer, int[]> deviceStatistics = new LinkedHashMap<>();
-        calendar.add(Calendar.MONTH, -4);
+        Map<Integer, int[]> deviceStatistics = new HashMap<>();
         for (int i = 0; i < 5; i++) {
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH) + 1;
             deviceStatistics.put(month,
                     new int[] { visitorRepository.countVisitorsByMonth(DEVICE, "computer", month, year),
-                                visitorRepository.countVisitorsByMonth(DEVICE, "mobile", month, year) });
-            calendar.add(Calendar.MONTH, 1);
+                            visitorRepository.countVisitorsByMonth(DEVICE, "mobile", month, year) });
+            calendar.add(Calendar.MONTH, -1);
         }
         statisticDTO.setDeviceStatistics(deviceStatistics);
         return statisticDTO;
