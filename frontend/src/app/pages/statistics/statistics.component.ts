@@ -19,6 +19,7 @@ import { get } from 'http';
 export class StatisticsComponent implements AfterViewInit, OnInit {
   @ViewChild('doughnutCanvas') doughnutCanvas!: ElementRef;
   @ViewChild('barCanvas') barCanvas!: ElementRef;
+  @ViewChild('barCanvasWrapper') barCanvasWrapper!: ElementRef;
   private comService = inject(CommunicationService);
   private translateService = inject(TranslateService);
   private backendService = inject(BackendService);
@@ -29,6 +30,7 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
   months: string[] = [];
   statisticDTO: StatisticDTO | undefined;
   loading: boolean = true;
+  barChartInitialized: boolean = false;
 
   ngOnInit(): void {
     Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
@@ -52,7 +54,19 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
         this.statisticDTO = res;
         this.loading = false;
         this.createDoughnutChart();
-        this.createBarChart();
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !this.barChartInitialized) {
+                this.barChartInitialized = true;
+                this.createBarChart();
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        observer.observe(this.barCanvasWrapper.nativeElement);
       });
       /**this.statisticDTO = {
         "numberDeveloper": 5,
@@ -74,7 +88,19 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
         setTimeout(() => {
           this.loading = false;
           this.createDoughnutChart();
-          this.createBarChart();
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !this.barChartInitialized) {
+                  this.barChartInitialized = true;
+                  this.createBarChart();
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
+
+          observer.observe(this.barCanvasWrapper.nativeElement);
         }, 2000);
       }*/
     }

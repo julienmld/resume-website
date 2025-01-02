@@ -9,7 +9,7 @@
 </div>
 
 <div class="statistics secund" appAppearOnScroll>
-    <div class="rectangle">
+    <div class="rectangle" #barCanvasWrapper>
         <div class="container">
             <p [hidden]="loading">{{ 'statistics-page.number-visitors' | translate }}</p>
             <canvas class="chart" #barCanvas></canvas>
