@@ -27,7 +27,7 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
   doughnutChart!: Chart;
   barChart!: Chart;
   months: string[] = [];
-  statisticDTO: StatisticDTO | undefined;
+  statisticDTO: StatisticDTO = new StatisticDTO(0, 0, 0, 0, 0, 0, new Map<number, number[]>());
   loading: boolean = true;
   barChartInitialized: boolean = false;
 
@@ -67,41 +67,6 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
 
         observer.observe(this.barCanvasWrapper.nativeElement);
       });
-      /**this.statisticDTO = {
-        "numberDeveloper": 5,
-        "numberRecruiter": 4,
-        "numberStudent": 6,
-        "numberClient": 2,
-        "numberCurious": 9,
-        "numberOther": 3,
-        "deviceStatistics": new Map<number, number[]>([
-          [8, [10, 0]],
-          [9, [0, 0]],
-          [10, [0, 0]],
-          [11, [0, 0]],
-          [12, [7, 3]],
-        ])
-      }
-
-      if (isPlatformBrowser(this.platformId)) {
-        setTimeout(() => {
-          this.loading = false;
-          this.createDoughnutChart();
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !this.barChartInitialized) {
-                  this.barChartInitialized = true;
-                  this.createBarChart();
-                }
-              });
-            },
-            { threshold: 0.1 }
-          );
-
-          observer.observe(this.barCanvasWrapper.nativeElement);
-        }, 2000);
-      }*/
     }
   }
 
@@ -183,12 +148,17 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
     const monthsToDisplay: string[] = [];
     const computerToDisplay: number[] = [];
     const mobileToDisplay: number[] = [];
+    const currentMonth = new Date().getMonth() + 1;
 
-    this.statisticDTO?.deviceStatistics.forEach((value, key) => {
-      monthsToDisplay.push(this.months[key - 1]);
-      computerToDisplay.push(value[0]);
-      mobileToDisplay.push(value[1]);
-    });
+    for (let i = 4; i > -1; i--) {
+      const month = ((currentMonth - i - 1 + 12) % 12) + 1;
+      monthsToDisplay.push(this.months[month - 1]);
+      const deviceStats = this.statisticDTO.deviceStatistics.get(month);
+      if (deviceStats) {
+        computerToDisplay.push(deviceStats[0]);
+        mobileToDisplay.push(deviceStats[1]);
+      }
+    }
 
     const ctx = this.barCanvas.nativeElement.getContext('2d');
     this.barChart = new Chart(ctx, {
