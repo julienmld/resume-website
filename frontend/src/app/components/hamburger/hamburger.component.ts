@@ -28,12 +28,7 @@ export class HamburgerComponent implements OnInit {
 
   onScroll(): void {
     const currentScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    if (currentScroll > this.lastScrollTop) {
-      this.scrolling = true;
-    } else {
-      this.scrolling = false;
-    }
-
+    this.scrolling = currentScroll > this.lastScrollTop;
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 

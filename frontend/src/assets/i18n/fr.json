@@ -14,6 +14,9 @@
   "architecture": "Architecture",
   "statistics": "Statistiques",
   "network": "CV et réseaux",
+  "settings": "Paramètres",
+  "dark-theme": "Thème sombre",
+  "language": "Langue",
   "small-screen": "Bonjour, la version mobile et tablette de ce site n'est pas disponible",
   "home-page": {
     "first-sentence": "Bonjour. Je suis Julien.",

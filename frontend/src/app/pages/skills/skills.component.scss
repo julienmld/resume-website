@@ -27,6 +27,10 @@
   margin-top: 18px;
 }
 
+.white-picture {
+  filter: var(--filter);
+}
+
 @media (min-width: $trigger-mobile-version-limit) {
   img:hover {
     transform: scale(1.25);

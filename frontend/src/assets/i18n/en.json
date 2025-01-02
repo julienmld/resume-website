@@ -14,6 +14,9 @@
   "architecture": "Architecture",
   "statistics": "Statistics",
   "network": "Social networks",
+  "settings": "Settings",
+  "dark-theme": "Dark theme",
+  "language": "Language",
   "small-screen": "Hello, the mobile and tablet version of this site is not available",
   "home-page": {
     "first-sentence": "Hello. I am Julien.",

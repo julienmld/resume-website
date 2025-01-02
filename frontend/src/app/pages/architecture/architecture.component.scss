@@ -17,8 +17,8 @@
 .aws-rectangle {
   width: 100%;
   position: relative;
-  border: $rectangle-border;
-  background-color: $rectangle-background-color;
+  border: var(--rectangle-border);
+  background-color: var(--computer-background);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,8 +55,8 @@
 }
 
 .schema {
-  background-color: $small-rectangle-background-color;
-  border: $rectangle-border;
+  background-color: var(--small-rectangle-background-color);
+  border: var(--rectangle-border);
   border-radius: $rectangle-border-radius;
   margin-bottom: 60px;
 }
@@ -102,7 +102,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: $secund-color;
+  background-color: var(--primary-color);
 }
 
 .container:hover .hidden-button {
@@ -136,6 +136,10 @@
     width: 90%;
     margin-top: 30px;
     margin-bottom: 90px;
+  }
+
+  .aws-rectangle {
+    background-color: var(--mobile-background);
   }
 
   p {

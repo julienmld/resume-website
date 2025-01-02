@@ -1,7 +1,20 @@
 <div [hidden]="scrolling" class="bottom-banner" [ngClass]="{'fixed': isHomePage}">
     <div class="section">
-        <img matTooltip="Français" (click)="changeLanguage('fr')" class="left" src="assets/img/french.png">
-        <img matTooltip="English" (click)="changeLanguage('en')" class="left" src="assets/img/english.png">
+        <img [matTooltipDisabled]="settingsVisible" [matTooltip]="'settings' | translate" (click)="clickSettings()"
+            class="settings" src="assets/img/settings.png">
+
+        <div *ngIf="settingsVisible" class="bubble">
+            <div class="line">
+                <p>{{'language' | translate}} </p>
+                <img (click)="changeLanguage('fr')" class="left" src="assets/img/french.png">
+                <img (click)="changeLanguage('en')" class="left" src="assets/img/english.png">
+                <img (click)="changeLanguage('sp')" class="left" src="assets/img/spanish.png">
+            </div>
+            <div class="line">
+                <p>{{'dark-theme' | translate}} </p>
+                <mat-slide-toggle [checked]="isDarkTheme" (change)="toggleTheme()" class="left" />
+            </div>
+        </div>
     </div>
 
     <div class="section">

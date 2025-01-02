@@ -4,7 +4,7 @@
   font-size: 95%;
   line-height: 1.2;
   margin-top: -43px;
-  color: white;
+  color: var(--white-in-dark-primary-color-otherwise);
 }
 
 .h1 {
@@ -27,7 +27,7 @@
 
 .text-section {
   text-align: left;
-  color: white;
+  color: var(--white-in-dark-primary-color-otherwise);
   font-size: 24px;
   margin-left: 40px;
   width: 50%;
@@ -38,10 +38,11 @@
   border-radius: 50%;
   height: 220px;
   width: 220px;
+  border: var(--rectangle-border);
 }
 
 .bottom-right {
-  color: white;
+  color: var(--white-in-dark-primary-color-otherwise);
   position: absolute;
   bottom: 50px;
   right: 0;
@@ -121,7 +122,6 @@
     font-size: 15px;
     bottom: 20px;
     right: 8px;
-    z-index: 3;
   }
 
   .finger {

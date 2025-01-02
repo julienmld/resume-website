@@ -23,8 +23,8 @@
   }
 
   .container {
-    background-color: $rectangle-background-color;
-    border: $rectangle-border;
+    background-color: var(--computer-background);
+    border: var(--rectangle-border);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -63,8 +63,8 @@
   }
 
   .container {
-    background-color: $rectangle-background-color;
-    border: $rectangle-border;
+    background-color: var(--mobile-background);
+    border: var(--rectangle-border);
     border-radius: 5px;
     display: flex;
     justify-content: center;

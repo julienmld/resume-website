@@ -1,13 +1,15 @@
-import { NgClass } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { NgIf, NgClass } from '@angular/common';
+import { Component, ElementRef, HostListener, inject, Input, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommunicationService } from '../../services/communication.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-bottom-banner',
   standalone: true,
-  imports: [TranslateModule, MatTooltipModule, NgClass],
+  imports: [NgIf, FormsModule, TranslateModule, NgClass, MatTooltipModule, MatSlideToggleModule],
   templateUrl: './bottom-banner.component.html',
   styleUrl: './bottom-banner.component.scss'
 })
@@ -15,8 +17,11 @@ export class BottomBannerComponent implements OnInit {
   @Input() isHomePage: boolean = true;
   private commService = inject(CommunicationService);
   private translate = inject(TranslateService);
+  private eRef = inject(ElementRef);
   private lastScrollTop = 0;
   scrolling = false;
+  settingsVisible = false;
+  isDarkTheme = true;
 
   ngOnInit(): void {
     if (typeof window !== "undefined") {
@@ -35,12 +40,7 @@ export class BottomBannerComponent implements OnInit {
 
   onScroll(): void {
     const currentScroll = document.documentElement.scrollTop;
-    if (currentScroll > this.lastScrollTop) {
-      this.scrolling = true;
-    } else {
-      this.scrolling = false;
-    }
-
+    this.scrolling = currentScroll > this.lastScrollTop;
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 
@@ -63,6 +63,29 @@ export class BottomBannerComponent implements OnInit {
 
   openLink(link: string) {
     window.open(link, '_blank');
+  }
+
+  clickSettings() {
+    this.settingsVisible = !this.settingsVisible;
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: MouseEvent) {
+    const clickedInside = this.eRef.nativeElement.contains(event.target);
+    if (!clickedInside) {
+      this.settingsVisible = false;
+    }
+  }
+
+  toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
+    const themeClass = this.isDarkTheme ? 'theme-dark' : 'theme-light';
+    document.body.classList.remove('theme-dark', 'theme-light');
+    document.body.classList.add(themeClass);
+    const particlesElement = document.getElementById('particles-js');
+    if (particlesElement) {
+      particlesElement.style.filter = this.isDarkTheme ? 'invert(0)' : 'invert(1)';
+    }
   }
 
 }

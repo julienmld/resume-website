@@ -3,8 +3,8 @@
 .rectangle {
   width: 80%;
   margin: auto;
-  border: $rectangle-border;
-  background-color: $rectangle-background-color;
+  border: var(--rectangle-border);
+  background-color: var(--computer-background);
   margin-bottom: 20px;
   color: white;
   text-align: justify;
@@ -33,6 +33,7 @@
 @media (max-width: $trigger-mobile-version-limit) {
   .rectangle {
     width: 90%;
+    background-color: var(--mobile-background);
   }
 
   .title {

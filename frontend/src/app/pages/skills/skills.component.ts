@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { Component, } from '@angular/core';
+import { NgFor, NgClass } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { upsizeAnimation } from '../../animations/upsizeAnimation';
 import { CardComponent } from '../../components/card/card.component';
@@ -8,7 +8,7 @@ import { AppearOnScrollDirective } from '../../services/appear-on-scroll.directi
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [NgFor, MatTooltipModule, CardComponent, AppearOnScrollDirective],
+  imports: [NgFor, NgClass, MatTooltipModule, CardComponent, AppearOnScrollDirective],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
   animations: [upsizeAnimation]

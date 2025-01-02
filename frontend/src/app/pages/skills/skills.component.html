@@ -3,7 +3,7 @@
   <div class="images-container">
     <div *ngFor="let techno of technos" class="upsize-item">
       <a (click)="scrollToSection(techno.part)">
-        <img matTooltip="{{ techno.label }}" [src]="'assets/img/' + techno.img">
+        <img matTooltip="{{ techno.label }}" [src]="'assets/img/' + techno.img" [ngClass]="{'white-picture': ['helm.png', 'ansible.png'].includes(techno.img)}" />
       </a>
     </div>
   </div>

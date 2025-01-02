@@ -14,6 +14,7 @@
   align-items: center;
   transform: translateY(+100%);
   transition: transform 1s ease-out;
+  background-color: var(--computer-background);
 }
 
 .bottom-banner.show {
@@ -38,13 +39,38 @@
 img {
   cursor: pointer;
   width: 24px;
+  height: 24px;
+}
+
+.settings {
+  filter: invert(1);
+}
+
+.bubble {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  padding: 10px;
+  background-color: var(--computer-background);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border: var(--rectangle-border);
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  height: auto;
+  line-height: 1;
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
   .bottom-banner {
     position: fixed;
     height: 50px;
-    background-color: rgba(11, 12, 16, 0.85);
+    background-color: var(--mobile-background);
   }
 
   img {
@@ -54,5 +80,11 @@ img {
   [hidden] {
     opacity: 0;
     visibility: hidden;
+  }
+
+  .bubble {
+    background-color: var(--mobile-background);
+    bottom: 60px;
+    left: 20px;
   }
 }

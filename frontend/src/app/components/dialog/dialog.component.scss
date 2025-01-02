@@ -6,7 +6,7 @@
 }
 
 .text {
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
 .button-container {
@@ -20,18 +20,18 @@
 
 button {
   cursor: pointer;
-  background-color: $secund-color;
+  background-color: var(--primary-color);
 }
 
 ::ng-deep .mat-mdc-dialog-surface {
-  border: $rectangle-border;
+  border: var(--rectangle-border);
   background-color: rgba(255, 255, 255, 0.97);
   width: 85%;
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
   ::ng-deep .mat-mdc-dialog-surface {
-    border: $rectangle-border;
+    border: var(--rectangle-border);
     background-color: rgba(255, 255, 255, 0.97);
     width: 110%;
   }

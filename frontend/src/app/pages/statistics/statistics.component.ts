@@ -7,6 +7,7 @@ import { StatisticDTO } from '../../models/StatisticDTO';
 import { AppearOnScrollDirective } from '../../services/appear-on-scroll.directive';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommunicationService } from '../../services/communication.service';
+import { get } from 'http';
 
 @Component({
   selector: 'app-statistics',
@@ -27,8 +28,6 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
   barChart!: Chart;
   months: string[] = [];
   statisticDTO: StatisticDTO | undefined;
-  englishMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  frenchMonths = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
   loading: boolean = true;
 
   ngOnInit(): void {
@@ -47,7 +46,7 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
       this.translations = res;
     });
 
-    this.months = this.translateService.getDefaultLang() === 'en' ? this.englishMonths : this.frenchMonths;
+    this.months = this.getTranslatedMonths();
     if (isPlatformBrowser(this.platformId)) {
       this.backendService.getStatistics().subscribe((res: StatisticDTO) => {
         this.statisticDTO = res;
@@ -87,20 +86,32 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
     });
 
     const english = this.translateService.getDefaultLang() === 'en';
-    this.months = english ? this.englishMonths : this.frenchMonths;
+    this.months = this.getTranslatedMonths();
     this.doughnutChart.data.labels = [this.translations.developers, this.translations.recruiters, this.translations.students, this.translations.clients, this.translations.curious, this.translations.others];
     this.doughnutChart.data.datasets[0].label = this.translations.visitors;
     this.doughnutChart.update();
 
     const monthsToDisplay: string[] = [];
     this.statisticDTO?.deviceStatistics.forEach((value, key) => {
-      monthsToDisplay.push(english ? this.englishMonths[key - 1] : this.frenchMonths[key - 1]);
+      monthsToDisplay.push(english ? this.months[key - 1] : this.months[key - 1]);
     });
     this.barChart.data.labels = monthsToDisplay;
     this.barChart.data.datasets[0].label = this.translations.computers;
     this.barChart.data.datasets[1].label = this.translations.mobiles;
     this.barChart.update();
 
+  }
+
+  getTranslatedMonths(): string[] {
+    switch (this.translateService.getDefaultLang()) {
+      case 'en':
+        return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      case 'sp':
+        return ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      case 'fr':
+      default:
+        return ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+    }
   }
 
   createDoughnutChart() {
@@ -129,6 +140,9 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
           plugins: {
             legend: {
               position: 'bottom',
+              labels: {
+                color: 'white',
+              }
             },
             tooltip: {
               enabled: true,
@@ -178,14 +192,29 @@ export class StatisticsComponent implements AfterViewInit, OnInit {
         scales: {
           x: {
             beginAtZero: true,
+            ticks: {
+              color: 'white',
+            },
+            grid: {
+              display: false,
+            },
           },
           y: {
             beginAtZero: true,
+            ticks: {
+              color: 'white',
+            },
+            grid: {
+              display: false,
+            },
           },
         },
         plugins: {
           legend: {
             position: 'bottom',
+            labels: {
+              color: 'white',
+            }
           },
           tooltip: {
             enabled: true,

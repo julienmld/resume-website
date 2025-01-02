@@ -11,8 +11,8 @@
     position: relative;
     margin: 10px 0;
     padding: 10px;
-    border: $rectangle-border;
-    background-color: $small-rectangle-background-color;
+    border: var(--rectangle-border);
+    background-color: var(--small-rectangle-background-color);
     border-radius: $rectangle-border-radius;
     color: white;
 }
@@ -24,7 +24,7 @@
     top: 20px;
     width: 10px;
     height: 10px;
-    background: $secund-color;
+    background: var(--primary-color);
     border-radius: 50%;
     box-shadow: 0 0 5px white;
 }
