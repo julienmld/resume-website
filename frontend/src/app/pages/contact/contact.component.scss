@@ -54,7 +54,7 @@ button {
 
 ::ng-deep .mat-mdc-select-panel {
     scrollbar-width: thin !important;
-    scrollbar-color: #333 #888 !important;
+    scrollbar-color: #333 var(--primary-color) !important;
 }
 
 @media (max-width: $trigger-mobile-version-limit) {
