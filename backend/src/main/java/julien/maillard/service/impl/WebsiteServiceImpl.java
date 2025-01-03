@@ -5,9 +5,9 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import julien.maillard.entity.Visitor;
 import julien.maillard.model.Message;
@@ -19,7 +19,15 @@ import julien.maillard.service.WebsiteService;
 public class WebsiteServiceImpl implements WebsiteService {
 
     private static final String JOB = "job";
+    private static final String DEVELOPER = "developer";
+    private static final String RECRUITER = "recruiter";
+    private static final String STUDENT = "student";
+    private static final String CLIENT = "client";
+    private static final String CURIOUS = "curious";
+    private static final String OTHER = "other";
     private static final String DEVICE = "device";
+    private static final String COMPUTER = "computer";
+    private static final String MOBILE = "mobile";
 
     @Autowired
     private JavaMailSender emailSender;
@@ -42,24 +50,59 @@ public class WebsiteServiceImpl implements WebsiteService {
 
     public StatisticDTO getStatisticDTO() {
         StatisticDTO statisticDTO = new StatisticDTO();
-        statisticDTO.setNumberDeveloper(visitorRepository.countVisitorsByAttribute(JOB, "developer"));
-        statisticDTO.setNumberRecruiter(visitorRepository.countVisitorsByAttribute(JOB, "recruiter"));
-        statisticDTO.setNumberStudent(visitorRepository.countVisitorsByAttribute(JOB, "student"));
-        statisticDTO.setNumberClient(visitorRepository.countVisitorsByAttribute(JOB, "client"));
-        statisticDTO.setNumberCurious(visitorRepository.countVisitorsByAttribute(JOB, "curious"));
-        statisticDTO.setNumberOther(visitorRepository.countVisitorsByAttribute(JOB, "other"));
+
+        List<List<Integer>> developers = getListOfList();
+        List<List<Integer>> recruiters = getListOfList();
+        List<List<Integer>> students = getListOfList();
+        List<List<Integer>> clients = getListOfList();
+        List<List<Integer>> curious = getListOfList();
+        List<List<Integer>> others = getListOfList();
+
         Calendar calendar = Calendar.getInstance();
-        Map<Integer, int[]> deviceStatistics = new HashMap<>();
+        calendar.add(Calendar.MONTH, -4);
+        
         for (int i = 0; i < 5; i++) {
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH) + 1;
-            deviceStatistics.put(month,
-                    new int[] { visitorRepository.countVisitorsByMonth(DEVICE, "computer", month, year),
-                            visitorRepository.countVisitorsByMonth(DEVICE, "mobile", month, year) });
-            calendar.add(Calendar.MONTH, -1);
+        
+            developers.get(0).add(visitorRepository.countVisitorsByMonth(DEVICE, COMPUTER, JOB, DEVELOPER, month, year));
+            developers.get(1).add(visitorRepository.countVisitorsByMonth(DEVICE, MOBILE, JOB, DEVELOPER, month, year));
+        
+            recruiters.get(0).add(visitorRepository.countVisitorsByMonth(DEVICE, COMPUTER, JOB, RECRUITER, month, year));
+            recruiters.get(1).add(visitorRepository.countVisitorsByMonth(DEVICE, MOBILE, JOB, RECRUITER, month, year));
+
+            students.get(0).add(visitorRepository.countVisitorsByMonth(DEVICE, COMPUTER, JOB, STUDENT, month, year));
+            students.get(1).add(visitorRepository.countVisitorsByMonth(DEVICE, MOBILE, JOB, STUDENT, month, year));
+        
+            clients.get(0).add(visitorRepository.countVisitorsByMonth(DEVICE, COMPUTER, JOB, CLIENT, month, year));
+            clients.get(1).add(visitorRepository.countVisitorsByMonth(DEVICE, MOBILE, JOB, CLIENT, month, year));
+
+            curious.get(0).add(visitorRepository.countVisitorsByMonth(DEVICE, COMPUTER, JOB, CURIOUS, month, year));
+            curious.get(1).add(visitorRepository.countVisitorsByMonth(DEVICE, MOBILE, JOB, CURIOUS, month, year));
+        
+            others.get(0).add(visitorRepository.countVisitorsByMonth(DEVICE, COMPUTER, JOB, OTHER, month, year));
+            others.get(1).add(visitorRepository.countVisitorsByMonth(DEVICE, MOBILE, JOB, OTHER, month, year));
+        
+            calendar.add(Calendar.MONTH, 1);
         }
-        statisticDTO.setDeviceStatistics(deviceStatistics);
+
+        statisticDTO.setDevelopers(developers);
+        statisticDTO.setRecruiters(recruiters);
+        statisticDTO.setStudents(students);
+        statisticDTO.setClients(clients);
+        statisticDTO.setCurious(curious);
+        statisticDTO.setOthers(others);
+
         return statisticDTO;
+    }
+
+    private List<List<Integer>> getListOfList() {
+        List<List<Integer>> listOfList = new ArrayList<>();
+        List<Integer> computerList = new ArrayList<>();
+        List<Integer> mobileList = new ArrayList<>();
+        listOfList.add(computerList);
+        listOfList.add(mobileList);
+        return listOfList;
     }
 
 }

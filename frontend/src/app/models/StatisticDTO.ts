@@ -1,20 +1,18 @@
 export class StatisticDTO {
 
-    numberDeveloper: number;
-    numberRecruiter: number;
-    numberStudent: number;
-    numberClient: number;
-    numberCurious: number;
-    numberOther: number;
-    deviceStatistics: Map<number, number[]>;
+    developers: number[][];
+    recruiters: number[][];
+    students: number[][];
+    clients: number[][];
+    curious: number[][];
+    others: number[][];
 
-    constructor(numberDeveloper: number, numberRecruiter: number, numberStudent: number, numberClient: number, numberCurious: number, numberOther: number, deviceStatistics: Map<number, number[]>) {
-        this.numberDeveloper = numberDeveloper;
-        this.numberRecruiter = numberRecruiter;
-        this.numberStudent = numberStudent;
-        this.numberClient = numberClient;
-        this.numberCurious = numberCurious;
-        this.numberOther = numberOther;
-        this.deviceStatistics = deviceStatistics;
+    constructor(developers: number[][], recruiters: number[][], students: number[][], clients: number[][], curious: number[][], others: number[][]) {
+        this.developers = developers;
+        this.recruiters = recruiters;
+        this.students = students;
+        this.clients = clients;
+        this.curious = curious;
+        this.others = others;
     }
 }

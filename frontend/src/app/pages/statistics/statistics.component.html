@@ -16,3 +16,12 @@
         </div>
     </div>
 </div>
+
+<div class="statistics third" appAppearOnScroll>
+    <div class="rectangle" #radarCanvasWrapper>
+        <div class="container">
+            <p [hidden]="loading">{{ 'statistics-page.distribution-visitors' | translate }}</p>
+            <canvas class="chart" #radarCanvas></canvas>
+        </div>
+    </div>
+</div>

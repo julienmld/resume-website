@@ -33,6 +33,10 @@ button {
   ::ng-deep .mat-mdc-dialog-surface {
     border: var(--rectangle-border);
     background-color: rgba(255, 255, 255, 0.97);
-    width: 110%;
+    width: 200%;
+  }
+
+  .dialog {
+    padding: 25px;
   }
 }

@@ -42,12 +42,12 @@
 
 .esir {
   width: 100px;
-  filter: invert(0.3);
+  filter: var(--filter);
 }
 
 .imageet {
   width: 60px;
-  filter: invert(0.3);
+  filter: invert(0.5);
 }
 
 .soprasteria {
@@ -60,7 +60,7 @@
 
 .dirisi {
   width: 110px;
-  filter: invert(0.4);
+  filter: invert(0.3);
 }
 
 @media (min-width: $trigger-mobile-version-limit) {
