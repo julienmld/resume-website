@@ -13,8 +13,8 @@ import { AppearOnScrollDirective } from '../../services/appear-on-scroll.directi
   animations: [upsizeAnimation]
 })
 export class ExperiencesComponent {
-  studiesTimeline = ['experiences-page.studies-timeline.cupge', 'experiences-page.studies-timeline.esir', 'experiences-page.studies-timeline.imageEt', 'experiences-page.studies-timeline.internship', 'experiences-page.studies-timeline.diploma']
-  sopraTimeline = ['experiences-page.sopra-timeline.internship', 'experiences-page.sopra-timeline.contract', 'experiences-page.sopra-timeline.sprint', 'experiences-page.sopra-timeline.transverse', 'experiences-page.sopra-timeline.freelance']
+  studiesTimeline = ['experiences-page.studies-timeline.diploma', 'experiences-page.studies-timeline.internship', 'experiences-page.studies-timeline.imageEt', 'experiences-page.studies-timeline.esir', 'experiences-page.studies-timeline.cupge']
+  sopraTimeline = ['experiences-page.sopra-timeline.freelance', 'experiences-page.sopra-timeline.transverse', 'experiences-page.sopra-timeline.sprint', 'experiences-page.sopra-timeline.contract', 'experiences-page.sopra-timeline.internship']
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);

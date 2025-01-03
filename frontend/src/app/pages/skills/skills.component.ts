@@ -30,10 +30,10 @@ export class SkillsComponent {
     { label: 'SAFe', img: 'safe.png', part: 'transverse' }
   ];
 
-  backendTimeline = ['skills-page.backend-timeline.esir', 'skills-page.backend-timeline.cracn', 'skills-page.backend-timeline.training', 'skills-page.backend-timeline.sprint'];
-  frontendTimeline = ['skills-page.frontend-timeline.esir', 'skills-page.frontend-timeline.cracn', 'skills-page.frontend-timeline.training', 'skills-page.frontend-timeline.sprint'];
-  devopsTimeline = ['skills-page.devops-timeline.cracn', 'skills-page.devops-timeline.sprint'];
-  transverseTimeline = ['skills-page.transverse-timeline.tutor', 'skills-page.transverse-timeline.recruit', 'skills-page.transverse-timeline.safe'];
+  backendTimeline = ['skills-page.backend-timeline.sprint', 'skills-page.backend-timeline.training', 'skills-page.backend-timeline.cracn', 'skills-page.backend-timeline.esir'];
+  frontendTimeline = ['skills-page.frontend-timeline.sprint', 'skills-page.frontend-timeline.training', 'skills-page.frontend-timeline.cracn', 'skills-page.frontend-timeline.esir'];
+  devopsTimeline = ['skills-page.devops-timeline.sprint', 'skills-page.devops-timeline.cracn'];
+  transverseTimeline = [ 'skills-page.transverse-timeline.safe', 'skills-page.transverse-timeline.recruit', 'skills-page.transverse-timeline.tutor'];
 
 
   scrollToSection(sectionId: string) {
