@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Message } from '../models/Message';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { StatisticDTO } from '../models/StatisticDTO';
 
 @Injectable({

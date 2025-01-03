@@ -68,7 +68,7 @@ export class ArchitectureComponent {
     }
   }
 
-  changeColor() {
+  spin() {
     this.spinValue++;
   }
 
