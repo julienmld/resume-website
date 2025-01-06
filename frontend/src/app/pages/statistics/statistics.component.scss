@@ -28,7 +28,7 @@
   }
 
   .container {
-    background-color: var(--computer-background);
+    background-color: var(--background);
     border: var(--rectangle-border);
     border-radius: 5px;
     display: flex;
@@ -73,7 +73,6 @@
   }
 
   .container {
-    background-color: var(--mobile-background);
     border: var(--rectangle-border);
     border-radius: 5px;
     display: flex;

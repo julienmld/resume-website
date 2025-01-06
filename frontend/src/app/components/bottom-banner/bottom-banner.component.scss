@@ -14,7 +14,7 @@
   align-items: center;
   transform: translateY(+100%);
   transition: transform 1s ease-out;
-  background-color: var(--computer-background);
+  background-color: var(--background);
 }
 
 .bottom-banner.show {
@@ -51,7 +51,7 @@ img {
   bottom: 40px;
   left: 20px;
   padding: 10px;
-  background-color: var(--computer-background);
+  background-color: var(--background);
   border-radius: 5px;
   color: white;
   border: var(--rectangle-border);
@@ -68,7 +68,6 @@ img {
   .bottom-banner {
     position: fixed;
     height: 50px;
-    background-color: var(--mobile-background);
   }
 
   img {
@@ -83,7 +82,7 @@ img {
 
   .bubble {
     font-size: 15px;
-    background-color: var(--mobile-background);
+    background-color: var(--background);
     bottom: 60px;
     left: 20px;
   }

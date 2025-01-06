@@ -10,7 +10,7 @@
 
 .centered-container {
     border: var(--rectangle-border);
-    background-color: var(--computer-background);
+    background-color: var(--background);
     border-radius: $rectangle-border-radius;
     margin-top: 50px;
     margin-bottom: 60px;
@@ -66,6 +66,5 @@ button {
 
     .centered-container {
         width: 90%;
-        background-color: var(--mobile-background);
     }
 }
