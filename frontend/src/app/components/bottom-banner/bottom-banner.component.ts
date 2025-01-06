@@ -70,6 +70,7 @@ export class BottomBannerComponent implements OnInit {
   }
 
   @HostListener('document:click', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
   handleClickOutside(event: MouseEvent) {
     const clickedInside = this.eRef.nativeElement.contains(event.target);
     if (!clickedInside) {
