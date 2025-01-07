@@ -11,10 +11,9 @@
         }
       },
       "i18n": {
-        "sourceLocale": "en",
+        "sourceLocale": "fr",
         "locales": {
-          "fr": "src/assets/i18n/fr.json",
-          "es": "src/assets/i18n/en.json",
+          "en": "src/assets/i18n/en.json",
           "sp": "src/assets/i18n/sp.json"
         }
       },
@@ -117,5 +116,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
