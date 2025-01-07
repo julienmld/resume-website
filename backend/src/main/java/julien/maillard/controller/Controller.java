@@ -12,7 +12,7 @@ import julien.maillard.model.StatisticDTO;
 import julien.maillard.entity.Visitor;
 import julien.maillard.service.WebsiteService;
 
-@CrossOrigin(origins = "https://julienmld.fr")
+@CrossOrigin(origins = {"https://julienmld.fr", "https://www.julienmld.fr"})
 @RestController
 public class Controller {
 
