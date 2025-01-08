@@ -26,37 +26,37 @@ import { MatButtonModule } from '@angular/material/button'
 export class ArchitectureComponent {
   spinValue: number = 0;
   technos: any[] = [
-    { label: 'Amplify', img: 'amplify.jpg', part: 'schema' },
-    { label: 'API Gateway', img: 'apigateway.png', part: 'schema' },
-    { label: 'Lambda', img: 'lambda.png', part: 'schema' },
-    { label: 'DynamoDB', img: 'dynamo.jpg', part: 'schema' },
-    { label: 'IAM', img: 'iam.jpg', part: 'schema' },
-    { label: 'Secret Manager', img: 'secretmanager.jpg', part: 'schema' }
+    { label: 'Amplify', img: 'amplify.webp', part: 'schema' },
+    { label: 'API Gateway', img: 'apigateway.webp', part: 'schema' },
+    { label: 'Lambda', img: 'lambda.webp', part: 'schema' },
+    { label: 'DynamoDB', img: 'dynamo.webp', part: 'schema' },
+    { label: 'IAM', img: 'iam.webp', part: 'schema' },
+    { label: 'Secret Manager', img: 'secretmanager.webp', part: 'schema' }
   ];
 
   schema = {
     frontend: {
-      images: ['amplify.jpg', 'angular.png'],
+      images: ['amplify.webp', 'angular.webp'],
       text: "architecture-page.frontend"
     },
     apigateway: {
-      images: ['apigateway.png'],
+      images: ['apigateway.webp'],
       text: "architecture-page.gateway"
     },
     backend: {
-      images: ['lambda.png', 'spring.svg'],
+      images: ['lambda.webp', 'spring.svg'],
       text: "architecture-page.backend"
     },
     database: {
-      images: ['dynamo.jpg'],
+      images: ['dynamo.webp'],
       text: "architecture-page.database"
     },
     iam: {
-      images: ['iam.jpg'],
+      images: ['iam.webp'],
       text: "architecture-page.iam"
     },
     secretManager: {
-      images: ['secretmanager.jpg'],
+      images: ['secretmanager.webp'],
       text: "architecture-page.secret-manager"
     }
   }

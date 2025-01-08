@@ -1,14 +1,14 @@
 <div [hidden]="scrolling" class="bottom-banner" [ngClass]="{'fixed': isHomePage}">
     <div class="section">
         <img [matTooltipDisabled]="settingsVisible" [matTooltip]="'settings' | translate" (click)="clickSettings()"
-            class="settings" src="assets/img/settings.png">
+            class="settings" src="assets/img/settings.webp">
 
         <div [hidden]="!settingsVisible" class="bubble">
             <div class="line">
                 <p>{{'language' | translate}} </p>
-                <img (click)="changeLanguage('fr')" class="left" src="assets/img/french.png">
-                <img (click)="changeLanguage('en')" class="left" src="assets/img/english.png">
-                <img (click)="changeLanguage('sp')" class="left" src="assets/img/spanish.png">
+                <img (click)="changeLanguage('fr')" class="left" src="assets/img/french.webp">
+                <img (click)="changeLanguage('en')" class="left" src="assets/img/english.webp">
+                <img (click)="changeLanguage('sp')" class="left" src="assets/img/spanish.webp">
             </div>
             <div class="line">
                 <p>{{'dark-theme' | translate}} </p>
@@ -18,12 +18,12 @@
     </div>
 
     <div class="section">
-        <img [matTooltip]="'resume' | translate" (click)="downloadCV()" class="right" src="assets/img/cv.png">
+        <img [matTooltip]="'resume' | translate" (click)="downloadCV()" class="right" src="assets/img/cv.webp">
         <img matTooltip="Linkedin" (click)="openLink('https://www.linkedin.com/in/julien-maillard-946b74181/')"
-            class="right" src="assets/img/linkedin.png">
+            class="right" src="assets/img/linkedin.webp">
         <img matTooltip="Github" (click)="openLink('https://github.com/julienmld/resume-website')" class="right"
-            src="assets/img/github.png">
+            src="assets/img/github.webp">
         <img matTooltip="Malt" (click)="openLink('https://www.malt.fr/profile/julienmaillard3')" class="right"
-            src="assets/img/malt.png">
+            src="assets/img/malt.webp">
     </div>
 </div>

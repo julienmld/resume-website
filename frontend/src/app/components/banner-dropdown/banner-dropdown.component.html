@@ -1,6 +1,6 @@
 <div (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)">
   <p class="underline-on-hover">{{ title | translate }}</p>
-  <img src="assets/img/arrow.png" [ngClass]="{'rotate': isOpen}" />
+  <img src="assets/img/arrow.webp" [ngClass]="{'rotate': isOpen}" />
   <div [hidden]="!isOpen" class="dropdown-content">
     <a *ngFor="let page of pages" mat-menu-item (click)="navigateTo(page)">{{ page | translate }}</a>
   </div>

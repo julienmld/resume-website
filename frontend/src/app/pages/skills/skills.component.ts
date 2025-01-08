@@ -15,19 +15,19 @@ import { AppearOnScrollDirective } from '../../services/appear-on-scroll.directi
 })
 export class SkillsComponent {
   technos: any[] = [
-    { label: 'Java', img: 'java.png', part: 'backend' },
-    { label: 'Maven', img: 'maven.png', part: 'backend' },
+    { label: 'Java', img: 'java.webp', part: 'backend' },
+    { label: 'Maven', img: 'maven.webp', part: 'backend' },
     { label: 'Spring', img: 'spring.svg', part: 'backend' },
-    { label: 'Angular', img: 'angular.png', part: 'frontend' },
-    { label: 'Terraform', img: 'terraform.png', part: 'devops' },
-    { label: 'Ansible', img: 'ansible.png', part: 'devops' },
-    { label: 'Kubernetes', img: 'kubernetes.png', part: 'devops' },
-    { label: 'Helm', img: 'helm.png', part: 'devops' },
-    { label: 'Gitlab', img: 'gitlab.png', part: 'devops' },
-    { label: 'Jenkins', img: 'jenkins.png', part: 'devops' },
-    { label: 'Linux', img: 'linux.png', part: 'devops' },
-    { label: 'Cypress', img: 'cypress.png', part: 'devops' },
-    { label: 'SAFe', img: 'safe.png', part: 'transverse' }
+    { label: 'Angular', img: 'angular.webp', part: 'frontend' },
+    { label: 'Terraform', img: 'terraform.webp', part: 'devops' },
+    { label: 'Ansible', img: 'ansible.webp', part: 'devops' },
+    { label: 'Kubernetes', img: 'kubernetes.webp', part: 'devops' },
+    { label: 'Helm', img: 'helm.webp', part: 'devops' },
+    { label: 'Gitlab', img: 'gitlab.webp', part: 'devops' },
+    { label: 'Jenkins', img: 'jenkins.webp', part: 'devops' },
+    { label: 'Linux', img: 'linux.webp', part: 'devops' },
+    { label: 'Cypress', img: 'cypress.webp', part: 'devops' },
+    { label: 'SAFe', img: 'safe.webp', part: 'transverse' }
   ];
 
   backendTimeline = ['skills-page.backend-timeline.sprint', 'skills-page.backend-timeline.training', 'skills-page.backend-timeline.cracn', 'skills-page.backend-timeline.esir'];
