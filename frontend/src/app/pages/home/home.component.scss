@@ -44,19 +44,19 @@
 .bottom-right {
   color: var(--white-in-dark-primary-color-otherwise);
   position: absolute;
-  bottom: 50px;
+  bottom: 65px;
   right: 0;
 }
 
 .move-up {
   position: relative;
   animation: moveUp 1.1s linear infinite;
-  margin-bottom: 22px;
-  margin-right: 27px;
+  margin-right: 20px;
 }
 
 .finger {
   width: 70px;
+  height: 70px;
   transform: scaleX(-1);
 }
 
@@ -120,11 +120,12 @@
 
   .bottom-right {
     font-size: 15px;
-    bottom: 20px;
+    bottom: 25px;
     right: 8px;
   }
 
   .finger {
-    width: 55px;
+    width: 60px;
+    height: 60px;
   }
 }
