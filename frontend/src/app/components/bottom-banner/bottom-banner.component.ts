@@ -21,7 +21,7 @@ export class BottomBannerComponent implements OnInit {
   private lastScrollTop = 0;
   scrolling = false;
   settingsVisible = false;
-  isDarkTheme = true;
+  isDarkTheme = false;
 
   ngOnInit(): void {
     if (typeof window !== "undefined") {
@@ -80,9 +80,12 @@ export class BottomBannerComponent implements OnInit {
 
   toggleTheme(): void {
     this.isDarkTheme = !this.isDarkTheme;
-    const themeClass = this.isDarkTheme ? 'theme-dark' : 'theme-light';
-    document.body.classList.remove('theme-dark', 'theme-light');
-    document.body.classList.add(themeClass);
+    if (this.isDarkTheme) {
+      document.body.classList.add('theme-dark');
+    } else {
+      document.body.classList.remove('theme-dark');
+
+    }
     const particlesElement = document.getElementById('particles-js');
     if (particlesElement) {
       particlesElement.style.filter = this.isDarkTheme ? 'invert(0)' : 'invert(1)';

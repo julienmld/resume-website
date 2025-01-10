@@ -26,6 +26,14 @@ export class AppComponent implements OnInit {
   isHomePage: boolean = false;
 
   ngOnInit(): void {
+
+    if (typeof window !== "undefined") {
+      const particlesElement = document.getElementById('particles-js');
+      if (particlesElement) {
+        particlesElement.style.filter = 'invert(1)';
+      }
+    }
+
     this.translate.setDefaultLang('fr');
     this.translate.get('easter-egg.first-indication').subscribe((res: string) => {
       console.log(res);

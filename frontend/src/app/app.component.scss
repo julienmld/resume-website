@@ -5,11 +5,12 @@ $trigger-mobile-version-limit: 1000px;
   --primary-color: #0B0C10;
   --background: rgba(11, 12, 16, 0.85);
 
-  --background-color: #0B0C10;
-  --white-in-dark-primary-color-otherwise: white;
-  --small-rectangle-background-color: rgba(0, 0, 0, 0.5);
-  --rectangle-border: 1px solid rgba(255, 255, 255, 0.15);
-  --filter: invert(0);
+  --background-color: white;
+  --white-in-dark-primary-color-otherwise: #0B0C10;
+  --small-rectangle-background-color: rgba(0, 0, 0, 0.4);
+  --rectangle-border: 1px solid rgba(11, 12, 16, 0.6);
+  --filter: invert(1);
+  --border-profile-image: 2px solid rgba(11, 12, 16, 0.7);
 }
 
 .theme-dark {
@@ -18,14 +19,7 @@ $trigger-mobile-version-limit: 1000px;
   --small-rectangle-background-color: rgba(0, 0, 0, 0.5);
   --rectangle-border: 1px solid rgba(255, 255, 255, 0.15);
   --filter: invert(0);
-}
-
-.theme-light {
-  --background-color: white;
-  --white-in-dark-primary-color-otherwise: #0B0C10;
-  --small-rectangle-background-color: rgba(0, 0, 0, 0.4);
-  --rectangle-border: 1px solid rgba(11, 12, 16, 0.6);
-  --filter: invert(1);
+  --border-profile-image: 2px solid rgba(255, 255, 255, 0.7);
 }
 
 body {

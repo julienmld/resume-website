@@ -49,7 +49,6 @@ input[type=checkbox] {
 
 .sidebarIconToggle {
     filter: invert(1);
-    transition: all 0.3s;
     box-sizing: border-box;
     position: fixed;
     z-index: 3;
@@ -103,9 +102,13 @@ input[type=checkbox] {
     width: 100%;
     background: var(--background);
     position: fixed;
-    top: 0;
-    left: 0;
     z-index: 3;
+    transform: translateY(-100%);
+    transition: transform 1s ease-out;
+}
+
+.bande-transparente.show {
+    transform: translateY(0);
 }
 
 input[type=checkbox]:checked~.sidebarIconToggle>.horizontal {

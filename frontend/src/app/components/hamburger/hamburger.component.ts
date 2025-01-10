@@ -18,8 +18,10 @@ export class HamburgerComponent implements OnInit {
     if (typeof window !== "undefined") {
       window.addEventListener('load', () => {
         const banner = document.querySelector('.sidebarIconToggle');
-        if (banner) {
+        const band = document.querySelector('.bande-transparente');
+        if (banner && band) {
           banner.classList.add('show');
+          band.classList.add('show');
         }
       });
       window.addEventListener('scroll', this.onScroll.bind(this));
