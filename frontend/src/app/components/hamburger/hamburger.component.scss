@@ -132,7 +132,7 @@ input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-2 {
 }
 
 input[type=checkbox]:checked~.bande-transparente {
-    height: 100%;
+    height: calc(100% - 50px);
 }
 
 .sidebarIconToggle {
