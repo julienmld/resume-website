@@ -118,8 +118,18 @@
     margin: 0;
   }
 
+  .text-finger {
+    font-size: 13px;
+  }
+
+  .finger {
+    width: 55px;
+    height: 55px;
+  }
+
   .bottom-right {
-    display: none;
+    bottom: 25px;
+    right: 18px;
   }
 
 }
