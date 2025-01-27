@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import jakarta.annotation.PostConstruct;
 
 import julien.maillard.entity.Visitor;
 import julien.maillard.model.Message;
@@ -28,12 +29,18 @@ public class WebsiteServiceImpl implements WebsiteService {
     private static final String DEVICE = "device";
     private static final String COMPUTER = "computer";
     private static final String MOBILE = "mobile";
+    private static StatisticDTO statisticDTO;
 
     @Autowired
     private JavaMailSender emailSender;
 
     @Autowired
     private VisitorRepository visitorRepository;
+
+    @PostConstruct
+    public void setStatisticDTO() {
+        resetStatisticDTO();
+    }
 
     public void sendSimpleMessage(Message message) {
         SimpleMailMessage mail = new SimpleMailMessage();
@@ -46,9 +53,14 @@ public class WebsiteServiceImpl implements WebsiteService {
     public void registerVisitor(Visitor visitor) {
         visitor.setVisitDateTime(LocalDateTime.now().toString());
         visitorRepository.registerVisitor(visitor);
+        resetStatisticDTO();
     }
 
     public StatisticDTO getStatisticDTO() {
+        return this.statisticDTO;
+    }
+
+    private void resetStatisticDTO() {
         StatisticDTO statisticDTO = new StatisticDTO();
 
         List<List<Integer>> developers = getListOfList();
@@ -93,7 +105,7 @@ public class WebsiteServiceImpl implements WebsiteService {
         statisticDTO.setCurious(curious);
         statisticDTO.setOthers(others);
 
-        return statisticDTO;
+        this.statisticDTO = statisticDTO;
     }
 
     private List<List<Integer>> getListOfList() {
