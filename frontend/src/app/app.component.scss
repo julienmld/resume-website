@@ -3,8 +3,9 @@ $trigger-mobile-version-limit: 1000px;
 
 :root {
   --primary-color: #0B0C10;
-  --background: rgba(11, 12, 16, 0.9);
 
+  --banner-background: rgba(11, 12, 16, 0);
+  --background: rgba(11, 12, 16, 0.9);
   --background-color: #0B0C10;
   --white-in-dark-primary-color-otherwise: white;
   --small-rectangle-background-color: rgba(0, 0, 0, 0.5);
@@ -14,6 +15,8 @@ $trigger-mobile-version-limit: 1000px;
 }
 
 .theme-light {
+  --banner-background: rgba(11, 12, 16, 1);
+  --background: rgba(11, 12, 16, 0.9);
   --background-color: white;
   --white-in-dark-primary-color-otherwise: #0B0C10;
   --small-rectangle-background-color: rgba(0, 0, 0, 0.4);
