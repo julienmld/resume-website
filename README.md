@@ -1,4 +1,4 @@
-# Mon Application Web
+# Mon CV au travers d'une application web
 
 Ce projet contient le code source d'une application web qui me permet de me présenter à différents interlocuteurs. Le code est open-source et je vous le mets à disposition. Si vous souhaitez l'utiliser comme point de départ pour votre propre application, vous êtes libre de le faire. J'ai choisi d'héberger cette application en utilisant les services AWS. À la racine du projet, vous trouverez deux dossiers principaux (backend et frontend), décrits brièvement ci-dessous. Des README détaillés sont disponibles dans chacun de ces dossiers.
 
