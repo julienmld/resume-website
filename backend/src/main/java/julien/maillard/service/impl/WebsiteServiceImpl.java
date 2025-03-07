@@ -1,20 +1,20 @@
 package julien.maillard.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Service;
+import jakarta.annotation.PostConstruct;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
-import jakarta.annotation.PostConstruct;
-
 import julien.maillard.entity.Visitor;
 import julien.maillard.model.Message;
 import julien.maillard.model.StatisticDTO;
 import julien.maillard.repository.VisitorRepository;
 import julien.maillard.service.WebsiteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
 
 @Service
 public class WebsiteServiceImpl implements WebsiteService {
@@ -29,7 +29,7 @@ public class WebsiteServiceImpl implements WebsiteService {
     private static final String DEVICE = "device";
     private static final String COMPUTER = "computer";
     private static final String MOBILE = "mobile";
-    private static StatisticDTO statisticDTO;
+    private StatisticDTO statisticDTO;
 
     @Autowired
     private JavaMailSender emailSender;
@@ -63,12 +63,12 @@ public class WebsiteServiceImpl implements WebsiteService {
     private void resetStatisticDTO() {
         StatisticDTO statisticDTO = new StatisticDTO();
 
-        List<List<Integer>> developers = getListOfList();
-        List<List<Integer>> recruiters = getListOfList();
-        List<List<Integer>> students = getListOfList();
-        List<List<Integer>> clients = getListOfList();
-        List<List<Integer>> curious = getListOfList();
-        List<List<Integer>> others = getListOfList();
+        List<List<Integer>> developers = Arrays.asList(new ArrayList<>(), new ArrayList<>());
+        List<List<Integer>> recruiters = Arrays.asList(new ArrayList<>(), new ArrayList<>());
+        List<List<Integer>> students = Arrays.asList(new ArrayList<>(), new ArrayList<>());
+        List<List<Integer>> clients = Arrays.asList(new ArrayList<>(), new ArrayList<>());
+        List<List<Integer>> curious = Arrays.asList(new ArrayList<>(), new ArrayList<>());
+        List<List<Integer>> others = Arrays.asList(new ArrayList<>(), new ArrayList<>());
 
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MONTH, -4);
@@ -106,15 +106,6 @@ public class WebsiteServiceImpl implements WebsiteService {
         statisticDTO.setOthers(others);
 
         this.statisticDTO = statisticDTO;
-    }
-
-    private List<List<Integer>> getListOfList() {
-        List<List<Integer>> listOfList = new ArrayList<>();
-        List<Integer> computerList = new ArrayList<>();
-        List<Integer> mobileList = new ArrayList<>();
-        listOfList.add(computerList);
-        listOfList.add(mobileList);
-        return listOfList;
     }
 
 }
